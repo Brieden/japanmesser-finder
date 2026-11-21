@@ -100,8 +100,9 @@ Gruppen: `types`, `typeGroups`, `steels`, `steelFamilies`, `rust`, `construction
 Jeder Eintrag hat mindestens `label`; viele zusätzlich `short`. Zugriff: `data.t('types','gyuto')` → „Gyuto“, `data.entry('types','gyuto')` → ganzes Objekt.
 Die Inhaltsfelder (werden schrittweise ergänzt – Ansichten müssen **graceful degradieren**, wenn ein Feld fehlt):
 
-* `types.<id>`: `kanji`, `gloss`, `group`, `summary`, `uses[]`, `avoid`, `fun`, `level` (1 leicht … 3 anspruchsvoll), `bevel`, `lengthMm:[min,max]`, `typicalMm:[a,b]`, `tasks[]` (siehe Finder), `leftHandNote`, `sources[]`
-* `steels.<id>`: `summary`, `hardnessHrc`, `character`, `care` (`low|medium|high`), `beginnerFriendly`, `sources[]`
+* `types.<id>`: `kanji`, `gloss`, `group`, `summary`, `uses[]`, `avoid`, `fun`, `level` (1–3 nach Schliff und Spezialisierung, **keine Wertung der Person**) mit Pflichtfeld `levelReason` (der konkrete Grund, mit Quelle), `sharpenNote` (Schärfen), `bevel`, `lengthMm:[min,max]`, `typicalMm:[a,b]`, `tasks[]` (siehe Finder), `leftHandNote`, `sources[]`
+* `steels.<id>`: `summary`, `hardnessHrc` (nur wenn die Quelle die Sorte eindeutig zuordnet; Sammelbezeichnungen wie „Molybdenum Steel“ haben keine), `facts[{t,s}]` (belegte Aussagen, `s` = Quellen-ID), `sharpen{level,text,source}` (belegte Aussage zum Schärfaufwand), `beginnerReason` (konkreter Grund statt „für Einsteiger geeignet“), `beginnerFriendly` (nur Sortierhilfe der Finder-Engine), `care`, `sources[]`
+* `hardnessScale`: `source`, `note`, `classes[{id,label,min,max,retention,toughness,sharpening,typical}]` – Härteklassen nach Knives and Stones (weich 55–58, ausgewogen 59–61, hart 62–64, sehr hart ab 65 HRC)
 * `rust.<id>`: `explain` (ausführlich), `care`
 * `construction.<id>`, `bevels.<id>`, `handleStyles.<id>`, `finishes.<id>`: `explain`
 
@@ -119,7 +120,10 @@ Die Inhaltsfelder (werden schrittweise ergänzt – Ansichten müssen **graceful
         { "type": "table", "caption": "…", "head": ["…"], "rows": [["…"]] },
         { "type": "figure", "id": "rust-tiers|construction|bevel|handles|…" },   // Diagramm, das die Ansicht selbst zeichnet
         { "type": "typeatlas" },      // interaktiver Messertyp-Atlas aus taxonomy.types
-        { "type": "steeltable" }      // Stahl-Übersicht aus taxonomy.steels
+        { "type": "steeltable" },     // Stahl-Übersicht aus taxonomy.steels (Härteklasse, belegte Schärf-Aussage, Quellen)
+        { "type": "hardnessscale" },  // Härteklassen-Tabelle aus taxonomy.hardnessScale
+        { "type": "ruststats" },      // Kennzahlen je Rost-Klasse aus dem Katalog (lib/insights.js)
+        { "type": "typecompare" }     // Messertypen im Vergleich (Anzahl, Länge, Härte-Median, Preis, Rostfrei-Anteil)
       ],
       "sources": ["src-01"] } ],
   "glossary": [ { "term": "Hagane", "ja": "鋼", "text": "…" } ],
@@ -148,10 +152,11 @@ Die Inhaltsfelder (werden schrittweise ergänzt – Ansichten müssen **graceful
 * **Barrierefrei**: semantisches HTML, sichtbarer Fokus, Tastaturbedienung, `lang="ja"` für Kanji (automatisch via `rich`/`withJa`), Labels an allen Formularfeldern, Dialoge über `<dialog>`.
 * **Datenschutz**: keine Cookies, keine Tracker, keine externen Schriften/Skripte. Einzige Fremdanfragen: Produktbilder vom Shopify-CDN (abschaltbar über `prefs.images`; dann Platzhalter statt `<img>`).
 * **Ton**: sachlich, belegt, keine Superlative/Marketingwörter. Unsicheres ausdrücklich als solches kennzeichnen („laut Shop“, „Sorte nicht angegeben“).
+* **Keine unbegründeten Wertungen**: Jede Einordnung („anspruchsvoll“, „empfindlich“, „geeignet“) nennt Grund und Quelle im selben Satz („einseitig geschliffen: händigkeitsgebunden; Händler sehen mehr Übungsbedarf“). Was keine Quelle hergibt, steht nicht da (z. B. gibt es keine Sterne für „Schärfe“, weil Geometrie und Schliff ab Werk im Katalog fehlen). `tests/insights.test.mjs` sperrt bekannte Floskeln („einsteigerfreundlich“, „meist zu anspruchsvoll“ …) und prüft, dass jede zitierte Quelle in `content/wissen.json` existiert.
 * **Robustheit**: fehlende Felder (z. B. noch ohne Erklärtext) dürfen nichts brechen; leere Ergebnislisten bekommen einen hilfreichen Leerzustand.
 * **Tests**: reine Logik (`assets/js/lib/*`, `format`, `shortlist`) mit `node:test` unter `tests/` abdecken.
 
-## Stand der Umsetzung (21.11.2026)
+## Stand der Umsetzung (22.11.2026)
 
 Alle Routen sind umgesetzt und im Browser geprüft (Desktop/Mobil, hell/dunkel; axe-core ohne WCAG-2.1-A/AA-Verstöße).
 
@@ -160,7 +165,8 @@ Alle Routen sind umgesetzt und im Browser geprüft (Desktop/Mobil, hell/dunkel; 
 | Katalog (Filter, Suche, URL-Zustand) | `lib/filters.js`, `views/catalog.js`, `css/views/catalog.css` |
 | Detailseite, „Im Laden zeigen“ | `views/detail.js`, `css/views/detail.css` |
 | Finder (Fragen, Bewertung, Begründung) | `lib/finder-engine.js`, `views/finder.js`, `css/views/finder.css` |
-| Messerkunde (Atlas, Stahltabelle, Diagramme) | `views/wissen.js`, `ui/typeatlas.js`, `ui/steeltable.js`, `ui/figures.js` |
+| Messerkunde (Atlas, Stahltabelle, Diagramme) | `views/wissen.js`, `ui/typeatlas.js`, `ui/steeltable.js`, `ui/figures.js`, `content.js` (gemeinsamer Lader für `wissen.json`) |
+| Vergleiche und Besonderheiten je Messer | `lib/insights.js` (reine Logik: Härteklasse, Einordnung im Typ, belegte „Was dieses Messer besonders macht“-Aussagen), `ui/meter.js` (Härte-Skala), Abschnitte „Besonderheiten“ und „Im Vergleich“ in `views/detail.js` |
 | Liste („Für wen?“, Text/Druck/Zeigen) | `views/liste.js`, `css/views/liste.css` |
 | Hinweise, Datenschutz, Einstellungen | `views/about.js`, `css/views/about.css` |
 | Silhouetten (maßstabsgetreue Seitenprofile) | `ui/silhouette.js` |

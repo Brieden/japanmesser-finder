@@ -33,13 +33,13 @@ export async function render(ctx) {
       { class: 'container hero' },
       h('p', { class: 'eyebrow' }, 'Messer aus Kappabashi, Tokyo'),
       h('h1', 'Das richtige Messer für die richtige Person'),
-      h('p', { class: 'lede' }, 'Eine Auswahlhilfe für den Messerkauf bei Tsubaya: geführt über wenige Fragen, per Filter durch den ganzen Katalog – oder erst einmal kurz und sachlich nachlesen, worin sich japanische Messer unterscheiden.'),
+      h('p', { class: 'lede' }, 'Eine Auswahlhilfe für den Messerkauf bei Tsubaya: geführt über zehn Fragen, per Filter durch den ganzen Katalog – oder erst einmal kurz und sachlich nachlesen, worin sich japanische Messer unterscheiden.'),
       h('div', { class: 'hamon', 'aria-hidden': 'true' })
     ),
     h(
       'section',
       { class: 'container paths', 'aria-label': 'Wege zum passenden Messer' },
-      path('#/finder', 'compass', 'Geführter Finder', 'Wenige Fragen zur Person, zur Küche und zur Pflege. Du erhältst passende Messertypen, eine Stahl-Empfehlung mit Erklärung und konkrete Treffer aus dem Katalog – jeweils mit Begründung.', 'Finder starten', 'path--primary'),
+      path('#/finder', 'compass', 'Geführter Finder', 'Zehn Fragen zur Person, zum Einsatz, zur Pflege und zum Budget. Du erhältst passende Messertypen, eine Stahl-Empfehlung mit Erklärung und konkrete Treffer aus dem Katalog – jeweils mit Begründung.', 'Finder starten', 'path--primary'),
       path('#/katalog', 'search', 'Katalog durchsuchen', `${num(homeKnives.length)} Haushalts- und Hobbymesser filtern nach Typ, Stahl, rostfrei, Länge, Griff, Händigkeit und Preis – ohne Umweg.`, 'Zum Katalog'),
       path('#/wissen', 'book', 'Messerkunde', 'Kurz, sachlich und ohne Hype: Stahl, Bauweise, Messertypen und Pflege – mit Quellen. Dazu: wann welcher Typ sinnvoll ist und Spaß macht.', 'Nachlesen')
     ),

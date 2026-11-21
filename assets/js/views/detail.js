@@ -1,5 +1,6 @@
 // Detailseite eines Artikels (#/messer/:handle): Galerie, Größen und Preise, Merkmale mit Erklärungen,
-// „Bitte beachten“, Typ-Karte, ähnliche Messer. Fehlende Taxonomie-Felder lassen die jeweilige Zeile einfach weg.
+// „Was dieses Messer besonders macht“ und „Im Vergleich“ (belegte Aussagen, lib/insights.js), „Bitte beachten“, Typ-Karte, ähnliche Messer.
+// Fehlende Taxonomie-Felder lassen die jeweilige Zeile einfach weg.
 import { h, loadCss, assetUrl, withJa } from '../dom.js';
 import { icon } from '../icons.js';
 import { prefs } from '../prefs.js';
@@ -12,6 +13,9 @@ import { openDialog } from '../ui/dialog.js';
 import { shopNotice } from '../ui/shop-notice.js';
 import { silhouette } from '../ui/silhouette.js';
 import { similarItems } from '../lib/filters.js';
+import { highlights, compareInClass, hardnessSentence, priceSentence, knifeHardness, hardnessNote, sharpeningStatement, hrcText } from '../lib/insights.js';
+import { hardnessMeter } from '../ui/meter.js';
+import { loadWissen } from '../content.js';
 
 // Der Router liest `title` nach dem Rendern (lebendige Bindung) → Tab-Titel mit dem konkreten Messer.
 export let title = 'Messer';
@@ -82,8 +86,6 @@ function priceCell(data, yen) {
   return h('span', { class: 'price' }, h('span', { class: 'price__main' }, `¥${new Intl.NumberFormat('de-DE').format(Math.round(yen))}`), alt != null && h('span', { class: 'price__alt' }, `≈ ${money(alt, cur)}`));
 }
 
-const levelText = { 1: 'leicht', 2: 'mittel', 3: 'anspruchsvoll' };
-const careText = { low: 'gering', medium: 'mittel', high: 'hoch' };
 
 // ───────────────────────────── Galerie ─────────────────────────────
 
@@ -323,9 +325,8 @@ function specSection(data, item) {
       const s = taxEntry('steels', item.steel.id);
       const bits = [];
       if (s?.summary) bits.push(s.summary);
-      if (s?.hardnessHrc) bits.push(`Härte typisch ${s.hardnessHrc[0]}–${s.hardnessHrc[1]} HRC (Richtwert der Stahlsorte, nicht am einzelnen Messer gemessen).`);
-      if (s?.care) bits.push(`Pflegeaufwand: ${careText[s.care] ?? s.care}.`);
-      if (typeof s?.beginnerFriendly === 'boolean') bits.push(s.beginnerFriendly ? 'Für Einsteiger geeignet.' : 'Eher etwas für Erfahrene.');
+      if (s?.hardnessHrc) bits.push(`Härte typisch ${hrcText(s.hardnessHrc)} HRC (Richtwert der Stahlsorte, nicht am einzelnen Messer gemessen).`);
+      if (s?.beginnerReason) bits.push(s.beginnerReason);
       add('Stahl', s?.label ?? item.steel.id, bits.join(' ') || null, { href: '#/wissen/stahl', text: 'Stahl in der Messerkunde' });
     }
     // Aufbau
@@ -392,6 +393,90 @@ function specSection(data, item) {
   );
 }
 
+// ───────────────────────────── Besonderheiten und Vergleich ─────────────────────────────
+
+const newTab = h('span', { class: 'visually-hidden' }, ' (öffnet in neuem Tab)');
+
+function sourceNodes(ids, sources) {
+  const list = ids.map((id) => sources?.[id]).filter(Boolean);
+  if (!list.length) return [];
+  // flach zurückgeben: replaceChildren() wandelt verschachtelte Arrays in Text um
+  return [' Quelle: ', ...list.flatMap((s, i) => [i ? ', ' : '', s.url ? h('a', { href: s.url, target: '_blank', rel: 'noopener noreferrer', title: s.title }, s.publisher ?? s.title, newTab.cloneNode(true)) : (s.publisher ?? s.title)])];
+}
+
+/** „Was dieses Messer besonders macht“: belegte Aussagen mit Folge für den Alltag; Quellen werden nachgeladen. */
+function highlightsSection(data, item) {
+  const list = highlights(item, data);
+  if (!list.length) return null;
+  const slots = [];
+  const entries = list.map((hl) => {
+    const slot = h('span', { class: 'detail__src muted' });
+    slots.push([slot, hl.sources]);
+    return h('li', h('strong', withJa(hl.lead)), ' ', withJa(hl.text), slot);
+  });
+  loadWissen()
+    .then((content) => {
+      for (const [slot, ids] of slots) slot.replaceChildren(...sourceNodes(ids, content.sources));
+    })
+    .catch(() => {}); // ohne Quellenliste bleibt jede Aussage lesbar; ihre Herkunft steht dann im Satz
+  return h(
+    'section',
+    { class: 'detail__section', 'aria-labelledby': 'detail-special' },
+    h('h2', { id: 'detail-special' }, 'Was dieses Messer besonders macht'),
+    h('p', { class: 'muted small' }, 'Jede Aussage nennt ihre Quelle. Sie gilt für Messer mit diesem Merkmal, nicht als Messung am einzelnen Exemplar.'),
+    h('ul', { class: 'detail__highlights' }, entries)
+  );
+}
+
+/** „Im Vergleich“: Härteklasse (Knives and Stones), Einordnung unter den Messern desselben Typs, Schärfaufwand, Preis. */
+function compareSection(data, item) {
+  const cmp = compareInClass(item, data);
+  if (!cmp) return null;
+  const hard = knifeHardness(item, data);
+  const sharp = sharpeningStatement(item, data);
+  const rows = [];
+
+  if (hard) {
+    rows.push(
+      h(
+        'div',
+        { class: 'detail__compare-row' },
+        h('h3', { class: 'detail__h3' }, 'Härte'),
+        hardnessMeter({ range: hard.range, taxonomy: data.taxonomy }),
+        h('p', `${hrcText(hard.range)} HRC, Klasse „${hard.cls.label}“. Das ist der typische Wert der Stahlsorte ${hard.steel.short ?? hard.steel.label}, nicht am einzelnen Messer gemessen.`),
+        hardnessSentence(cmp) && h('p', hardnessSentence(cmp))
+      ),
+      h(
+        'div',
+        { class: 'detail__compare-row' },
+        h('h3', { class: 'detail__h3' }, 'Schnitthaltigkeit und Schärfen'),
+        h('p', h('strong', 'Schnitthaltigkeit: '), `${hard.cls.retention} (Skala von Knives and Stones)`),
+        h('p', h('strong', 'Schärfen: '), sharp ? sharp.text : 'Für diese Stahlsorte liegt uns keine belegte Aussage vor.')
+      )
+    );
+  } else {
+    const note = hardnessNote(item, data);
+    rows.push(
+      h('div', { class: 'detail__compare-row' }, h('h3', { class: 'detail__h3' }, 'Härte'), h('p', note ? note.text : 'Die Stahlsorte ist nicht genannt; die Härte lässt sich nicht einordnen. Deshalb gibt es hier keinen Härte-Vergleich.'))
+    );
+  }
+
+  if (priceSentence(cmp)) rows.push(h('div', { class: 'detail__compare-row' }, h('h3', { class: 'detail__h3' }, 'Preis'), h('p', priceSentence(cmp))));
+
+  return h(
+    'section',
+    { class: 'detail__section', 'aria-labelledby': 'detail-compare' },
+    h('h2', { id: 'detail-compare' }, `Im Vergleich: ${cmp.typeLabel}`),
+    h('div', { class: 'detail__compare' }, rows),
+    h(
+      'p',
+      { class: 'muted small' },
+      `Verglichen wird mit den übrigen ${cmp.n - 1} ${cmp.typeLabel} im Katalog (Stand ${dateDe(data.meta?.fetchedAt)}). Wie scharf das Messer ab Werk ist, lässt sich nicht sagen: Geometrie und Schliff nennt der Katalog nicht. `,
+      h('a', { href: '#/wissen/schaerfe' }, 'So entsteht die Einordnung')
+    )
+  );
+}
+
 // ───────────────────────────── „Bitte beachten“ ─────────────────────────────
 
 /** [{ lead, text }] – aus den Daten abgeleitet, jeweils mit konkreter Folge für den Alltag. */
@@ -412,18 +497,19 @@ function cautions(data, item) {
   if (item.bevel === 'single') {
     const text =
       item.handed === 'left'
-        ? 'Dies ist die Linkshänder-Ausführung; für Rechtshänder ist sie nicht gedacht. Einseitig geschliffene Messer verlangen mehr Übung und Schleiferfahrung.'
-        : 'Die Klinge ist händigkeitsgebunden und verlangt mehr Übung und Schleiferfahrung. Dies ist die Rechtshänder-Ausführung; Linkshänder brauchen eine Linkshänder-Ausführung (nicht jeder Typ wird so angeboten).';
+        ? 'Dies ist die Linkshänder-Ausführung; für Rechtshänder ist sie nicht gedacht. Händler sehen bei einseitig geschliffenen Messern mehr Übungsbedarf bei Benutzung und Nachschliff als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen).'
+        : 'Die Klinge ist händigkeitsgebunden; Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen). Dies ist die Rechtshänder-Ausführung; Linkshänder brauchen eine Linkshänder-Ausführung (nicht jeder Typ wird so angeboten).';
     add('Einseitig geschliffen.', text);
   } else if (item.handed === 'left') {
-    add('Für Linkshänder gekennzeichnet.', 'Der Shop führt dieses Messer als Linkshänder-Ausführung; Rechtshänder sollten die normale Ausführung wählen.');
+    add('Für Linkshänder gekennzeichnet.', 'Der Shop führt dieses Messer als Linkshänder-Ausführung; für Rechtshänder ist der Artikel ohne Linkshänder-Kennzeichnung gedacht.');
   }
   if (flags.includes('left-signal-mismatch')) add('Händigkeit nicht eindeutig.', 'Titel und Schlagwörter des Shops widersprechen sich bei der Linkshänder-Ausführung. Im Laden nachfragen.');
 
   const hrcMax = steel?.hardnessHrc ? Math.max(...steel.hardnessHrc) : 0;
-  if (hrcMax >= 64) add(`Sehr harter Stahl (bis ca. ${hrcMax} HRC).`, 'Die Schneide hält lange, bricht aber bei seitlicher Belastung, auf Knochen oder Gefrorenem leichter aus. Nicht hebeln oder verdrehen. (HRC ist ein Richtwert der Stahlsorte.)');
+  const veryHard = data.taxonomy.hardnessScale?.classes?.find((c) => c.id === 'veryhard');
+  if (veryHard && hrcMax >= veryHard.min) add(`Härte bis ca. ${hrcMax} HRC.`, `Ab ${veryHard.min} HRC gilt ein Stahl nach Knives and Stones als spröder: Bei rauem Gebrauch sind Ausbrüche eher möglich. Deshalb nicht hebeln oder verdrehen. (HRC ist ein Richtwert der Stahlsorte.)`);
 
-  if (item.steel && UNSPECIFIED_STEELS.has(item.steel.id)) add('Stahlsorte nicht angegeben.', 'Der Shop nennt keine genaue Sorte; Härte, Schärfbarkeit und Pflegeaufwand lassen sich nicht einschätzen.');
+  if (item.steel && UNSPECIFIED_STEELS.has(item.steel.id)) add('Stahlsorte nicht angegeben.', 'Der Shop nennt keine genaue Sorte; Härte und Schärfbarkeit lassen sich nicht einschätzen.');
   if (flags.some((f) => f.startsWith('steel-family-conflict'))) add('Stahlangaben widersprüchlich.', 'Titel, Schlagwörter und Spezifikation des Shops passen nicht zusammen; hier gilt die Mehrheit der Angaben. Im Laden bestätigen lassen.');
 
   if (item.segment === 'gastro') add('Profi-/Gastro-Linie (業務用).', 'Der Shop führt dieses Messer unter den Artikeln für den gewerblichen Einsatz. Preise und Ausstattung können sich von den Haushaltsmessern unterscheiden.');
@@ -454,10 +540,9 @@ function typeCard(data, item) {
   const type = item.type ? entry(data, 'types', item.type) : null;
   if (!type || !(type.summary || type.uses?.length || type.avoid || type.fun)) return null;
   const meta = [];
-  if (type.level) meta.push(`Anspruch: ${levelText[type.level] ?? type.level}`);
+  if (type.level) meta.push(`Einstufung ${type.level} von 3`);
   if (type.typicalMm) meta.push(`typisch ${cmText(type.typicalMm[0])}–${cmText(type.typicalMm[1])} cm`);
   else if (type.lengthMm) meta.push(`üblich ${cmText(type.lengthMm[0])}–${cmText(type.lengthMm[1])} cm`);
-  if (type.bevel) meta.push(type.bevel === 'single' ? 'meist einseitig geschliffen' : 'meist beidseitig geschliffen');
 
   return h(
     'section',
@@ -468,9 +553,10 @@ function typeCard(data, item) {
       h('div', { class: 'detail__typecard-head' }, h('div', h('p', { class: 'eyebrow' }, 'Über den Typ'), h('h2', { id: 'detail-type', class: 'detail__typecard-title' }, withJa(`${type.label}${type.kanji ? ` ${type.kanji}` : ''}`)), type.gloss && h('p', { class: 'muted detail__gloss' }, type.gloss)), h('div', { class: 'detail__sil' }, silhouette(item.type, { width: 150 }))),
       type.summary && h('p', withJa(type.summary)),
       meta.length > 0 && h('p', { class: 'cluster detail__meta' }, meta.map((m) => h('span', { class: 'chip chip--outline' }, m))),
-      type.uses?.length > 0 && h('div', h('h3', { class: 'detail__h3' }, 'Dafür gut'), h('ul', type.uses.map((u) => h('li', withJa(u))))),
-      type.avoid && h('div', h('h3', { class: 'detail__h3' }, 'Lieber nicht'), h('p', withJa(type.avoid))),
-      type.fun && h('div', h('h3', { class: 'detail__h3' }, 'Das Besondere'), h('p', withJa(type.fun)))
+      type.levelReason && h('p', { class: 'detail__note' }, withJa(type.levelReason), ' ', h('a', { href: '#/wissen/typen' }, 'Einstufung erklärt')),
+      type.uses?.length > 0 && h('div', h('h3', { class: 'detail__h3' }, 'Wofür'), h('ul', type.uses.map((u) => h('li', withJa(u))))),
+      type.avoid && h('div', h('h3', { class: 'detail__h3' }, 'Weniger geeignet'), h('p', withJa(type.avoid))),
+      type.fun && h('div', h('h3', { class: 'detail__h3' }, 'Spaßfaktor'), h('p', withJa(type.fun)))
     )
   );
 }
@@ -593,7 +679,7 @@ export async function render(ctx) {
     h('div', { class: 'detail__top' }, gallery(item), summary),
     cautionsBox(data, item),
     sizesSection(data, item, picks, origin),
-    h('div', { class: 'detail__cols' }, h('div', { class: 'detail__main' }, specSection(data, item)), h('div', { class: 'detail__side' }, typeCard(data, item), learnLinks(item))),
+    h('div', { class: 'detail__cols' }, h('div', { class: 'detail__main' }, highlightsSection(data, item), compareSection(data, item), specSection(data, item)), h('div', { class: 'detail__side' }, typeCard(data, item), learnLinks(item))),
     similarSection(data, item, origin)
   );
 }

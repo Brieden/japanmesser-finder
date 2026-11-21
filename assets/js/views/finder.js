@@ -462,8 +462,8 @@ function renderResult(env) {
         e.summary && h('p', { class: 'ftype__summary' }, rich(e.summary)),
         rec.reasons.length > 0 && h('ul', { class: 'pcard__reasons' }, rec.reasons.map((t) => h('li', { class: 'pcard__reason' }, icon('check', { size: 16 }), h('span', t)))),
         rec.warnings.length > 0 && h('ul', { class: 'pcard__warnings' }, rec.warnings.map((t) => h('li', { class: 'pcard__warning' }, icon('alert', { size: 16 }), h('span', t)))),
-        e.avoid && h('p', { class: 'muted small' }, h('strong', 'Eher nicht für: '), e.avoid),
-        h('p', { class: 'muted small' }, `Im Katalog: ${num(rec.count)} Artikel, ${num(rec.availableCount)} laut Katalog vorrätig`),
+        e.avoid && h('p', { class: 'muted small' }, h('strong', 'Weniger geeignet für: '), e.avoid),
+        h('p', { class: 'muted small' }, `Nach deinen Vorgaben zu Rost und Händigkeit: ${num(rec.count)} Artikel, ${num(rec.availableCount)} laut Katalog vorrätig`),
         h('a', { class: 'ftype__link', href: '#/wissen/typen', 'aria-label': `Mehr zu ${name} in der Messerkunde` }, 'Mehr in der Messerkunde', icon('arrow-right', { size: 16 }))
       )
     );

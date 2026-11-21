@@ -154,8 +154,8 @@ test('Anfänger, allround, rechts, 15–30k: nur komplett rostfrei, Gyuto/Santok
     assert.ok(x.item.sizes[x.sizeIndex].available, 'nur vorrätige Größen');
     assert.ok(x.reasons.includes('komplett rostfrei'));
     assert.ok(x.reasons.some((t) => /Wa-Griff wie gewünscht/.test(t)));
-    assert.ok(x.reasons.some((t) => /¥[\d.]+ – im Budget|leicht über/.test(t)) || x.warnings.some((t) => /leicht über dem Budget/.test(t)));
-    assert.ok(x.reasons.some((t) => /\(Standardlänge\)/.test(t)));
+    assert.ok(x.reasons.some((t) => /¥[\d.]+ – im Budget/.test(t)) || x.warnings.some((t) => /bis zu 10 % über dem Budget/.test(t)));
+    assert.ok(x.reasons.some((t) => /Wunschlänge/.test(t)));
     assert.ok(x.reasons[0].startsWith(`${data.t('types', x.item.type)} – passt zu`));
   }
   assert.ok(r.items.every((x, i, arr) => i === 0 || x.score <= arr[0].score));
@@ -303,7 +303,7 @@ test('Spezialmesser: Hinweiskarte statt Sashimi-Messer für Nicht-Experten, Scha
     assert.ok(more.typeRecs.some((t) => !hint.types.includes(t.typeId)), 'ehrliche Alternative bleibt dabei');
     assert.ok(more.items.some((x) => hint.types.includes(x.item.type)));
     assert.ok(more.items.filter((x) => x.item.bevel === 'single').every((x) => x.warnings.some((w) => /Einseitig geschliffen/.test(w))));
-    assert.ok(more.typeRecs.find((t) => hint.types.includes(t.typeId)).warnings.some((w) => /Anspruchsvoll/.test(w)));
+    assert.ok(more.typeRecs.find((t) => hint.types.includes(t.typeId)).warnings.some((w) => /^Einseitig geschliffen: händigkeitsgebunden; Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf$/.test(w)));
   }
   const expert = A({ tasks: ['fisch'], level: 'expert', rust: 'full' });
   assert.equal(specialistHint(expert, data).show, false);
@@ -458,8 +458,8 @@ test('Stahl und Pflege: Erklärung je Erfahrung, drei Rost-Stufen', () => {
   // Kohlenstoffstahl + Schleifdienst: erlaubt (Wahl des Experten), aber mit ehrlichem Hinweis
   const serviceCarbon = steelAdvice(A({ level: 'expert', rust: 'any', care: 'service' }), data);
   assert.deepEqual(serviceCarbon.rustAllowed, ['full', 'clad', 'none']);
-  assert.ok(serviceCarbon.bullets.some((b) => /Lässt du schleifen/.test(b)));
-  assert.ok(!steelAdvice(A({ level: 'expert', rust: 'full', care: 'service' }), data).bullets.some((b) => /Lässt du schleifen/.test(b)));
+  assert.ok(serviceCarbon.bullets.some((b) => /Bei Schleifdienst bleibt vor allem der Aufwand, nach jedem Gebrauch zu trocknen/.test(b)));
+  assert.ok(!steelAdvice(A({ level: 'expert', rust: 'full', care: 'service' }), data).bullets.some((b) => /Bei Schleifdienst bleibt vor allem der Aufwand, nach jedem Gebrauch zu trocknen/.test(b)));
   const clad = steelAdvice(A({ level: 'expert', rust: 'clad' }), data);
   assert.deepEqual(clad.rustAllowed, ['full', 'clad']);
   assert.match(clad.headline, /teilweise/i);
@@ -469,6 +469,10 @@ test('Stahl und Pflege: Erklärung je Erfahrung, drei Rost-Stufen', () => {
   // Experten mit Kohlenstoffstahl bekommen ihn auch in den Treffern – mit Warnung
   const r = matchKnives(A({ level: 'expert', rust: 'any', tasks: ['fleisch'] }), data, { limit: 24 });
   assert.ok(r.items.some((x) => x.item.rust === 'none' && x.warnings.includes('Kohlenstoffstahl: nach jedem Gebrauch abtrocknen')));
+});
+
+test('Die Startseite nennt die Zahl der Finder-Fragen (zehn)', () => {
+  assert.equal(QUESTIONS.length, 10, 'Wenn sich die Zahl ändert: Text in assets/js/views/home.js anpassen');
 });
 
 test('Hinweise und Erklärungen je Schritt', () => {
@@ -517,10 +521,10 @@ const taxonomy = () => ({
     nacktes: { label: 'Nacktes Messer' }, // ohne Gewichte, ohne alles
   },
   steels: {
-    vg10: { label: 'VG-10', short: 'VG-10', hardnessHrc: [59, 61], beginnerFriendly: true },
+    vg10: { label: 'VG-10', short: 'VG-10', hardnessHrc: [59, 61], beginnerFriendly: true, beginnerReason: 'Rostfreier Stahl ist weit weniger reaktiv.' },
     zdp189: { label: 'ZDP-189', short: 'ZDP-189', hardnessHrc: [65, 67], beginnerFriendly: false },
     aogami2: { label: 'Aogami #2', short: 'Aogami #2', hardnessHrc: [61, 63], beginnerFriendly: false },
-    mo: { label: 'Molybdän-Stahl', short: 'Mo-Stahl', summary: 'Molybdän-Stahl laut Shop: die genaue Sorte ist nicht angegeben.', beginnerFriendly: true },
+    mo: { label: 'Molybdän-Stahl', short: 'Mo-Stahl', summary: 'Molybdän-Stahl laut Shop: die genaue Sorte ist nicht angegeben.', beginnerFriendly: true, beginnerReason: 'Rostfreier Stahl ist weit weniger reaktiv.' },
     unknown: { label: 'Stahl nicht angegeben', short: 'o. A.' },
   },
   rust: { full: { label: 'Komplett rostfrei', care: 'Von Hand spülen.', explain: 'Durchgehend rostfrei.' }, clad: { label: 'Teilweise rostfrei', care: 'Abtrocknen.', explain: 'Mantel rostfrei.' }, none: { label: 'Nicht rostfrei', care: 'Sofort abtrocknen.', explain: 'Kohlenstoffstahl.' } },
@@ -611,7 +615,7 @@ test('Fixture: Größe je Artikel und Budget je Größe', () => {
   const std = matchKnives(A({ budget: '15-30' }), d);
   assert.equal(std.items.length, 1);
   assert.equal(std.items[0].sizeIndex, 1, '21 cm: nah an 22,5 cm und im Budget');
-  assert.ok(std.items[0].reasons.some((t) => t === '21 cm (Standardlänge)'));
+  assert.ok(std.items[0].reasons.some((t) => t === '21 cm: nahe der Wunschlänge (etwa 22,5 cm)'));
   assert.ok(std.items[0].reasons.some((t) => t === '¥24.000 – im Budget'));
   // offenes Budget und große Größe: 24 cm
   assert.equal(matchKnives(A({ size: 'large' }), d).items[0].sizeIndex, 2);
@@ -631,19 +635,19 @@ test('Fixture: Warnungen sind sachlich und belegbar', () => {
   const r = matchKnives(A({ level: 'expert', rust: 'any', budget: 'open' }), d, { limit: 10 });
   const by = (steel) => r.items.find((x) => x.item.steel.id === steel);
   assert.ok(by('aogami2').warnings.includes('Kohlenstoffstahl: nach jedem Gebrauch abtrocknen'));
-  assert.ok(by('zdp189').warnings.some((w) => /^Sehr hart \(65\+ HRC\): Ausbrüche bei Knochen oder Verdrehen möglich$/.test(w)));
+  assert.ok(by('zdp189').warnings.some((w) => /^Härte 65\+ HRC: ab 65 HRC spröder, Ausbrüche bei Knochen oder Verdrehen möglich \(Knives and Stones\)$/.test(w)));
   assert.ok(by('unknown').warnings.includes('Sorte nicht angegeben'));
   assert.ok(by('mo').warnings.some((w) => /^Sorte nicht angegeben \(nur „Mo-Stahl“ laut Shop\)$/.test(w)));
   assert.ok(r.items.some((x) => x.warnings.includes('Stahlangabe im Katalog widersprüchlich – im Laden nachfragen')));
   assert.ok(r.items.some((x) => x.warnings.includes('Einzelstück laut Shop')));
-  // Einsteiger: Mo-Stahl bekommt wegen unklarer Sorte keinen „für Einsteiger geeignet“-Grund
+  // Einsteiger: Mo-Stahl bekommt wegen unklarer Sorte keinen Stahl-Grund; VG-10 nennt den Grund der Taxonomie
   const beginner = matchKnives(A({ level: 'beginner' }), d, { limit: 10 });
-  assert.ok(!beginner.items.find((x) => x.item.steel.id === 'mo').reasons.some((t) => /Einsteiger/.test(t)));
-  assert.ok(beginner.items.find((x) => x.item.steel.id === 'vg10').reasons.some((t) => /VG-10: für Einsteiger geeignet/.test(t)));
+  assert.ok(!beginner.items.find((x) => x.item.steel.id === 'mo').reasons.some((t) => /^Mo-Stahl:/.test(t)));
+  assert.ok(beginner.items.find((x) => x.item.steel.id === 'vg10').reasons.some((t) => /^VG-10: Rostfreier Stahl ist weit weniger reaktiv\.$/.test(t)));
   // Linkshänder + Wa-Griff mit unbekannter/asymmetrischer Form
   const odd = fixture([knife({ grip: { style: 'wa', shape: 'curved' } }), knife({ grip: { style: 'wa', shape: 'octagonal' } })]);
   const left = matchKnives(A({ hand: 'left' }), odd);
-  assert.ok(left.items.some((x) => x.warnings.some((w) => /D-förmige Griffe sind oft für Rechtshänder geformt/.test(w))));
+  assert.ok(left.items.some((x) => x.warnings.some((w) => /D-förmige Griffe sind laut Kireaji meist für Rechtshänder ausgerichtet/.test(w))));
   assert.ok(left.items.some((x) => !x.warnings.some((w) => /D-förmige/.test(w))));
 });
 

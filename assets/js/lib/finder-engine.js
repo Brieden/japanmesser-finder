@@ -189,9 +189,9 @@ function sizeOptions(data) {
   const typ = entryOf(data, 'types', 'gyuto')?.typicalMm;
   const example = Array.isArray(typ) && typ.length === 2 ? ` Beim Gyuto sind das etwa ${cmText(typ[0])} bis ${cmText(typ[1])} cm.` : '';
   return [
-    { value: 'small', label: 'Eher klein', sub: 'Kleine Küche, kleines Brett oder eher kleine Hand: kürzere Klingen.' },
-    { value: 'standard', label: 'Normal', sub: `Übliche Klingenlängen.${example}` },
-    { value: 'large', label: 'Eher groß', sub: 'Viel Platz oder große Hand: längere Klingen.' },
+    { value: 'small', label: 'Klein', sub: 'Kleine Küche, kleines Brett oder kleine Hand: Wir wählen das untere Ende der gängigen Klingenlänge.' },
+    { value: 'standard', label: 'Mittel', sub: `Wir wählen die Mitte der gängigen Klingenlänge.${example}` },
+    { value: 'large', label: 'Groß', sub: 'Großes Brett oder große Hand: Wir wählen das obere Ende der gängigen Klingenlänge.' },
   ];
 }
 
@@ -234,13 +234,13 @@ export const QUESTIONS = [
     key: 'level',
     kind: 'single',
     required: true,
-    title: 'Wie viel Erfahrung gibt es mit guten Messern?',
+    title: 'Welche Erfahrung hat die Person mit Messern und ihrer Pflege?',
     whyTitle: 'Warum fragen wir?',
-    why: 'Manche Messer sind anspruchsvoll: einseitig geschliffene Sashimi- und Profi-Gemüsemesser, sehr harte oder nicht rostfreie Stähle. Je nach Erfahrung sortieren wir sie aus oder weisen darauf hin. Das ist keine Wertung, sondern soll Frust und Fehlkäufe vermeiden.',
+    why: 'Je nach Erfahrung sortieren wir Messer aus oder weisen darauf hin, bei denen Händler mehr Übungsbedarf oder mehr Pflege sehen: einseitig geschliffene Sashimi- und Profi-Gemüsemesser (händigkeitsgebunden, mehr Übung bei Benutzung und Nachschliff), nicht rostfreie Stähle (nach jedem Gebrauch trocknen) und Stähle ab 65 HRC (spröder). Das ist keine Wertung der Person, sondern soll Fehlkäufe vermeiden.',
     options: () => [
       { value: 'beginner', label: 'Einstieg', sub: 'Bisher Supermarkt- oder Haushaltsmesser.' },
-      { value: 'hobby', label: 'Kocht gern', sub: 'Hatte schon gute Messer.' },
-      { value: 'expert', label: 'Kennt sich aus', sub: 'Schärft selbst und pflegt Messer bewusst.' },
+      { value: 'hobby', label: 'Kocht gern', sub: 'Kocht regelmäßig und hatte schon Messer aus dem Fachhandel.' },
+      { value: 'expert', label: 'Kennt sich aus', sub: 'Schärft selbst auf dem Stein und kennt Stahlsorten.' },
     ],
   },
   {
@@ -250,9 +250,9 @@ export const QUESTIONS = [
     required: true,
     visible: (a) => a.level === 'expert',
     title: 'Wie wichtig ist „rostfrei“?',
-    lead: 'Du hast die Wahl. Die drei Stufen im Katalog unterscheiden sich vor allem in der Pflege.',
+    lead: 'Die drei Stufen unterscheiden sich darin, welche Teile der Klinge rosten können und wann du abtrocknen musst: komplett, teilweise oder nicht rostfrei.',
     whyTitle: 'Was heißt das?',
-    why: 'Das ist die wichtigste Stahl-Entscheidung: Komplett rostfrei verzeiht Pflegefehler, Kohlenstoffstahl belohnt Pflege mit einer sehr feinen, gut schärfbaren Schneide. Was du ausschließt, zeigen wir nicht – auch nicht, wenn es sonst wenig Treffer gibt.',
+    why: 'Das ist die wichtigste Stahl-Entscheidung: Komplett rostfreier Stahl ist weit weniger reaktiv als Kohlenstoffstahl (Japanese Knife Imports). Weißstahl, ein Kohlenstoffstahl, lässt sich laut Sakai Ichimonji trotz hoher Härte relativ leicht schärfen, rostet aber leicht. Was du ausschließt, zeigen wir nicht – auch nicht, wenn es sonst wenig Treffer gibt.',
     explain: [{ group: 'rust', ids: ['full', 'clad', 'none'] }],
     options: (data) => [
       { value: 'full', label: 'Komplett rostfrei', sub: rustCare(data, 'full', 'Von Hand spülen, abtrocknen.') },
@@ -266,13 +266,13 @@ export const QUESTIONS = [
     kind: 'single',
     required: true,
     title: 'Wie wird das Messer gepflegt?',
-    lead: 'Ehrliche Antworten helfen mehr als gute: Wir schlagen nur vor, was zur Pflege passt.',
+    lead: 'Wir schlagen nur Messer vor, die zur angegebenen Pflege passen.',
     whyTitle: 'Warum fragen wir?',
-    why: 'Pflege hat großen Einfluss darauf, wie lange ein Messer hält. Je weniger Pflege im Alltag realistisch ist, desto eher empfehlen wir komplett rostfreien Stahl – und bei Spülmaschine ehrlicherweise auch ein anderes Messer.',
+    why: 'Pflege entscheidet über Rost und Ausbrüche: Kohlenstoffstahl rostet, wenn er nass bleibt, und in der Spülmaschine werden Messer herumgeschleudert, außerdem schädigen Hitze, Wasser und Reiniger den Griff (Japanese Knife Imports). Je weniger Pflege im Alltag zu erwarten ist, desto strenger filtern wir auf komplett rostfreien Stahl.',
     options: () => [
       { value: 'careful', label: 'Von Hand spülen und abtrocknen', sub: 'Schärfen mit dem Wasserstein ist denkbar.' },
-      { value: 'service', label: 'Von Hand spülen', sub: 'Schärfen eher über einen Schleifdienst – oder gar nicht.' },
-      { value: 'rough', label: 'Ehrlich: oft Spülmaschine oder nass liegen gelassen', sub: 'Das kommt vor. Wir sagen dir, was dann passt.' },
+      { value: 'service', label: 'Von Hand spülen', sub: 'Schärfen über einen Schleifdienst oder gar nicht.' },
+      { value: 'rough', label: 'Spülmaschine oder nass liegen gelassen', sub: 'Das kommt vor. Wir sagen dir, was dann passt.' },
     ],
   },
   {
@@ -282,7 +282,7 @@ export const QUESTIONS = [
     required: true,
     title: 'Rechts- oder Linkshänder?',
     whyTitle: 'Warum fragen wir?',
-    why: 'Die meisten Messer im Katalog sind beidseitig geschliffen und passen für beide Hände. Einseitig geschliffene Messer sind händigkeitsgebunden: Für Linkshänder zeigen wir nur Linkshänder-Ausführungen.',
+    why: 'Beidseitig geschliffene Messer passen für beide Hände. Einseitig geschliffene Messer sind händigkeitsgebunden: Für Linkshänder zeigen wir nur Linkshänder-Ausführungen.',
     explain: [{ group: 'bevels', ids: ['single'] }],
     options: () => [
       { value: 'right', label: 'Rechtshänder' },
@@ -298,11 +298,11 @@ export const QUESTIONS = [
     default: 'any',
     title: 'Welcher Griff ist gewohnt oder gewünscht?',
     whyTitle: 'Was heißt das?',
-    why: 'Der Griff bestimmt, wie sich das Messer in der Hand anfühlt – das ist weitgehend Gewohnheit. Wir zeigen zuerst Messer mit deinem Griff; gibt es zu wenige, lockern wir das und sagen es dir.',
+    why: 'Ein Wa-Griff wiegt weniger und verlagert den Schwerpunkt nach vorn zur Klinge, ein Yō-Griff wiegt mehr und ist in der Regel vernietet; laut Japanese Knife Imports ist keiner besser, es ist Vorliebe. Wir zeigen zuerst Messer mit deinem Griff; gibt es zu wenige, lockern wir das und sagen es dir.',
     explain: [{ group: 'handleStyles', ids: ['wa', 'yo'] }],
     options: () => [
-      { value: 'wa', label: 'Japanischer Griff (Wa)', sub: 'Meist Holz, leichter, Schwerpunkt nahe an der Klinge.' },
-      { value: 'yo', label: 'Westlicher Griff (Yō)', sub: 'Schwerer und meist vernietet, wie bei vielen europäischen Messern.' },
+      { value: 'wa', label: 'Japanischer Griff (Wa)', sub: 'Typisch Holz, wiegt weniger, Schwerpunkt nach vorn zur Klinge.' },
+      { value: 'yo', label: 'Westlicher Griff (Yō)', sub: 'Wiegt mehr, in der Regel vernietet.' },
       { value: 'any', label: 'Egal', sub: 'Beide Griffarten sind willkommen.' },
     ],
   },
@@ -345,7 +345,7 @@ export const QUESTIONS = [
     title: 'Welche Optik gefällt?',
     lead: 'Freiwillig, Mehrfachauswahl möglich.',
     whyTitle: 'Was heißt das?',
-    why: 'Die Optik sagt wenig über die Schneidleistung. Deshalb gehört sie zu den ersten Dingen, auf die wir bei zu wenigen Treffern verzichten.',
+    why: 'Muster und Oberflächen sind Optik: Wie scharf ein Messer wird und wie lange es scharf bleibt, bestimmen Kernstahl und Geometrie (Chef Knives To Go, Knife Steel Nerds). Darum verzichten wir bei zu wenigen Treffern zuerst auf Optik-Wünsche.',
     explain: [{ group: 'finishes', ids: ['damascus', 'tsuchime', 'kurouchi'] }],
     options: () => [
       { value: 'plain', label: 'Schlicht', sub: 'Glatte oder fein polierte Klinge, kein Muster.' },
@@ -420,7 +420,7 @@ export const whyText = (question, data) => (typeof question.why === 'function' ?
 
 // ───────────────────────── Hinweise je Schritt ─────────────────────────
 
-const SPECIALIST_SHORT = 'Die klassischen Messer für Fisch und Sashimi (Yanagiba, Deba) sind einseitig geschliffen und anspruchsvoll. Für den Anfang passt oft ein Gyuto oder Santoku – im Ergebnis erklären wir das genauer.';
+const SPECIALIST_SHORT = 'Die klassischen Messer für Fisch und Sashimi (Yanagiba, Deba) sind einseitig geschliffen: nur für Rechts- oder Linkshänder gebaut, und Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf. Für den Anfang empfehlen Händler ein beidseitig geschliffenes Gyuto oder Santoku – im Ergebnis erklären wir das genauer.';
 
 /** Hinweise, die zu einer Frage passend (live) unter den Antworten erscheinen; mit position: 'top' stünden sie über der Frage. */
 export function stepNotes(stepId, answers, data) {
@@ -437,7 +437,7 @@ export function stepNotes(stepId, answers, data) {
       notes.push({
         tone: 'info',
         title: 'Rostfrei: für dich automatisch „komplett rostfrei“',
-        text: 'Für Einstieg und Hobby suchen wir nur komplett rostfreie Messer: Die Klinge ist durchgehend rostfrei, bekommt keine Patina und verzeiht vergessenes Abtrocknen eher. Teilweise und nicht rostfreie Messer zeigen wir nur bei der Erfahrung „Kennt sich aus“.',
+        text: 'Für Einstieg und Hobby suchen wir nur komplett rostfreie Messer: Die Klinge ist durchgehend rostfrei und bekommt keine Patina, und vergessenes Abtrocknen wirkt sich weniger aus, weil rostfreier Stahl weit weniger reaktiv ist (Japanese Knife Imports). Teilweise und nicht rostfreie Messer zeigen wir nur bei der Erfahrung „Kennt sich aus“.',
         explain: [{ group: 'rust', ids: ['full', 'clad', 'none'] }],
       });
     }
@@ -445,7 +445,7 @@ export function stepNotes(stepId, answers, data) {
       notes.push({
         tone: 'warn',
         title: 'Ehrlicher Hinweis zur Spülmaschine',
-        text: 'Japanische Messer haben oft eine dünne, sehr harte Klinge. In der Spülmaschine werden sie herumgeschleudert, und Hitze, Wasser und Reiniger schädigen auch den Griff – selbst bei rostfreiem Stahl. Wenn das zum Alltag gehört, passt ein robustes, auch europäisches Messer womöglich besser. Wir zeigen dir trotzdem komplett rostfreie Messer; bitte nur von Hand spülen.',
+        text: 'Japanische Messer sind laut Korin in der Regel dünner und härter als europäische. In der Spülmaschine werden sie herumgeschleudert, und Hitze, Wasser und Reiniger schädigen auch den Griff – selbst bei rostfreiem Stahl (Japanese Knife Imports). Weichere Klingen (55–58 HRC, typisch für deutsche Messer) verzeihen rauen Umgang (Knives and Stones); für diesen Alltag kann ein europäisches Messer besser passen. Wir zeigen dir trotzdem komplett rostfreie Messer; bitte nur von Hand spülen.',
       });
       if (a.level === 'expert' && a.rust && a.rust !== 'full') {
         notes.push({ tone: 'info', title: 'Deine Rost-Wahl wird hier übergangen', text: 'Bei dieser Pflege zeigen wir ausschließlich komplett rostfreie Messer.' });
@@ -456,7 +456,7 @@ export function stepNotes(stepId, answers, data) {
     notes.push({
       tone: 'info',
       title: 'Linkshänder: auf den Schliff achten',
-      text: 'Beidseitig geschliffene Messer (z. B. Gyuto, Santoku, Nakiri) passen für beide Hände. Einseitig geschliffene Messer gibt es als eigene Linkshänder-Ausführung – nur diese zeigen wir. Bei Wa-Griffen sind D-förmige Formen oft für Rechtshänder geformt; achteckige oder ovale Griffe sind neutraler.',
+      text: 'Beidseitig geschliffene Messer (z. B. Gyuto, Santoku, Nakiri) passen für beide Hände. Einseitig geschliffene Messer gibt es als eigene Linkshänder-Ausführung – nur diese zeigen wir. D-förmige Griffe sind laut Kireaji meist für Rechtshänder ausgerichtet; achteckige und runde Querschnitte sind symmetrisch.',
     });
   }
   return notes;
@@ -465,8 +465,8 @@ export function stepNotes(stepId, answers, data) {
 // ───────────────────────── Zusammenfassung (Profil-Chips) ─────────────────────────
 
 const LEVEL_TEXT = { beginner: 'Einstieg', hobby: 'Kocht gern', expert: 'Kennt sich aus' };
-const CARE_TEXT = { careful: 'Von Hand, selbst schärfen', service: 'Von Hand, Schleifdienst', rough: 'Oft Spülmaschine oder nass' };
-const SIZE_TEXT = { small: 'Eher klein', standard: 'Normal', large: 'Eher groß' };
+const CARE_TEXT = { careful: 'Von Hand, selbst schärfen', service: 'Von Hand, Schleifdienst', rough: 'Spülmaschine oder nass' };
+const SIZE_TEXT = { small: 'Klein', standard: 'Mittel', large: 'Groß' };
 const GRIP_TEXT = { wa: 'Japanisch (Wa)', yo: 'Westlich (Yō)', any: 'Egal' };
 const LOOKS_TEXT = { plain: 'Schlicht', damascus: 'Damast', hammered: 'Hammerschlag', rustic: 'Rustikal (Kurouchi)', any: 'Egal' };
 
@@ -619,9 +619,9 @@ function taskFitText(meta, tasks, data) {
     else if (w >= 0.5) medium.push(label);
     else if (w >= 0.25) weak.push(label);
   });
-  if (strong.length) return `passt zu ${strong.join(' und ')}${medium.length ? `, geeignet für ${medium.join(' und ')}` : ''}`;
-  if (medium.length) return `geeignet für ${medium.join(' und ')}`;
-  if (weak.length) return `bedingt geeignet für ${weak.join(' und ')}`;
+  if (strong.length) return `passt zu ${strong.join(' und ')}${medium.length ? `, passt teilweise zu ${medium.join(' und ')}` : ''}`;
+  if (medium.length) return `passt teilweise zu ${medium.join(' und ')}`;
+  if (weak.length) return `passt nur am Rand zu ${weak.join(' und ')}`;
   return null;
 }
 
@@ -633,12 +633,11 @@ function typeReasons(meta, a, data, target, pool) {
   const mostlySingle = pool.length > 0 && pool.filter((i) => i.bevel === 'single').length / pool.length >= 0.5;
   const bothHands = a.hand === 'left' && meta.bevel === 'double' && !mostlySingle;
   if (a.level !== 'expert' && meta.level <= 1) {
-    if (mostlySingle) reasons.push('Einsteigerfreundlich (Stufe 1 von 3)');
-    else reasons.push(bothHands ? 'Einsteigerfreundlich: beidseitig geschliffen, für Links- und Rechtshänder' : 'Einsteigerfreundlich: beidseitig geschliffen, wenig Übung nötig');
+    if (!mostlySingle) reasons.push('Beidseitig geschliffen: für beide Hände nutzbar; einseitige Messer verlangen laut Händlern mehr Übung bei Benutzung und Nachschliff');
   } else if (bothHands) reasons.push('Beidseitig geschliffen: für Links- und Rechtshänder');
   if (target != null) {
     const typ = meta.typical;
-    reasons.push(`Wunschlänge etwa ${cmText(target)} cm${typ ? ` (üblich: ${cmText(typ[0])}${typ[1] !== typ[0] ? `–${cmText(typ[1])}` : ''} cm)` : ''}`);
+    reasons.push(`Wunschlänge etwa ${cmText(target)} cm${typ ? ` (typisch: ${cmText(typ[0])}${typ[1] !== typ[0] ? `–${cmText(typ[1])}` : ''} cm)` : ''}`);
   }
   return reasons;
 }
@@ -648,15 +647,15 @@ function typeWarnings(meta, a, pool) {
   const warnings = [];
   if (meta.bevel === 'single') {
     if (a.hand === 'left') warnings.push('Einseitig geschliffen: nur in Linkshänder-Ausführung sinnvoll');
-    if (a.level !== 'expert') warnings.push('Anspruchsvoll: einseitig geschliffen, braucht Übung beim Schneiden und Schleiferfahrung');
+    if (a.level !== 'expert') warnings.push('Einseitig geschliffen: händigkeitsgebunden; Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf');
   } else if (meta.level >= 3 && a.level !== 'expert') {
-    warnings.push('Anspruchsvoll: braucht Übung und Pflege');
+    warnings.push(meta.levelReason ?? 'Spezialmesser für eine einzelne Aufgabe');
   } else if (meta.level === 2 && a.level === 'beginner') {
-    warnings.push('Etwas anspruchsvoller als ein Allround-Messer (Stufe 2 von 3)');
+    warnings.push(`Spezialmesser: ${meta.levelReason ?? 'für eine einzelne Aufgabe gebaut'}`);
   }
   const singles = pool.filter((i) => i.bevel === 'single').length;
   if (meta.bevel !== 'single' && !isSerrated(meta) && a.level !== 'expert' && count >= 2 && singles / count >= 0.5) {
-    warnings.push(`Im Katalog meist einseitig geschliffen (${singles} von ${count} Artikeln): braucht Übung und Schleiferfahrung`);
+    warnings.push(`Im Katalog sind ${singles} von ${count} Artikeln einseitig geschliffen: händigkeitsgebunden, laut Händlern mehr Übungsbedarf`);
   }
   if (count < MIN_HITS) warnings.push(`Im Katalog nur ${count} passende${count === 1 ? 'r Artikel' : ' Artikel'}`);
   return warnings;
@@ -708,7 +707,7 @@ export function recommendTypes(answers, data, { includeSpecialists = false } = {
       else picks.push(second);
     }
   }
-  // Für Nicht-Experten mit „Trotzdem zeigen“: mindestens ein einsteigerfreundlicher Typ bleibt als ehrliche Alternative
+  // Für Nicht-Experten mit „Trotzdem zeigen“: mindestens ein Typ ohne Spezialisierung (kein Spezialmesser) bleibt als Alternative
   if (level !== 'expert' && includeSpecialists) {
     const gentle = rows.find((r) => !r.meta.specialist);
     if (gentle && !picks.some((r) => !r.meta.specialist)) {
@@ -748,8 +747,8 @@ export function specialistHint(answers, data) {
     show: true,
     types,
     typeLabels,
-    title: fish ? 'Fisch und Sashimi: Spezialmesser, anspruchsvoll' : `${names}: Spezialmesser, anspruchsvoll`,
-    text: `${names} ${types.length > 1 ? 'sind' : 'ist'} einseitig geschliffen (oder sonst anspruchsvoll): Das Messer braucht Übung beim Schneiden und Schleiferfahrung beim Schärfen. Für den Anfang passt oft ${alt} – beidseitig geschliffen und verzeihender.`,
+    title: fish ? 'Fisch und Sashimi: einseitig geschliffene Spezialmesser' : `${names}: Spezialmesser`,
+    text: `${names} ${types.length > 1 ? 'sind' : 'ist'} einseitig geschliffen oder ein Spezialwerkzeug: Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf. Für den Anfang empfehlen Händler ${alt}: beidseitig geschliffen und für beide Hände nutzbar.`,
     toggleLabel: fish ? 'Trotzdem Sashimi-Messer zeigen' : `Trotzdem ${names} zeigen`,
     alternatives,
   };
@@ -835,15 +834,15 @@ export function steelAdvice(answers, data) {
 
   let headline;
   if (rough) {
-    headline = 'Nur komplett rostfrei – und ehrlich: Ein robustes Messer passt womöglich besser';
+    headline = 'Nur komplett rostfrei – und für diesen Alltag kann ein europäisches Messer besser passen';
     const dish = 'Nicht in die Spülmaschine: Das Messer wird herumgeschleudert, Hitze, Wasser und Reiniger schädigen auch den Griff – selbst bei komplett rostfreiem Stahl.';
     warnings.push(dish);
     bullets.push(dish);
-    bullets.push('Wenn Spülmaschine oder nasses Liegenlassen zum Alltag gehören, passt ein robustes, auch europäisches Messer oft besser als ein japanisches mit dünner, sehr harter Klinge.');
+    bullets.push('Gehören Spülmaschine oder nasses Liegenlassen zum Alltag, kann ein europäisches Messer besser passen: Seine Klinge ist weicher (55–58 HRC) und verzeiht rauen Umgang, während japanische Messer dünner und härter sind (Knives and Stones, Korin).');
     bullets.push('Wir zeigen dir trotzdem komplett rostfreie Messer und bevorzugen Griffe, die nicht quellen (Edelstahl, Kunststoff, Harz). Von Hand spülen und abtrocknen bleibt die beste Pflege.');
   } else if (!expert) {
-    headline = 'Komplett rostfreier Stahl: die sichere Wahl für den Einstieg';
-    bullets.push('Wir zeigen dir nur komplett rostfreie Messer: Die Klinge besteht durchgehend aus rostfreiem Stahl, bildet keine Patina und verzeiht es eher, wenn das Abtrocknen einmal vergessen wird.');
+    headline = 'Komplett rostfreier Stahl: vergessenes Abtrocknen wirkt sich weniger aus';
+    bullets.push('Wir zeigen dir nur komplett rostfreie Messer: Die Klinge besteht durchgehend aus rostfreiem Stahl und bildet keine Patina; vergessenes Abtrocknen wirkt sich weniger aus, weil rostfreier Stahl weit weniger reaktiv ist (Japanese Knife Imports).');
     bullets.push(`Pflege: ${tiers[0].care || 'Von Hand spülen, abtrocknen.'}`);
   } else if (allowed.length === 1) {
     headline = 'Komplett rostfrei, wie gewünscht';
@@ -864,7 +863,7 @@ export function steelAdvice(answers, data) {
       bullets.push('Schärfen: Mit einem Wasserstein (1000er zum Schärfen, 3000er oder feiner zum Verfeinern) lassen sich japanische Messer am besten schärfen. Durchzieh-Schleifer entfernen zu viel Material und passen nicht zu dünnen Klingen.');
     } else if (a.care === 'service') {
       bullets.push('Schärfen: Wer nicht selbst schärfen mag, lässt schleifen. Durchzieh-Schleifer passen nicht zu dünnen japanischen Klingen – frage den Schleifdienst vorher, ob er japanische Messer schleift.');
-      if (allowed.length > 1) bullets.push('Kohlenstoffstahl lässt sich besonders gut schärfen; das nützt vor allem, wenn du selbst schärfst. Lässt du schleifen, bleibt vor allem der Mehraufwand bei der Pflege.');
+      if (allowed.length > 1) bullets.push('Weißstahl, ein Kohlenstoffstahl, lässt sich laut Sakai Ichimonji trotz hoher Härte relativ leicht schärfen; das nützt, wenn die Person selbst schärft. Blue Super (Aogami Super) hält die Schneide sehr lange, ein Feinschliff mit weichem Stein ist aber schwierig. Bei Schleifdienst bleibt vor allem der Aufwand, nach jedem Gebrauch zu trocknen.');
     }
   }
 
@@ -872,13 +871,13 @@ export function steelAdvice(answers, data) {
   const pool = candidatePool(a, data, recs);
   const beginner = a.level === 'beginner';
   const stainless = frequentSteels(pool, data, { family: 'stainless', beginner });
-  if (stainless.length) bullets.push(`Rostfreie Stähle, die bei deinen Typen im Katalog häufig vorkommen (typische Härte): ${stainless.join(', ')}.`);
+  if (stainless.length) bullets.push(`Rostfreie Stähle bei deinen Typen im Katalog, nach Anzahl (mit typischer Härte): ${stainless.join(', ')}.`);
   if (allowed.includes('none') || allowed.includes('clad')) {
     const carbon = frequentSteels(pool, data, { family: 'carbon', beginner: false });
-    if (carbon.length) bullets.push(`Kohlenstoffstähle, die häufig vorkommen (typische Härte): ${carbon.join(', ')}.`);
+    if (carbon.length) bullets.push(`Kohlenstoffstähle bei deinen Typen im Katalog, nach Anzahl (mit typischer Härte): ${carbon.join(', ')}.`);
   }
   if (a.level !== 'expert') {
-    bullets.push('Sehr harte Stähle (ab etwa 65 HRC, z. B. ZDP-189) halten die Schärfe lange, sind aber weniger zäh: Ausbrüche bei Knochen oder Verdrehen sind eher möglich. Für den Anfang sind weniger harte Stähle tendenziell verzeihender.');
+    bullets.push('Stähle ab etwa 65 HRC (z. B. ZDP-189) halten die Schneide außergewöhnlich lange, sind aber spröder: Knives and Stones nennt Ausbrüche bei rauem Gebrauch als Risiko. Weichere Stähle (55–58 HRC) verzeihen rauen Umgang.');
   }
 
   return { rustAllowed: allowed, headline, bullets, warnings, tiers };
@@ -984,19 +983,18 @@ function explainItem(c, ctx) {
   if (a.hand === 'left') {
     if (item.handed === 'left') reasons.push(item.bevel === 'single' ? 'Linkshänder-Ausführung (einseitig geschliffen)' : 'Linkshänder-Ausführung');
     else if (item.bevel === 'double') reasons.push('Beidseitig geschliffen: für Links- und Rechtshänder');
-    if (item.grip?.style === 'wa' && !SYMMETRIC_SHAPES.has(item.grip.shape)) warnings.push(`Wa-Griff, Form ${item.grip.shape ? `„${shortOf(data, 'handleShapes', item.grip.shape).toLowerCase()}“` : 'nicht angegeben'}: D-förmige Griffe sind oft für Rechtshänder geformt`);
+    if (item.grip?.style === 'wa' && !SYMMETRIC_SHAPES.has(item.grip.shape)) warnings.push(`Wa-Griff, Form ${item.grip.shape ? `„${shortOf(data, 'handleShapes', item.grip.shape).toLowerCase()}“` : 'nicht angegeben'}: D-förmige Griffe sind laut Kireaji meist für Rechtshänder ausgerichtet`);
   }
   // Länge
   if (target != null && size.mm != null) {
-    const desc = a.size === 'small' ? 'eher kurz' : a.size === 'large' ? 'eher lang' : 'Standardlänge';
-    if (dist != null && dist <= tol) reasons.push(`${lengthLabel(size)} (${desc})`);
+    if (dist != null && dist <= tol) reasons.push(dist === 0 ? `${lengthLabel(size)}: entspricht der Wunschlänge` : `${lengthLabel(size)}: nahe der Wunschlänge (etwa ${cmText(target)} cm)`);
     else warnings.push(`${lengthLabel(size)} weicht von der Wunschlänge (etwa ${cmText(target)} cm) ab`);
   }
   // Preis
   const price = size.priceJpy;
   if (price != null && band && a.budget !== 'open') {
     if (price > band.max * BUDGET_TOLERANCE) warnings.push(`${jpy(price)} – über dem Budget (gelockert)`);
-    else if (price > band.max) warnings.push(`${jpy(price)} – leicht über dem Budget (bis +10 % Toleranz)`);
+    else if (price > band.max) warnings.push(`${jpy(price)} – bis zu 10 % über dem Budget (Toleranz)`);
     else if (band.min > 0 && price < band.min) reasons.push(`${jpy(price)} – günstiger als dein Budgetrahmen`);
     else reasons.push(`${jpy(price)} – im Budget`);
   }
@@ -1013,16 +1011,16 @@ function explainItem(c, ctx) {
   }
   // Stahl
   const vague = steelE && VAGUE_STEEL.test(`${steelE.label} ${steelE.summary ?? ''}`);
-  if (a.level === 'beginner' && steelE?.beginnerFriendly === true && !vague) reasons.push(`${steelE.short ?? steelE.label}: für Einsteiger geeignet`);
+  if (a.level === 'beginner' && steelE?.beginnerFriendly === true && steelE.beginnerReason && !vague) reasons.push(`${steelE.short ?? steelE.label}: ${steelE.beginnerReason}`);
   if (a.care === 'rough' && waterproofGrip(item)) reasons.push('Griff quillt nicht durch Wasser');
   // Warnungen: Härte, Stahlangabe, Schliff, Shop-Hinweise
   const hrc = hardness(steelE);
-  if (hrc && hrc[1] >= 65) warnings.push(`Sehr hart (${hrc[0] >= 65 ? `${hrc[0]}+` : `bis ${hrc[1]}`} HRC): Ausbrüche bei Knochen oder Verdrehen möglich`);
+  if (hrc && hrc[1] >= 65) warnings.push(`Härte ${hrc[0] >= 65 ? `${hrc[0]}+` : `bis ${hrc[1]}`} HRC: ab 65 HRC spröder, Ausbrüche bei Knochen oder Verdrehen möglich (Knives and Stones)`);
   if (!item.steel || UNKNOWN_STEELS.has(item.steel.id)) warnings.push('Sorte nicht angegeben');
   else if (vague) warnings.push(`Sorte nicht angegeben (nur „${steelE.short ?? steelE.label}“ laut Shop)`);
   if (item.flags?.some((f) => String(f).startsWith('steel-family-conflict'))) warnings.push('Stahlangabe im Katalog widersprüchlich – im Laden nachfragen');
-  if (item.bevel === 'single' && a.level !== 'expert' && !isSerrated(meta)) warnings.push('Einseitig geschliffen: braucht Übung beim Schneiden und Schleiferfahrung');
-  if (item.notes?.includes('rusts-easily-per-shop')) warnings.push('Laut Shop rostet das Messer leicht');
+  if (item.bevel === 'single' && a.level !== 'expert' && !isSerrated(meta)) warnings.push('Einseitig geschliffen: händigkeitsgebunden; Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf');
+  if (item.notes?.includes('rusts-easily-per-shop')) warnings.push('Der Shop schreibt „rusts easily“: nach jedem Gebrauch trocknen');
   if (item.notes?.includes('one-off')) warnings.push('Einzelstück laut Shop');
 
   const uniq = (list) => [...new Set(list)];

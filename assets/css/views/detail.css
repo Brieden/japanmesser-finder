@@ -453,3 +453,12 @@
   font-size: 0.35em;
   font-weight: 600;
 }
+
+/* Besonderheiten und Vergleich */
+.detail__highlights { margin: var(--space-3) 0 0; padding: 0; list-style: none; display: grid; gap: var(--space-3); }
+.detail__highlights li { padding: var(--space-3); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.detail__src { display: block; margin-top: var(--space-1); font-size: var(--step--1); }
+.detail__src:empty { display: none; }
+.detail__compare { display: grid; gap: var(--space-4); margin-block: var(--space-3); }
+.detail__compare-row { display: grid; gap: var(--space-2); min-width: 0; }
+.detail__compare-row > * { margin: 0; }

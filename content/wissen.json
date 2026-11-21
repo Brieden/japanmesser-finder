@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-21",
+ "updated": "2026-11-22",
  "intro": {
   "title": "Messerkunde",
   "lede": "Kurz, sachlich und mit Quellen: was japanische Küchenmesser tatsächlich anders macht, wie du die Begriffe im Katalog liest und worauf es beim Verschenken ankommt."
@@ -10,7 +10,7 @@
    "id": "grundlagen",
    "kicker": "Grundlagen",
    "title": "Was japanische Messer anders macht",
-   "summary": "Dünnere Klingen, härterer Stahl, spitzere Schneidwinkel: Das bringt Schneidleistung und kostet Robustheit.",
+   "summary": "Dünnere Klingen, härterer Stahl und engere Schneidwinkel verbessern Schnitt und Schnitthaltigkeit, machen die Schneide aber spröder.",
    "blocks": [
     {
      "type": "p",
@@ -22,15 +22,15 @@
     },
     {
      "type": "p",
-     "text": "Die Schneide wird oft in einem engeren Winkel geschliffen, und die Klinge ist hinter der Schneide dünner. Händler nennen für japanische Kohlenstoffstahlmesser etwa 15° pro Seite, für typische westliche Klingen 20–25°. Wie viel das ausmacht: Larrin Thomas (Knife Steel Nerds) schreibt, die Schneidengeometrie sei für die Leistung wichtiger als Wärmebehandlung oder Stahlsorte."
+     "text": "Japanische Messer sind laut Korin in der Regel dünner und härter als europäische. Für Kohlenstoffstahlmesser nennt Chef Knives To Go etwa 15° pro Seite, für typische westliche Klingen 20–25°. Larrin Thomas (Knife Steel Nerds) schreibt, die Schneidengeometrie sei für die Leistung wichtiger als Wärmebehandlung oder Stahlsorte."
     },
     {
      "type": "h3",
-     "text": "Härte: länger scharf, weniger zäh"
+     "text": "Härte: länger scharf, aber spröder"
     },
     {
      "type": "p",
-     "text": "Gemessen wird die Härte in Rockwell (HRC). America’s Test Kitchen nennt für getestete japanische Gyuto 58–65 HRC, für westliche Kochmesser etwa 55–58 HRC. Härtere Klingen behalten die Schneide länger, sind aber weniger zäh: Wo ein weicher Stahl sich verbiegt, bricht bei hartem Stahl eher ein kleines Stück aus."
+     "text": "Gemessen wird die Härte in Rockwell (HRC). America’s Test Kitchen nennt für getestete japanische Gyuto 58–65 HRC, für westliche Kochmesser etwa 55–58 HRC. Härtere Klingen behalten die Schneide länger, sind aber spröder: Wo sich die Schneide eines weichen Stahls verbiegt, bricht bei hartem Stahl ein kleines Stück heraus (Knives and Stones)."
     },
     {
      "type": "h3",
@@ -38,13 +38,13 @@
     },
     {
      "type": "p",
-     "text": "Es gibt viele Spezialformen, vom Gemüsemesser bis zum Sashimi-Messer. Ihre Form gehört zu einer Schnitttechnik (Schiebeschnitt, Zugschnitt, Wiegen). Mehr dazu im Abschnitt zu den Messertypen."
+     "text": "Es gibt Formen für einzelne Aufgaben, vom Gemüsemesser (Nakiri) bis zum Sashimi-Messer (Yanagiba). Ihre Form gehört zu einer Schnitttechnik (Schiebeschnitt, Zugschnitt, Wiegen). Mehr dazu im Abschnitt zu den Messertypen."
     },
     {
      "type": "callout",
      "tone": "info",
      "title": "Was das für den Kauf heißt",
-     "text": "Ein dünnes, hartes Messer schneidet mit wenig Kraft sauber, verlangt aber Brett, Technik und Pflege, die dazu passen: kein Hebeln, kein Verdrehen, keine Knochen. Ob sich das lohnt, hängt weniger vom Messer ab als davon, wie die Person kocht."
+     "text": "Ein dünnes, hartes Messer bricht bei Knochen, Gefrorenem, Hebeln und Verdrehen aus (Japanese Knife Imports). Es passt zu Personen, die auf Holz- oder Gummibrettern schneiden, von Hand spülen und Knochen und Gefrorenes beiseitelassen."
     }
    ],
    "sources": [
@@ -102,11 +102,14 @@
       ],
       [
        "**Nicht rostfrei**",
-       "Kohlenstoffstahl, meist mit Weicheisen-Mantel oder als Monostahl",
+       "Kohlenstoffstahl, mit Weicheisen-Mantel (Kasumi) oder als Monostahl",
        "Reagiert mit Feuchtigkeit und Säuren, bildet Patina, kann rosten",
        "Sofort abtrocknen, bei Lagerung ölen (Kamelienöl)"
       ]
      ]
+    },
+    {
+     "type": "ruststats"
     },
     {
      "type": "callout",
@@ -120,7 +123,7 @@
     },
     {
      "type": "p",
-     "text": "Auf Kohlenstoffstahl bildet sich mit der Zeit eine graue bis dunkle Oxidschicht, die Patina. Sie ist normal und verlangsamt weiteres Rosten. Ihre Farbe entsteht durch das Schnittgut; säurehaltige Zutaten wie Zwiebeln und Eiweiß aus Fleisch beschleunigen sie. Aus anfangs bunten Tönen wird mit der Zeit ein stabiles Anthrazitgrau."
+     "text": "Auf Kohlenstoffstahl bildet sich mit der Zeit eine graue bis dunkle Oxidschicht, die Patina. Sie verlangsamt weiteres Rosten (Knives and Stones). Ihre Farbe entsteht durch das Schnittgut; säurehaltige Zutaten wie Zwiebeln und Eiweiß aus Fleisch beschleunigen sie. Aus anfangs bunten Tönen wird mit der Zeit ein stabiles Anthrazitgrau."
     },
     {
      "type": "h3",
@@ -137,7 +140,7 @@
      "type": "callout",
      "tone": "warn",
      "title": "Sorte nicht angegeben",
-     "text": "Bei vielen Messern nennt der Shop nur Sammelbezeichnungen wie „Molybdenum Steel“, „Swedish Steel“ oder „Cobalt Steel“. Die genaue Legierung ist dann unbekannt; die Einordnung „rostfrei“ stammt aus dem Katalogeintrag."
+     "text": "Bei Messern mit Sammelbezeichnungen wie „Molybdenum Steel“, „Swedish Steel“, „Cobalt Steel“ oder „HSS“ nennt der Shop keine genaue Legierung. Härte und Zusammensetzung sind dann unbekannt; die Einordnung „rostfrei“ stammt aus dem Katalogeintrag."
     },
     {
      "type": "h3",
@@ -147,9 +150,9 @@
      "type": "list",
      "ordered": false,
      "items": [
-      "**Wenig Pflegeaufwand gewünscht:** komplett rostfrei. VG-10, AUS-8/10 und Ginsan #3 sind verbreitet und unkompliziert.",
-      "**Schärfen als Hobby:** Kohlenstoffstahl (Shirogami, Aogami) passt laut Händlern zu Köchen, die eine sehr feine Schneide wollen, gern auf dem Stein schärfen und die Klinge nach jedem Gebrauch trocknen.",
-      "**Sehr harte Stähle (z. B. ZDP-189, ab ca. 65 HRC):** Die Schneide bleibt lange scharf, ist aber tendenziell weniger zäh; Ausbrüche sind eher möglich."
+      "**Wenn kaum gepflegt wird:** komplett rostfrei. Rostfreier Stahl ist laut Japanese Knife Imports weit weniger reaktiv und leichter zu pflegen als Kohlenstoffstahl; Beispiele im Katalog sind VG-10, AUS-8, AUS-10 und Ginsan #3.",
+      "**Wenn die Person gern auf dem Stein schärft:** Weißstahl (Shirogami) lässt sich laut Sakai Ichimonji trotz hoher Härte relativ leicht schärfen, rostet aber leicht; die Klinge muss nach jedem Gebrauch getrocknet werden (Knives and Stones).",
+      "**Stähle ab ca. 65 HRC (z. B. ZDP-189):** Die Schneide hält außergewöhnlich lange, ist aber spröder; Knives and Stones nennt Ausbrüche bei rauem Gebrauch als Risiko."
      ]
     }
    ],
@@ -161,7 +164,98 @@
     "kns-steels",
     "proterial-aogami1",
     "kns-bluesuper",
-    "kns-chip"
+    "kns-chip",
+    "ichi-steels",
+    "ichi-w1",
+    "ichi-bs",
+    "korin-carbon-care"
+   ]
+  },
+  {
+   "id": "schaerfe",
+   "kicker": "Schärfe",
+   "title": "Schärfe, Schnitthaltigkeit und Schärfen",
+   "summary": "Was bestimmt, wie fein eine Schneide ist, wie lange sie scharf bleibt und wie aufwendig das Nachschärfen wird – und wo die Quellen keine Zahl hergeben.",
+   "blocks": [
+    {
+     "type": "h3",
+     "text": "Drei Begriffe, die zu unterscheiden sind"
+    },
+    {
+     "type": "table",
+     "caption": "",
+     "head": [
+      "Begriff",
+      "Was gemeint ist",
+      "Wovon es abhängt (laut Quellen)"
+     ],
+     "rows": [
+      [
+       "**Schärfe**",
+       "Wie fein die Schneide ist und wie wenig Kraft ein Schnitt braucht",
+       "Vor allem von der Schneidengeometrie (Winkel, Dicke hinter der Schneide) und vom Schliff; der Stahl kommt danach (Knife Steel Nerds). Geometrie und Schliff ab Werk nennt der Katalog nicht."
+      ],
+      [
+       "**Schnitthaltigkeit**",
+       "Wie lange die Schneide scharf bleibt",
+       "Von der Verschleißfestigkeit des Stahls, also von Härte und Karbidanteil (Knife Steel Nerds)."
+      ],
+      [
+       "**Schärfaufwand**",
+       "Wie mühsam das Nachschärfen ist",
+       "Je verschleißfester der Stahl, desto schwerer lässt er sich schärfen: „Ease in sharpening is the inverse of wear resistance“ (Knife Steel Nerds). Karbide sind hart, spröde und schwer zu schleifen (Alleima)."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Diese Seite vergibt deshalb **keine Sterne für „Schärfe“**: Dafür fehlen im Katalog die entscheidenden Angaben (Geometrie, Schliff ab Werk). Was sich belegen lässt, steht unten: die Härte-Skala, die Aussagen der Hersteller je Stahl und der Vergleich der Messer im Katalog."
+    },
+    {
+     "type": "h3",
+     "text": "Härte-Skala (HRC)"
+    },
+    {
+     "type": "p",
+     "text": "Knives and Stones ordnet Messer nach der Rockwell-Härte so ein:"
+    },
+    {
+     "type": "hardnessscale"
+    },
+    {
+     "type": "p",
+     "text": "Die Härte der einzelnen Stähle (typische Werte laut Hersteller- und Händlerangaben) steht in der Stahltabelle. Sie gilt für die Stahlsorte, nicht für das einzelne Messer."
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Faustregel mit Ausnahmen",
+     "text": "Je härter ein Messer, desto schwerer lässt es sich schärfen – so formuliert es der Hersteller Sakai Ichimonji. Weißstahl (Shirogami) weicht davon ab: Er hat kaum Zusätze und Verunreinigungen und lässt sich deshalb trotz hoher Härte relativ leicht auf dem Stein schärfen. Das Gegenbeispiel ist Blue Super (Aogami Super): Die Schneide bleibt sehr lange scharf, ein Feinschliff mit weichem Wasserstein ist aber schwierig (Ichimonji)."
+    },
+    {
+     "type": "h3",
+     "text": "Wie die Einordnung einzelner Messer entsteht"
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      "Grundlage ist die typische Härte der Stahlsorte (Richtwert, nicht am einzelnen Messer gemessen). Messer ohne genannte Stahlsorte („Molybdenum Steel“, „Swedish Steel“ …) werden nicht eingeordnet.",
+      "Verglichen wird innerhalb desselben Messertyps im Katalog, z. B. ein Gyuto nur mit anderen Gyuto.",
+      "Die Aussage lautet nie „schärfer“, sondern „härter als x % der Vergleichsmesser“; daraus folgt nach der Skala oben, wie lange die Schneide voraussichtlich hält.",
+      "Nicht berücksichtigt werden Geometrie, Schliff ab Werk und die Wärmebehandlung des einzelnen Herstellers."
+     ]
+    }
+   ],
+   "sources": [
+    "kns-nerds",
+    "kns-tungsten",
+    "alleima-chem",
+    "alleima-gloss",
+    "kns-white2",
+    "ichi-steels",
+    "ichi-w1",
+    "ichi-bs"
    ]
   },
   {
@@ -177,7 +271,7 @@
     },
     {
      "type": "p",
-     "text": "**Monostahl (zenkō):** Die ganze Klinge besteht aus einem Stahl. Bei rostfreien Messern ist das üblich und unkompliziert. Der Begriff *Honyaki* meint im engeren Sinn ein aus einem Stück Kohlenstoffstahl geschmiedetes und gehärtetes Messer, aufwendig und teuer. Rostfreie Monostahl-Messer werden zwar manchmal so genannt, sind es im engeren Sinn aber nicht. Im Katalog heißt eine Linie „Honyaki INOX“; gemeint ist rostfreier Monostahl."
+     "text": "**Monostahl (zenkō):** Die ganze Klinge besteht aus einem Stahl. Der Begriff *Honyaki* meint im engeren Sinn ein aus einem Stück Kohlenstoffstahl geschmiedetes und gehärtetes Messer, aufwendig und teuer. Rostfreie Monostahl-Messer werden zwar manchmal so genannt, sind es im engeren Sinn aber nicht (hocho-knife.com). Im Katalog heißt eine Linie „Honyaki INOX“; gemeint ist rostfreier Monostahl."
     },
     {
      "type": "p",
@@ -189,7 +283,7 @@
     },
     {
      "type": "p",
-     "text": "Echter Damast ist mustergeschweißter Stahl: Lagen verschiedener Stähle werden verschmiedet, geschliffen und geätzt. Bei japanischen Messern liegt das Muster im **Mantel**, die Schneide bildet der **Kernstahl**. Daneben gibt es reine Oberflächenmuster (Laser, Ätzung), die nur Optik sind. Wie gut ein Damast-Messer schneidet, entscheiden Kernstahl und Geometrie, nicht das Muster."
+     "text": "Echter Damast ist mustergeschweißter Stahl: Lagen verschiedener Stähle werden verschmiedet, geschliffen und geätzt. Bei japanischen Messern liegt das Muster im **Mantel**, die Schneide bildet der **Kernstahl**. Daneben gibt es reine Oberflächenmuster (Laser, Ätzung), die nur Optik sind. Wie scharf ein Damast-Messer wird und wie lange die Schneide hält, bestimmen Kernstahl und Geometrie, nicht das Muster."
     },
     {
      "type": "h3",
@@ -200,7 +294,7 @@
      "ordered": false,
      "items": [
       "**Kurouchi:** dunkle Schmiedehaut; vor allem Optik, nutzt sich im Gebrauch ab.",
-      "**Tsuchime (Hammerschlag):** Optik; Händler nennen außerdem, dass Schnittgut weniger anhaftet.",
+      "**Tsuchime (Hammerschlag):** Optik; laut Händlern (Kireaji, Chef Knives To Go) bleibt weniger Schnittgut an der Klinge haften.",
       "**Nashiji („Birnenhaut“) und Migaki (poliert):** unterschiedliche Optik von matt-strukturiert bis nahezu spiegelnd."
      ]
     }
@@ -219,7 +313,7 @@
    "id": "schliff",
    "kicker": "Schliff und Griff",
    "title": "Einseitig oder beidseitig, Wa oder Yō",
-   "summary": "Schliff und Griff entscheiden, ob ein Messer zur Person passt: Händigkeit, Übung und Gewohnheit zählen.",
+   "summary": "Einseitiger Schliff bindet das Messer an die Händigkeit; der Griff bestimmt Gewicht und Schwerpunkt.",
    "blocks": [
     {
      "type": "figure",
@@ -228,13 +322,13 @@
     },
     {
      "type": "p",
-     "text": "**Beidseitig geschliffene** Messer (ryōba) sind die Regel bei Gyuto, Santoku und Nakiri; sie führen den Schnitt gerade und eignen sich für Links- und Rechtshänder. **Einseitig geschliffene** (kataba) wie Yanagiba, Deba und Usuba haben eine flache, oft leicht hohle Rückseite (*urasuki*). Sie sind für Rechts- oder Linkshänder gebaut und lassen sich nicht umarbeiten."
+     "text": "**Beidseitig geschliffene** Messer (ryōba) sind die Regel bei Gyuto, Santoku und Nakiri; sie führen den Schnitt gerade und eignen sich für Links- und Rechtshänder. **Einseitig geschliffene** (kataba) wie Yanagiba, Deba und Usuba haben eine flache Rückseite, die bei Premium-Klingen hohl ausgeschliffen ist (Wikipedia) (*urasuki*). Sie sind für Rechts- oder Linkshänder gebaut und lassen sich nicht umarbeiten. Händler sehen bei ihnen mehr Übungsbedarf bei Benutzung und Nachschliff (Erfahrungsurteil, nicht gemessen); Knifewear hält dagegen, dass es ein Profi-Privileg nicht gibt, sondern nur mehr Übung verlangt wird."
     },
     {
      "type": "callout",
      "tone": "warn",
      "title": "Linkshänder",
-     "text": "Einseitig geschliffene Messer gibt es für Linkshänder nur in einer eigenen Ausführung (im Katalog: „For Left-Handed“). Doppelschliff-Messer gelten als beidhändig, manche haben eine leichte Asymmetrie. Die Händler erwarten, dass bei einseitigen Messern die Händigkeit geklärt wird."
+     "text": "Einseitig geschliffene Messer gibt es für Linkshänder nur in einer eigenen Ausführung (im Katalog: „For Left-Handed“). Doppelschliff-Messer sind für beide Hände nutzbar; asymmetrisch geschliffene Varianten haben eine Vorzugshand (Beispiel laut Zknives: das Garasuki mit „strong right bias“). Japanese Knife Imports prüft bei Erstkunden, ob sie wirklich Linkshänder sind, bevor ein einseitiges Linkshänder-Messer verschickt wird."
     },
     {
      "type": "h3",
@@ -242,11 +336,11 @@
     },
     {
      "type": "p",
-     "text": "**Wa-Griffe** (japanisch) sind meist aus Holz und achteckig, oval oder D-förmig. Sie sind leichter als westliche Griffe und verlagern den Schwerpunkt nach vorn zur Klinge; ausgelegt sind sie für den Pinch-Grip, bei dem die Finger die Klinge direkt vor dem Griff fassen. **Yō-Griffe** (westlich) sind schwerer, meist vernietet und für Nutzer westlicher Messer vertraut. Laut Japanese Knife Imports ist keiner „besser“; es ist Geschmackssache."
+     "text": "**Wa-Griffe** (japanisch) sind typisch aus Holz (Chef Knives To Go) und im Querschnitt achteckig, oval oder D-förmig. Sie wiegen weniger als westliche Griffe und verlagern den Schwerpunkt nach vorn zur Klinge; ausgelegt sind sie für den Pinch-Grip, bei dem Daumen und Zeigefinger die Klinge direkt vor dem Griff fassen. **Yō-Griffe** (westlich) wiegen mehr und sind in der Regel vollständig vernietet (Japanese Knife Imports). Laut Japanese Knife Imports ist keiner der beiden besser; es ist eine Frage der persönlichen Vorliebe."
     },
     {
      "type": "p",
-     "text": "Achteckige und runde Griffe sind symmetrisch. D-förmige Griffe sind meist für Rechtshänder ausgelegt; manche Linkshänder kommen trotzdem gut damit zurecht."
+     "text": "Achteckige und runde Querschnitte sind symmetrisch. D-förmige Griffe sind laut Kireaji meist für Rechtshänder geformt; Linkshänder sollten vor dem Kauf prüfen, ob der Griff passt."
     }
    ],
    "sources": [
@@ -261,11 +355,11 @@
    "id": "typen",
    "kicker": "Messertypen",
    "title": "Welcher Typ wofür – und wann er Spaß macht",
-   "summary": "Typen, Längen und Einsatz im Überblick, mit ehrlicher Einordnung von Aufwand und Nutzen.",
+   "summary": "Typen, Längen und Einsatz im Überblick, mit Kennzahlen aus dem Katalog.",
    "blocks": [
     {
      "type": "p",
-     "text": "Für den Haushalt reichen laut japanischen Fachleuten meist ein **Hauptmesser** (Gyuto oder Santoku) und ein kleines **Petty**; Brotmesser, Nakiri oder Sujihiki sind sinnvolle Ergänzungen. Knifewear rechnet insgesamt mit drei bis fünf Messern."
+     "text": "Laut dem Kama-asa-Interview bei JETRO (Kappabashi) genügen im Haushalt ein Kochmesser oder Santoku und ein kleines Messer von 12–15 cm; Brotmesser, Nakiri oder Sujihiki ergänzen. Knifewear rechnet insgesamt mit drei bis fünf Messern."
     },
     {
      "type": "p",
@@ -275,7 +369,22 @@
      "type": "callout",
      "tone": "info",
      "title": "Spezialmesser: für wen sinnvoll?",
-     "text": "Yanagiba, Deba und Usuba sind vor allem für Menschen gedacht, die die traditionelle japanische Zubereitung bewusst lernen wollen. Die Aufgaben lassen sich auch mit Kochmesser, Ausbeinmesser oder Sujihiki erledigen. Der Reiz dieser Messer liegt in Technik und Anspruch, nicht in Vielseitigkeit."
+     "text": "Yanagiba, Deba und Usuba sind für Menschen gedacht, die die traditionelle japanische Zubereitung bewusst lernen wollen. Die Aufgaben lassen sich auch mit Kochmesser, Ausbeinmesser oder Sujihiki erledigen. Der Reiz liegt laut Knifewear in der Technik (etwa Zugschnitt beim Yanagiba, Katsuramuki beim Usuba), nicht in der Vielseitigkeit."
+    },
+    {
+     "type": "h3",
+     "text": "Typen im Vergleich"
+    },
+    {
+     "type": "p",
+     "text": "Die Tabelle fasst den Katalog zusammen: wie viele Artikel es gibt, welche Länge typisch ist, wie hart die verwendeten Stähle im Mittel sind und was die Messer kosten. Wie scharf ein Typ wird, steht dort nicht: Das hängt vor allem von der Schneidengeometrie ab, die der Katalog nicht nennt (siehe Abschnitt „Schärfe“)."
+    },
+    {
+     "type": "typecompare"
+    },
+    {
+     "type": "h3",
+     "text": "Alle Typen im Detail"
     },
     {
      "type": "typeatlas"
@@ -285,21 +394,26 @@
     "ty-109399",
     "ty-465399",
     "ty-410167",
-    "ty-743282"
+    "ty-743282",
+    "korin-faq",
+    "knifewear-ktip",
+    "koi-pankiri",
+    "seido-nakiri",
+    "korin-santoku"
    ]
   },
   {
    "id": "pflege",
    "kicker": "Pflege",
    "title": "Pflege und Schärfen",
-   "summary": "Wenige Regeln verhindern die meisten Schäden.",
+   "summary": "Von Hand spülen, trocknen, auf Holz oder Gummi schneiden, keine Knochen: Das sind die Regeln der Händler gegen Rost und Ausbrüche.",
    "blocks": [
     {
      "type": "list",
      "ordered": false,
      "items": [
       "**Von Hand spülen und sofort abtrocknen.** Nicht in die Spülmaschine: Das Messer wird herumgeschleudert, Hitze, Wasser und Reiniger schädigen auch den Griff.",
-      "**Brett:** Holz oder weiches Gummi. Glas- und Steinbretter sind zu hart; auch Bambus gilt als sehr hart und lässt Klingen leicht ausbrechen.",
+      "**Brett:** Holz oder weiches Gummi. Glas- und Steinbretter sind zu hart: Die Schneide stumpft schnell ab und kann ausbrechen (Knives and Stones). Auch Bambus- und Glasbretter lassen Klingen ausbrechen (Seisuke).",
       "**Nicht schneiden:** Knochen, Gefrorenes, harte Kerne. Nicht hebeln oder verdrehen. Das sind die typischen Ursachen für Ausbrüche.",
       "**Trocken lagern**, etwa an der Magnetleiste oder im Block mit Luftzirkulation; in einer geschlossenen, feuchten Scheide können selbst rostfreie Messer rosten."
      ]
@@ -318,7 +432,7 @@
     },
     {
      "type": "p",
-     "text": "Nach Gebrauch abwischen und abtrocknen, bei längerer Lagerung dünn mit Kamelienöl einölen. Patina ist normal."
+     "text": "Nach Gebrauch abwischen und abtrocknen, bei längerer Lagerung dünn mit Kamelienöl einölen. Eine graue Patina verlangsamt weiteres Rosten."
     }
    ],
    "sources": [
@@ -356,7 +470,7 @@
       ],
       [
        "„Japanische Messer sind nichts für Anfänger.“",
-       "Beidseitig geschliffene, rostfreie Modelle (z. B. Gyuto, Santoku) sind gängige Einsteigermesser. Anspruchsvoller sind einseitig geschliffene Messer und reaktive Kohlenstoffstähle."
+       "Händler empfehlen Einsteigern beidseitig geschliffene, rostfreie Allrounder wie Gyuto oder Santoku (Chef Knives To Go: ein Gyuto oder Santoku von ca. 210 mm sei „almost always the right choice“). Einseitig geschliffene Messer sind händigkeitsgebunden und verlangen laut Händlern mehr Übung; Kohlenstoffstahl rostet, wenn er nass bleibt."
       ],
       [
        "„Rostfrei heißt: keine Pflege.“",
@@ -511,17 +625,17 @@
   {
    "term": "Urasuki",
    "ja": "裏すき",
-   "text": "Leicht hohle Rückseite bei einseitig geschliffenen Messern."
+   "text": "Hohlkehle in der flachen Rückseite einseitig geschliffener Messer."
   },
   {
    "term": "Wa-Griff",
    "ja": "和式柄",
-   "text": "Japanischer Holzgriff (achteckig, oval oder D-förmig), leichter als westliche Griffe."
+   "text": "Japanischer Griff, typisch aus Holz (achteckig, oval oder D-förmig); wiegt weniger als ein westlicher Griff."
   },
   {
    "term": "Yō-Griff",
    "ja": "洋式柄",
-   "text": "Westlicher, meist vernieteter Griff."
+   "text": "Westlicher Griff, in der Regel vernietet."
   },
   {
    "term": "Saya",
@@ -531,7 +645,7 @@
   {
    "term": "Patina",
    "ja": "",
-   "text": "Graue bis dunkle Oxidschicht auf Kohlenstoffstahl; normal und verlangsamt weiteres Rosten."
+   "text": "Graue bis dunkle Oxidschicht auf Kohlenstoffstahl; sie verlangsamt weiteres Rosten."
   },
   {
    "term": "HRC",
@@ -596,7 +710,7 @@
    "title": "Japanese Knife Buyer's Guide",
    "publisher": "Chef Knives To Go",
    "url": "https://www.chefknivestogo.com/japanese-knife-buyers-guide.html",
-   "note": "Wa- vs. Yō-Griff, Oberflächen, Wasserstein-Körnungen."
+   "note": "Wa- vs. Yō-Griff, Oberflächen, Wasserstein-Körnungen; Gyuto-Längen: 21 und 24 cm am häufigsten, 21 cm beliebteste Größe für Hobbyköche, ab 27 cm Spezialistenbereich."
   },
   "cktg-damascus": {
    "title": "What is Damascus Steel?",
@@ -966,6 +1080,108 @@
    "title": "Santoku vs. Gyuto",
    "publisher": "Knifewear",
    "url": "https://knifewear.com/blogs/articles/santoku-v-s-gyuto-the-best-multipurpose-kitchen-knife"
+  },
+  "ichi-steels": {
+   "title": "Japanese Knife Steels (Übersicht)",
+   "publisher": "Sakai Ichimonji",
+   "url": "https://global.ichimonji.co.jp/pages/knifesteel",
+   "note": "Ein Satz je Stahl, u. a. Blue #1 hält länger als White; White #1 sehr hoher Kohlenstoff, aber spröder; ZDP-189 bis 67 HRC."
+  },
+  "ichi-w1": {
+   "title": "White Steel #1 – High Carbon Steel",
+   "publisher": "Sakai Ichimonji",
+   "url": "https://global.ichimonji.co.jp/blogs/japanese-knife-steel/white-steel-1",
+   "note": "Je härter das Messer, desto schwerer zu schärfen; Weißstahl ist die Ausnahme (kaum Zusätze)."
+  },
+  "ichi-bs": {
+   "title": "Blue Steel Super",
+   "publisher": "Sakai Ichimonji",
+   "url": "https://global.ichimonji.co.jp/blogs/japanese-knife-steel/blue-steel-super",
+   "note": "Sehr hohe Verschleißfestigkeit; Feinschliff mit weichem Wasserstein schwierig."
+  },
+  "kns-tungsten": {
+   "title": "Is Blue Super Steel Actually Super? The Facts about Tungsten-alloyed Steels",
+   "publisher": "Knife Steel Nerds (Larrin Thomas)",
+   "url": "https://knifesteelnerds.com/2018/03/29/is-blue-super-steel-actually-super-the-facts-about-tungsten-alloyed-steels/",
+   "note": "Edge retention folgt der Verschleißfestigkeit; Ease in sharpening ist das Gegenstück zur Verschleißfestigkeit."
+  },
+  "alleima-chem": {
+   "title": "Chemical composition of knife steel",
+   "publisher": "Alleima",
+   "url": "https://www.alleima.com/en/products/strip-steel/knife-steel/knife-steel-knowledge/important-factors/chemical-composition/",
+   "note": "Große Primärkarbide machen das Messer spröder und schwerer zu schärfen."
+  },
+  "alleima-gloss": {
+   "title": "Knife steel technical glossary",
+   "publisher": "Alleima",
+   "url": "https://www.alleima.com/en/products/strip-steel/knife-steel/knife-steel-knowledge/technical-glossary/",
+   "note": "Karbide sind verschleißfest, aber spröde und schwer zu schleifen."
+  },
+  "cktg-takeda": {
+   "title": "Takeda Stainless Clad Bunka 160mm (Produktseite)",
+   "publisher": "Chef Knives To Go",
+   "url": "https://www.chefknivestogo.com/tastclbu.html",
+   "note": "Takeda Hamono, Schmied Shosui Takeda, Niimi; San-mai, Kern Aogami Super, rostfreier Mantel, Kurouchi, 50/50-Schliff."
+  },
+  "kns-saji": {
+   "title": "Takeshi Saji",
+   "publisher": "Knives and Stones",
+   "url": "https://www.knivesandstones.com.au/pages/craftsman/takeshi-saji",
+   "note": "Ordnet Takeshi Saji Takefu zu."
+  },
+  "kns-tanaka": {
+   "title": "Shigeki Tanaka",
+   "publisher": "Knives and Stones",
+   "url": "https://www.knivesandstones.com.au/pages/craftsman/shigeki-tanaka",
+   "note": "Ordnet Shigeki Tanaka Miki zu."
+  },
+  "tsubaya-brand": {
+   "title": "„TSUBAYA“ brand",
+   "publisher": "Tsubaya",
+   "url": "https://tsubaya.jp/en/pages/about-our-brand",
+   "note": "Beim Kauf gibt es keine Garantiekarte; der eingravierte oder aufgedruckte Markenname dient als Nachweis."
+  },
+  "knifewear-ktip": {
+   "title": "What's a K-Tip? Kiritsuke vs. Bunka vs. Hakata",
+   "publisher": "Knifewear",
+   "url": "https://knifewear.com/blogs/articles/whats-a-k-tip-kiritsuke-v-s-bunka-v-s-hakata",
+   "note": "Die K-Tip-Spitze ist empfindlicher und verlangt mehr Vorsicht."
+  },
+  "knifewear-honesuki": {
+   "title": "Knife vs. Knife: How to Choose a Boning Knife",
+   "publisher": "Knifewear",
+   "url": "https://knifewear.com/blogs/articles/knife-vs-knife-how-to-choose-a-boning-knife",
+   "note": "Dünne Spitze des Honesuki nicht zum Aufhebeln harter Gelenke verwenden."
+  },
+  "koi-pankiri": {
+   "title": "Pankiri",
+   "publisher": "Koi Knives",
+   "url": "https://koiknives.com/blogs/japanese-knives/pankiri",
+   "note": "Die Zähne des Brotmessers lassen sich kaum auf dem Wasserstein schärfen."
+  },
+  "seido-nakiri": {
+   "title": "What Are Nakiri Knives Used For?",
+   "publisher": "Seido Knives",
+   "url": "https://seidoknives.com/blogs/news/what-are-nakiri-knives-used-for",
+   "note": "Das Nakiri hat keine Spitze für Detailarbeit."
+  },
+  "zknives-honesuki": {
+   "title": "Honesuki-Maru",
+   "publisher": "Zknives",
+   "url": "https://zknives.com/knives/kitchen/misc/type/Honesuki-Maru.shtml",
+   "note": "Abgrenzung Honesuki Maru und Hankotsu."
+  },
+  "korin-santoku": {
+   "title": "Santoku",
+   "publisher": "Korin",
+   "url": "https://www.korin.com/japanese-knives/styles/santoku",
+   "note": "Die hohe Klinge hält die Knöchel weit über dem Brett."
+  },
+  "korin-carbon-care": {
+   "title": "About Carbon Knife Care",
+   "publisher": "Korin",
+   "url": "https://www.korin.com/about-carbon-knife-care",
+   "note": "Weißstahl #1: schärfste erreichbare Schneide, aber spröde und schwer zu pflegen."
   }
  }
 }

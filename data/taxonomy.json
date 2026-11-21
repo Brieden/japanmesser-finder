@@ -37,14 +37,14 @@
       "label": "Teilweise rostfrei",
       "short": "Teils rostfrei",
       "tone": "warn",
-      "explain": "Die Seiten der Klinge sind rostfrei (Mantel aus rostfreiem Stahl), der Kern mit der Schneide besteht aber aus Kohlenstoffstahl. Der Mantel schützt den größten Teil der Klingenfläche; die Schneide selbst kann wie jeder Kohlenstoffstahl Patina bilden und bei Nässe rosten. Ein Mittelweg: weniger Aufwand als reiner Kohlenstoffstahl, mehr als komplett rostfrei.",
+      "explain": "Die Seiten der Klinge sind rostfrei (Mantel aus rostfreiem Stahl), der Kern mit der Schneide besteht aus Kohlenstoffstahl. Der Mantel deckt laut Japanese Knife Imports den größten Teil der Klingenfläche ab und mindert die Reaktivität; die Schneide selbst kann wie jeder Kohlenstoffstahl Patina bilden und bei Nässe rosten. Der Händler nennt das einen Mittelweg zwischen komplett rostfrei und nicht rostfrei.",
       "care": "Nach dem Schneiden abspülen und sofort abtrocknen; die Schneide nicht nass liegen lassen."
     },
     "none": {
       "label": "Nicht rostfrei (Kohlenstoffstahl)",
       "short": "Nicht rostfrei",
       "tone": "bad",
-      "explain": "Kohlenstoffstahl ohne rostfreien Mantel (häufig mit Weicheisen-Mantel). Er reagiert mit Feuchtigkeit und Säuren, bildet im Gebrauch eine graue Patina und rostet, wenn er nass bleibt. Dafür schätzen ihn Messer-Fans: gut schärfbar, sehr feine Schneide. Ein Hobby für Menschen, die gern pflegen.",
+      "explain": "Kohlenstoffstahl ohne rostfreien Mantel. Er reagiert mit Feuchtigkeit und säurehaltigen Lebensmitteln, bildet eine graue Patina und rostet, wenn er nass bleibt; bei Messern mit Weicheisen-Mantel (Kasumi) patiniert und rostet auch der Mantel. Laut Korin ergibt Weißstahl #1 die schärfste erreichbare Schneide, ist aber spröde.",
       "care": "Sofort nach Gebrauch abwischen und abtrocknen; bei längerer Lagerung dünn mit Kamelienöl einölen."
     }
   },
@@ -68,11 +68,29 @@
       "composition": "C ≈ 1,25–1,35 %",
       "care": "high",
       "beginnerFriendly": false,
-      "summary": "Reiner Kohlenstoffstahl („Weißstahl“, Proterial/Yasuki): viel Kohlenstoff, kaum Legierungselemente. Nimmt sehr feine Schneiden an, reagiert aber schnell mit Feuchtigkeit.",
+      "summary": "Unlegierter Kohlenstoffstahl („Weißstahl“) von Proterial (Yasuki) mit ca. 1,25–1,35 % Kohlenstoff.",
       "sources": [
         "kns-white2",
-        "kns-steels"
-      ]
+        "kns-steels",
+        "ichi-w1",
+        "ichi-steels"
+      ],
+      "facts": [
+        {
+          "t": "Sakai Ichimonji beschreibt Weißstahl #1 als auf möglichst hohe Schärfe ausgelegt: Mehr Kohlenstoff erhöht die Härte.",
+          "s": "ichi-w1"
+        },
+        {
+          "t": "Der hohe Kohlenstoffgehalt macht ihn spröder als Weißstahl #2 (Ichimonji).",
+          "s": "ichi-steels"
+        }
+      ],
+      "sharpen": {
+        "level": "easy",
+        "text": "Weißstahl hat kaum Zusätze und Verunreinigungen und lässt sich deshalb trotz hoher Härte relativ leicht auf dem Stein schärfen (Sakai Ichimonji).",
+        "source": "ichi-w1"
+      },
+      "beginnerReason": "Kohlenstoffstahl muss nach jedem Gebrauch abgetrocknet werden, sonst rostet er (Knives and Stones)."
     },
     "shirogami2": {
       "label": "Shirogami #2 (Weißstahl)",
@@ -85,11 +103,24 @@
       "composition": "C ≈ 1,05–1,15 %",
       "care": "high",
       "beginnerFriendly": false,
-      "summary": "Reiner Kohlenstoffstahl („Weißstahl“) mit etwas weniger Kohlenstoff als Shirogami #1. Gilt als gut schärfbar; nicht rostfrei, nach jedem Gebrauch trocknen.",
+      "summary": "Unlegierter Kohlenstoffstahl („Weißstahl“) mit ca. 1,05–1,15 % Kohlenstoff, also weniger als Shirogami #1.",
       "sources": [
         "kns-white2",
-        "kns-steels"
-      ]
+        "kns-steels",
+        "ichi-steels"
+      ],
+      "facts": [
+        {
+          "t": "Weniger Kohlenstoff als Weißstahl #1; dadurch laut Ichimonji etwas belastbarer.",
+          "s": "ichi-steels"
+        }
+      ],
+      "sharpen": {
+        "level": "easy",
+        "text": "Weißstahl hat kaum Zusätze und Verunreinigungen und lässt sich deshalb trotz hoher Härte relativ leicht auf dem Stein schärfen (Sakai Ichimonji).",
+        "source": "ichi-w1"
+      },
+      "beginnerReason": "Kohlenstoffstahl muss nach jedem Gebrauch abgetrocknet werden, sonst rostet er (Knives and Stones)."
     },
     "shirogami3": {
       "label": "Shirogami #3 (Weißstahl)",
@@ -107,11 +138,19 @@
       "composition": "C ≈ 1,25–1,35 %, Cr ≈ 0,3–0,5 %, W ≈ 1,5–2,0 %",
       "care": "high",
       "beginnerFriendly": false,
-      "summary": "Kohlenstoffstahl („Blaustahl“) mit Chrom- und Wolframzusatz. Trotz Chrom nicht rostfrei; die Zusätze verändern vor allem das Verschleißverhalten.",
+      "summary": "Kohlenstoffstahl („Blaustahl“) mit Chrom (ca. 0,3–0,5 %) und Wolfram (ca. 1,5–2,0 %). Er ist trotz Chrom nicht rostfrei: Dafür wären mindestens 10,5 % Chrom nötig (EN 10088).",
       "sources": [
         "proterial-aogami1",
-        "kns-steels"
-      ]
+        "kns-steels",
+        "ichi-steels"
+      ],
+      "facts": [
+        {
+          "t": "Wolfram und Chrom ergeben laut Ichimonji eine länger haltende Schneide als bei der White-Reihe.",
+          "s": "ichi-steels"
+        }
+      ],
+      "beginnerReason": "Kohlenstoffstahl muss nach jedem Gebrauch abgetrocknet werden, sonst rostet er (Knives and Stones)."
     },
     "aogami2": {
       "label": "Aogami #2 (Blaustahl)",
@@ -124,10 +163,18 @@
       "composition": "C ≈ 1,1 %, Cr ≈ 0,35 %, W ≈ 1,25 % (Näherung)",
       "care": "high",
       "beginnerFriendly": false,
-      "summary": "Kohlenstoffstahl („Blaustahl“) mit Chrom- und Wolframzusatz, weniger Kohlenstoff als Aogami #1. Nicht rostfrei, bildet Patina.",
+      "summary": "Kohlenstoffstahl („Blaustahl“) mit Chrom und Wolfram; mit ca. 1,1 % Kohlenstoff weniger als Aogami #1 (ca. 1,3 %). Nicht rostfrei, bildet Patina.",
       "sources": [
-        "kns-steels"
-      ]
+        "kns-steels",
+        "ichi-steels"
+      ],
+      "facts": [
+        {
+          "t": "Weniger Kohlenstoff als Blue #1: Die Schneide hält laut Ichimonji noch länger, ist aber weniger scharf.",
+          "s": "ichi-steels"
+        }
+      ],
+      "beginnerReason": "Kohlenstoffstahl muss nach jedem Gebrauch abgetrocknet werden, sonst rostet er (Knives and Stones)."
     },
     "aogami-super": {
       "label": "Aogami Super (Blaustahl)",
@@ -140,11 +187,29 @@
       "composition": "C ≈ 1,45 %, Cr ≈ 0,4 %, V ≈ 0,4 %, W ≈ 2,25 %",
       "care": "high",
       "beginnerFriendly": false,
-      "summary": "Kohlenstoffstahl mit Chrom, Vanadium und Wolfram. Laut Händler sehr reaktiv (hoher Kohlenstoff, nur ca. 0,4 % Chrom): gründlich trocknen ist Pflicht.",
+      "summary": "Kohlenstoffstahl mit Chrom, Vanadium und Wolfram bei ca. 1,45 % Kohlenstoff. Knives and Stones nennt ihn reaktiv (hoher Kohlenstoffanteil, nur ca. 0,4 % Chrom): nach dem Waschen gründlich trocknen.",
       "sources": [
         "kns-bluesuper",
-        "kns-steels"
-      ]
+        "kns-steels",
+        "ichi-steels",
+        "ichi-bs"
+      ],
+      "facts": [
+        {
+          "t": "Mit zusätzlichem Vanadium ist es laut Ichimonji die verschleißfesteste Schneide unter den Stählen seiner Übersicht.",
+          "s": "ichi-steels"
+        },
+        {
+          "t": "Die Schneide bleibt sehr lange scharf; ein Feinschliff mit weichem Wasserstein ist dafür schwierig (Ichimonji).",
+          "s": "ichi-bs"
+        }
+      ],
+      "sharpen": {
+        "level": "harder",
+        "text": "Die hohe Verschleißfestigkeit erschwert den Feinschliff mit weichem Wasserstein (Sakai Ichimonji).",
+        "source": "ichi-bs"
+      },
+      "beginnerReason": "Kohlenstoffstahl muss nach jedem Gebrauch abgetrocknet werden, sonst rostet er (Knives and Stones)."
     },
     "vtoku1": {
       "label": "V-Toku #1 (Takefu, Kohlenstoffstahl)",
@@ -157,10 +222,11 @@
       "composition": "C ≈ 1,15 %, Cr ≈ 0,35 %, W ≈ 2,25 %",
       "care": "high",
       "beginnerFriendly": false,
-      "summary": "Kohlenstoffstahl von Takefu Special Steel; der Shop weist ausdrücklich darauf hin, dass er leicht rostet.",
+      "summary": "Kohlenstoffstahl von Takefu Special Steel mit Wolfram (ca. 1,15 % Kohlenstoff). Der Shop schreibt: „carbon steel, which rusts easily“.",
       "sources": [
         "kns-steels"
-      ]
+      ],
+      "beginnerReason": "Kohlenstoffstahl muss nach jedem Gebrauch abgetrocknet werden, sonst rostet er (Knives and Stones)."
     },
     "vtoku2": {
       "label": "V-Toku #2 (Takefu, Kohlenstoffstahl)",
@@ -173,10 +239,11 @@
       "composition": "C ≈ 1,05 %, Cr ≈ 0,25 %, W ≈ 1,25 %",
       "care": "high",
       "beginnerFriendly": false,
-      "summary": "Kohlenstoffstahl von Takefu Special Steel; der Shop weist ausdrücklich darauf hin, dass er leicht rostet.",
+      "summary": "Kohlenstoffstahl von Takefu Special Steel mit Wolfram (ca. 1,05 % Kohlenstoff). Der Shop schreibt: „carbon steel, which rusts easily“.",
       "sources": [
         "kns-steels"
-      ]
+      ],
+      "beginnerReason": "Kohlenstoffstahl muss nach jedem Gebrauch abgetrocknet werden, sonst rostet er (Knives and Stones)."
     },
     "sk": {
       "label": "SK-Kohlenstoffstahl",
@@ -189,10 +256,11 @@
       "composition": "C ≈ 0,8 %",
       "care": "high",
       "beginnerFriendly": false,
-      "summary": "Einfacher Kohlenstoff-Werkzeugstahl; in Messern etwas weniger hart als Weiß- oder Blaustahl. Nicht rostfrei.",
+      "summary": "Kohlenstoff-Werkzeugstahl mit ca. 0,8 % Kohlenstoff und 58–62 HRC, ohne Chrom und Wolfram. Nicht rostfrei.",
       "sources": [
         "kns-steels"
-      ]
+      ],
+      "beginnerReason": "Kohlenstoffstahl muss nach jedem Gebrauch abgetrocknet werden, sonst rostet er (Knives and Stones)."
     },
     "carbon-unspecified": {
       "label": "Kohlenstoffstahl (Sorte nicht angegeben)",
@@ -210,26 +278,38 @@
       "composition": "C ≈ 1,0 %, Cr ≈ 13,75 %",
       "care": "low",
       "beginnerFriendly": true,
-      "summary": "Rostfreier Stahl (Ginsan #3, „Silver #3“) mit rund 1 % Kohlenstoff und knapp 14 % Chrom: rostfrei und trotzdem hart.",
+      "summary": "Rostfreier Stahl (Ginsan #3, „Silver #3“) mit rund 1 % Kohlenstoff und knapp 14 % Chrom.",
       "sources": [
-        "kns-steels"
-      ]
+        "kns-steels",
+        "ichi-steels"
+      ],
+      "facts": [
+        {
+          "t": "Er hat viel Kohlenstoff und fühlt sich laut Ichimonji ähnlich an wie eine Klinge aus Kohlenstoffstahl.",
+          "s": "ichi-steels"
+        }
+      ],
+      "beginnerReason": "Rostfreier Stahl ist weit weniger reaktiv; vergessenes Abtrocknen wirkt sich weniger aus (Japanese Knife Imports)."
     },
     "vg1": {
       "label": "VG-1",
       "short": "VG-1",
       "family": "stainless",
-      "hardnessHrc": [
-        61,
-        62
-      ],
       "composition": "C ≈ 0,95 %, Cr ≈ 13 %",
       "care": "low",
       "beginnerFriendly": true,
-      "summary": "Rostfreier Stahl; Härte laut Hersteller ab etwa 61 HRC.",
+      "summary": "Rostfreier Stahl mit ca. 0,95 % Kohlenstoff und ca. 13 % Chrom; Härte laut Hersteller ab ca. 61 HRC, eine Obergrenze nennt die Quelle nicht.",
       "sources": [
-        "kns-steels"
-      ]
+        "kns-steels",
+        "ichi-steels"
+      ],
+      "facts": [
+        {
+          "t": "Vorgänger von VG-10 mit weniger Verschleißfestigkeit, aber guter Schnitthaltigkeit (Ichimonji).",
+          "s": "ichi-steels"
+        }
+      ],
+      "beginnerReason": "Rostfreier Stahl ist weit weniger reaktiv; vergessenes Abtrocknen wirkt sich weniger aus (Japanese Knife Imports)."
     },
     "vg2": {
       "label": "VG-2",
@@ -252,10 +332,18 @@
       "composition": "C ≈ 1,0 %, Cr ≈ 15 %, Mo ≈ 1 %, V ≈ 0,25 %, Co ≈ 1,55 %",
       "care": "low",
       "beginnerFriendly": true,
-      "summary": "Weit verbreiteter rostfreier Messerstahl mit rund 15 % Chrom; für den Alltag unkompliziert.",
+      "summary": "Rostfreier Stahl mit rund 15 % Chrom und ca. 1 % Kohlenstoff, dazu Kobalt, Molybdän und Vanadium.",
       "sources": [
-        "kns-steels"
-      ]
+        "kns-steels",
+        "ichi-steels"
+      ],
+      "facts": [
+        {
+          "t": "Weiterentwicklung von VG-1 mit besserer Schnitthaltigkeit und Haltbarkeit (Ichimonji).",
+          "s": "ichi-steels"
+        }
+      ],
+      "beginnerReason": "Rostfreier Stahl ist weit weniger reaktiv; vergessenes Abtrocknen wirkt sich weniger aus (Japanese Knife Imports)."
     },
     "aus8": {
       "label": "AUS-8",
@@ -268,10 +356,23 @@
       "composition": "C ≈ 0,7 %, Cr ≈ 13 %",
       "care": "low",
       "beginnerFriendly": true,
-      "summary": "Rostfreier Stahl mit moderater Härte; einsteigerfreundlich.",
+      "summary": "Rostfreier Stahl mit ca. 0,7 % Kohlenstoff und ca. 13 % Chrom bei 57–59 HRC.",
       "sources": [
-        "kns-steels"
-      ]
+        "kns-steels",
+        "ichi-steels"
+      ],
+      "facts": [
+        {
+          "t": "Zäher als AUS-6 und laut Ichimonji noch recht leicht zu schärfen.",
+          "s": "ichi-steels"
+        }
+      ],
+      "sharpen": {
+        "level": "easy",
+        "text": "Laut Ichimonji noch recht leicht zu schärfen.",
+        "source": "ichi-steels"
+      },
+      "beginnerReason": "Rostfreier Stahl ist weit weniger reaktiv; vergessenes Abtrocknen wirkt sich weniger aus (Japanese Knife Imports)."
     },
     "aus10": {
       "label": "AUS-10",
@@ -284,10 +385,18 @@
       "composition": "C ≈ 0,95 %, Cr ≈ 13 %",
       "care": "low",
       "beginnerFriendly": true,
-      "summary": "Rostfreier Stahl mit etwas mehr Kohlenstoff als AUS-8; ebenfalls einsteigerfreundlich.",
+      "summary": "Rostfreier Stahl mit ca. 0,95 % Kohlenstoff und ca. 13 % Chrom bei 58–60 HRC.",
       "sources": [
-        "kns-steels"
-      ]
+        "kns-steels",
+        "ichi-steels"
+      ],
+      "facts": [
+        {
+          "t": "Stärker als die übrigen AUS-Stähle, aber etwas weniger korrosionsbeständig (Ichimonji).",
+          "s": "ichi-steels"
+        }
+      ],
+      "beginnerReason": "Rostfreier Stahl ist weit weniger reaktiv; vergessenes Abtrocknen wirkt sich weniger aus (Japanese Knife Imports)."
     },
     "zdp189": {
       "label": "ZDP-189",
@@ -300,11 +409,19 @@
       "composition": "C ≈ 3 %, Cr ≈ 20 %",
       "care": "low",
       "beginnerFriendly": false,
-      "summary": "Rostfreier Stahl mit sehr viel Kohlenstoff und Chrom: Härte laut Hersteller ab etwa 65 HRC. Sehr hart bedeutet tendenziell weniger zäh; Ausbrüche sind eher möglich.",
+      "summary": "Rostfreier Pulverstahl mit ca. 3 % Kohlenstoff und ca. 20 % Chrom; Härte laut Hersteller ab ca. 65 HRC.",
       "sources": [
         "kns-steels",
-        "kns-chip"
-      ]
+        "kns-chip",
+        "ichi-steels"
+      ],
+      "facts": [
+        {
+          "t": "Er kann laut Ichimonji bis 67 HRC erreichen.",
+          "s": "ichi-steels"
+        }
+      ],
+      "beginnerReason": "Mit über 65 HRC spröder: Knives and Stones nennt Ausbrüche bei rauem Gebrauch als Risiko."
     },
     "za18": {
       "label": "ZA-18",
@@ -315,7 +432,7 @@
         62
       ],
       "care": "low",
-      "summary": "Rostfreier Stahl; die Händlertabelle nennt etwa 60–62 HRC.",
+      "summary": "Rostfreier Stahl; die Händlertabelle nennt 60–62 HRC, eine Zusammensetzung nennt sie nicht.",
       "sources": [
         "kns-steels"
       ],
@@ -325,12 +442,8 @@
       "label": "Pulver-HSS (Schnellarbeitsstahl, Sorte nicht angegeben)",
       "short": "Pulver-HSS",
       "family": "stainless",
-      "hardnessHrc": [
-        61,
-        65
-      ],
       "care": "low",
-      "summary": "Im Katalog nur als „HSS“ (Pulver-Schnellarbeitsstahl) bezeichnet. Für SG2/R2, die unter dieser Klasse üblichen rostfreien Pulverstähle, nennt die Händlertabelle 61–65 HRC; welche Sorte verbaut ist, sagt der Shop nicht.",
+      "summary": "Im Katalog nur als „HSS“ (Pulver-Schnellarbeitsstahl) bezeichnet; welche Sorte verbaut ist, sagt der Shop nicht. Für SG2/R2, die unter dieser Klasse bekannten rostfreien Pulverstähle, nennt die Händlertabelle 61–65 HRC; ob das auf diese Messer zutrifft, ist nicht belegt.",
       "sources": [
         "kns-steels"
       ],
@@ -343,7 +456,8 @@
       "care": "low",
       "beginnerFriendly": true,
       "summary": "Bezeichnung „Kobaltstahl“ laut Shop; rostfrei. Die genaue Sorte ist nicht angegeben.",
-      "sources": []
+      "sources": [],
+      "beginnerReason": "Rostfreier Stahl ist weit weniger reaktiv; vergessenes Abtrocknen wirkt sich weniger aus (Japanese Knife Imports)."
     },
     "swedish": {
       "label": "Schwedischer Stahl (Bezeichnung laut Shop)",
@@ -352,7 +466,8 @@
       "care": "low",
       "beginnerFriendly": true,
       "summary": "Bezeichnung „Schwedischer Stahl“ laut Shop; rostfrei. Die genaue Sorte ist nicht angegeben.",
-      "sources": []
+      "sources": [],
+      "beginnerReason": "Rostfreier Stahl ist weit weniger reaktiv; vergessenes Abtrocknen wirkt sich weniger aus (Japanese Knife Imports)."
     },
     "mov": {
       "label": "Molybdän-Vanadium-Stahl",
@@ -364,10 +479,18 @@
       ],
       "care": "low",
       "beginnerFriendly": true,
-      "summary": "Molybdän-Vanadium-Stahl (Sammelbezeichnung, Zusammensetzung je Hersteller verschieden): rostfrei; Härte laut Händlertabelle etwa 54–60 HRC.",
+      "summary": "Molybdän-Vanadium-Stahl: Sammelbezeichnung, deren Zusammensetzung je Hersteller verschieden ist; rostfrei. Die Händlertabelle nennt 54–60 HRC, eine Spanne, die für eine Härte-Einordnung zu breit ist.",
       "sources": [
-        "kns-steels"
-      ]
+        "kns-steels",
+        "ichi-steels"
+      ],
+      "facts": [
+        {
+          "t": "Ichimonji nennt ihn einen Standard-Edelstahl und empfiehlt ihn für das erste japanische Messer.",
+          "s": "ichi-steels"
+        }
+      ],
+      "beginnerReason": "Rostfreier Stahl ist weit weniger reaktiv; vergessenes Abtrocknen wirkt sich weniger aus (Japanese Knife Imports)."
     },
     "mo": {
       "label": "Molybdän-Stahl",
@@ -376,23 +499,20 @@
       "care": "low",
       "beginnerFriendly": true,
       "summary": "Molybdän-Stahl laut Shop: rostfrei; die genaue Sorte ist nicht angegeben.",
-      "sources": []
+      "sources": [],
+      "beginnerReason": "Rostfreier Stahl ist weit weniger reaktiv; vergessenes Abtrocknen wirkt sich weniger aus (Japanese Knife Imports)."
     },
     "inox": {
       "label": "INOX (rostfrei)",
       "short": "INOX",
       "family": "stainless",
-      "hardnessHrc": [
-        57,
-        59
-      ],
-      "composition": "C ≈ 0,5 %, Cr ≈ 13,5 %",
       "care": "low",
       "beginnerFriendly": true,
-      "summary": "„Inox“: rostfreier Standard-Messerstahl; Händlertabelle: etwa 57–59 HRC.",
+      "summary": "Sammelbezeichnung für rostfreien Stahl laut Shop (u. a. die Linie „Honyaki INOX“). Die Händlertabelle nennt für „Inox“ 57–59 HRC und ca. 13,5 % Chrom; dass das auf diese Messer zutrifft, ist nicht belegt.",
       "sources": [
         "kns-steels"
-      ]
+      ],
+      "beginnerReason": "Rostfreier Stahl ist weit weniger reaktiv; vergessenes Abtrocknen wirkt sich weniger aus (Japanese Knife Imports)."
     },
     "stainless-unspecified": {
       "label": "Rostfreier Stahl (Sorte nicht angegeben)",
@@ -409,7 +529,7 @@
     "solid": {
       "label": "Monostahl (ein Stahl durchgehend)",
       "short": "Monostahl",
-      "explain": "Monostahl (zenkō): Die ganze Klinge besteht aus einem Stahl. Bei rostfreien Messern üblich und unkompliziert."
+      "explain": "Monostahl (zenkō): Die ganze Klinge besteht aus einem Stahl."
     },
     "warikomi": {
       "label": "Mehrlagig, Kern zwischen zwei Mantellagen (Warikomi)",
@@ -436,7 +556,7 @@
     "single": {
       "label": "Einseitig geschliffen",
       "short": "Einseitig",
-      "explain": "Einseitig geschliffen (kataba): Nur eine Seite ist zur Schneide geschliffen, die andere ist flach, oft leicht hohl (urasuki). Traditionell bei Sashimi- und Profi-Gemüsemessern. Die Klinge ist händigkeitsgebunden und verlangt mehr Übung und Schleiferfahrung; Linkshänder brauchen eine Linkshänder-Ausführung."
+      "explain": "Einseitig geschliffen (kataba): Nur eine Seite ist zur Schneide geschliffen, die andere ist flach und bei Premium-Klingen hohl ausgeschliffen (urasuki, laut Wikipedia). Traditionell bei Sashimi- und Profi-Gemüsemessern. Die Klinge ist händigkeitsgebunden: Rechtshänder und Linkshänder brauchen jeweils eine eigene Ausführung, umarbeiten lässt sie sich nicht. Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen)."
     }
   },
   "handed": {
@@ -457,12 +577,12 @@
     "wa": {
       "label": "Japanischer Griff (Wa)",
       "short": "Wa-Griff",
-      "explain": "Japanischer Griff (Wa): meist Holz, achteckig, oval oder D-förmig; leichter als westliche Griffe und verlagert den Schwerpunkt nach vorn zur Klinge. Ausgelegt für den „Pinch-Grip“, bei dem die Finger die Klinge direkt vor dem Griff fassen."
+      "explain": "Japanischer Griff (Wa): typisch aus Holz (Chef Knives To Go), im Querschnitt achteckig, oval oder D-förmig; er wiegt weniger als ein westlicher Griff und verlagert den Schwerpunkt nach vorn zur Klinge. Ausgelegt ist er für den Pinch-Grip, bei dem die Finger die Klinge direkt vor dem Griff fassen."
     },
     "yo": {
       "label": "Westlicher Griff (Yō)",
       "short": "Yō-Griff",
-      "explain": "Westlicher Griff (Yō): meist schwerer und vernietet, vertraut für alle, die westliche Messer gewohnt sind."
+      "explain": "Westlicher Griff (Yō): wiegt mehr als ein Wa-Griff und ist in der Regel vollständig vernietet (Japanese Knife Imports)."
     },
     "steel": {
       "label": "Ganzmetallgriff",
@@ -568,7 +688,7 @@
     "tsuchime": {
       "label": "Tsuchime (Hammerschlag)",
       "short": "Hammerschlag",
-      "explain": "Tsuchime: Hammerschlag auf der Klinge. Optik; Händler nennen außerdem, dass Schnittgut weniger anhaftet."
+      "explain": "Tsuchime: Hammerschlag auf der Klinge. Optik; laut Händlern (Kireaji, Chef Knives To Go) bleibt weniger Schnittgut an der Klinge haften."
     },
     "nashiji": {
       "label": "Nashiji (Birnenhaut)",
@@ -578,7 +698,7 @@
     "damascus": {
       "label": "Damast (sichtbares Lagenmuster)",
       "short": "Damast",
-      "explain": "Damast: sichtbares Lagenmuster aus verschmiedeten Stählen, bei japanischen Messern meist im Mantel; die Schneide bildet der Kernstahl. Vor allem Optik."
+      "explain": "Damast: sichtbares Lagenmuster aus verschmiedeten Stählen. Bei japanischen Damast-Messern liegt das Muster im Mantel, die Schneide bildet der Kernstahl (Chef Knives To Go)."
     },
     "fine-finish": {
       "label": "Feinpoliert",
@@ -614,19 +734,35 @@
   },
   "makers": {
     "Tsubaya": {
-      "label": "Tsubaya (Hausmarke)"
+      "label": "Tsubaya (Hausmarke)",
+      "note": "Der Markenname ist laut Shop auf dem Messer eingraviert oder aufgedruckt und ersetzt die Garantiekarte als Nachweis, auch bei Weitergabe des Messers.",
+      "sources": [
+        "tsubaya-brand"
+      ]
     },
     "Takeda Hamono": {
-      "label": "Takeda Hamono"
+      "label": "Takeda Hamono",
+      "note": "Schmied: Shosui Takeda, Niimi (Präfektur Okayama). Chef Knives To Go führt Takeda-Messer der Linie „NAS“ als San-mai mit Kern aus Aogami Super, rostfreiem Mantel, Kurouchi-Oberfläche und beidseitig gleichem (50/50) Schliff. Der Tsubaya-Katalog nennt den Mantel nicht und stuft die Messer als nicht rostfrei ein; bis zur Klärung im Laden sind sie wie Kohlenstoffstahl zu pflegen.",
+      "sources": [
+        "cktg-takeda"
+      ]
     },
     "Yoshida Hamono": {
       "label": "Yoshida Hamono"
     },
     "Saji Takeshi": {
-      "label": "Saji Takeshi"
+      "label": "Saji Takeshi",
+      "note": "Schmied in Takefu laut Knives and Stones.",
+      "sources": [
+        "kns-saji"
+      ]
     },
     "Tanaka Shigeki": {
-      "label": "Tanaka Shigeki"
+      "label": "Tanaka Shigeki",
+      "note": "Schmied in Miki laut Knives and Stones.",
+      "sources": [
+        "kns-tanaka"
+      ]
     },
     "Masahiro": {
       "label": "Masahiro"
@@ -671,14 +807,14 @@
       "kanji": "牛刀",
       "gloss": "Kochmesser (Allzweck)",
       "group": "allround",
-      "summary": "Die japanische Ausprägung des westlichen Kochmessers: meist beidseitig geschliffen, dünner und leichter als europäische Vorbilder. Ein Allzweckmesser für Gemüse, Fleisch und Fisch.",
+      "summary": "Japanische Ausprägung des westlichen Kochmessers: beidseitig geschliffen, dünner und leichter als europäische Kochmesser. Allzweckmesser für Gemüse sowie Fleisch und Fisch ohne Knochen.",
       "uses": [
-        "Gemüse, Kräuter, Zwiebeln",
-        "Fleisch parieren und schneiden",
-        "Wiegeschnitt dank gewölbter Schneide"
+        "Gemüse, Kräuter und Zwiebeln schneiden",
+        "Fleisch parieren und in Scheiben schneiden",
+        "Wiegeschnitt: Die gewölbte Schneide erlaubt es, die Klinge über dem Brett zu schaukeln"
       ],
-      "avoid": "Knochen, Gefrorenes und sehr harte Kerne (z. B. dichter Kürbis); nicht hebeln oder verdrehen.",
-      "fun": "Vielseitig und vertraut: Die gewölbte Schneide erlaubt Wiegen und Schieben, die Spitze feine Arbeiten.",
+      "avoid": "Knochen, Gefrorenes und sehr dichte Kerne wie Kürbis: Die dünne, harte Schneide bricht dabei aus (Korin, Japanese Knife Imports). Nicht hebeln oder verdrehen.",
+      "fun": "Ein Messer für beide Schneidstile: Die gewölbte Schneide erlaubt Wiegen und Schieben, die Spitze Arbeiten im Kleinen.",
       "level": 1,
       "bevel": "double",
       "lengthMm": [
@@ -704,22 +840,24 @@
         "ty-896348",
         "ty-743282",
         "ty-109399",
-        "ty-650083"
-      ]
+        "ty-650083",
+        "cktg-guide"
+      ],
+      "levelReason": "Beidseitig geschliffen: für Links- und Rechtshänder nutzbar; Händler sehen bei einseitig geschliffenen Messern mehr Übungsbedarf bei Benutzung und Nachschliff."
     },
     "santoku": {
       "label": "Santoku",
       "kanji": "三徳",
       "gloss": "Allzweckmesser, kompakt",
       "group": "allround",
-      "summary": "Kompaktes Allzweckmesser („drei Tugenden“) mit flacher Schneide und abgerundeter, abwärts gezogener Spitze („Schafsfuß“). Kürzer und flacher als ein Gyuto, für Schiebeschnitte ausgelegt.",
+      "summary": "Haushaltsmesser mit flacher Schneide und abgerundeter, abwärts gezogener Spitze („Schafsfuß“); kürzer und flacher als das Gyuto und auf Schiebeschnitte ausgelegt.",
       "uses": [
         "Gemüse im Schiebeschnitt",
         "Fleisch und Fisch ohne Knochen",
-        "kleine Bretter und Küchen"
+        "Kleine Schneidbretter: Ichimonji und Knifewear empfehlen das Santoku dafür"
       ],
-      "avoid": "Knochen und Gefrorenes; für ausgiebiges Wiegen ist die flache Schneide weniger geeignet.",
-      "fun": "Schnelles, sauberes Schneiden mit vollem Brettkontakt; die hohe Klinge hält die Knöchel über dem Brett.",
+      "avoid": "Knochen und Gefrorenes (dünne, harte Schneide). Zum Wiegen taugt es weniger als das Gyuto, weil die Schneide flacher ist.",
+      "fun": "Die hohe Klinge hält die Knöchel über dem Brett (Korin), und die flache Schneide liegt im Schiebeschnitt auf ganzer Länge auf.",
       "level": 1,
       "bevel": "double",
       "lengthMm": [
@@ -743,21 +881,23 @@
         "ty-494372",
         "ty-109399",
         "ty-148096",
-        "ty-743282"
-      ]
+        "ty-743282",
+        "korin-santoku"
+      ],
+      "levelReason": "Beidseitig geschliffen: für Links- und Rechtshänder nutzbar; Händler sehen bei einseitig geschliffenen Messern mehr Übungsbedarf bei Benutzung und Nachschliff."
     },
     "bunka": {
       "label": "Bunka",
       "kanji": "文化",
       "gloss": "Allzweckmesser mit „Tanto“-Spitze",
       "group": "allround",
-      "summary": "Ähnelt dem Santoku, hat aber eine eckig abgeschrägte Spitze („Reverse-Tanto“, „K-Tip“) für Detailarbeit. In Japan werden Bunka und Santoku teils als dasselbe Messer behandelt.",
+      "summary": "Ähnlich wie ein Santoku, aber mit eckig abgeschrägter Spitze („Reverse-Tanto“, „K-Tip“) für Arbeiten mit der Spitze. Knifewear: Beide Namen wurden jahrzehntelang austauschbar verwendet.",
       "uses": [
         "Allzweck wie ein Santoku",
         "Detailarbeit mit der Spitze"
       ],
-      "avoid": "Die Spitze ist empfindlicher als eine runde Santoku-Spitze; nicht zum Aufhebeln benutzen.",
-      "fun": "Santoku-Handling mit präziser Spitze.",
+      "avoid": "Die abgeschrägte Spitze ist laut Knifewear empfindlicher als eine normale Spitze; nicht zum Aufhebeln benutzen.",
+      "fun": "Santoku-Form mit einer Spitze für Detailarbeit.",
       "level": 1,
       "bevel": "double",
       "typicalMm": [
@@ -773,20 +913,20 @@
         "ty-415118",
         "ty-333833",
         "ty-873243"
-      ]
+      ],
+      "levelReason": "Beidseitig geschliffen: für Links- und Rechtshänder nutzbar; Händler sehen bei einseitig geschliffenen Messern mehr Übungsbedarf bei Benutzung und Nachschliff. Die K-Tip-Spitze ist empfindlicher (Knifewear)."
     },
     "kiritsuke": {
       "label": "Kiritsuke",
       "kanji": "切付",
       "gloss": "Messer mit schräg abgeschnittener Spitze",
       "group": "allround",
-      "summary": "Zwei Dinge heißen so: das traditionelle, einseitig geschliffene Kiritsuke (lang, flach, schräge Spitze) und das heute häufige Kiritsuke-Gyuto („K-Tip“, beidseitig geschliffen). Ersteres verlangt viel Messerkontrolle, Letzteres ist alltagstauglich.",
+      "summary": "Zwei Messer tragen diesen Namen: das traditionelle Kiritsuke ist einseitig geschliffen, lang und flach mit schräger Spitze; das Kiritsuke-Gyuto („K-Tip“) ist beidseitig geschliffen und wie ein Gyuto zu nutzen. Die meisten heute als Kiritsuke verkauften Messer sind K-Tip-Gyuto (Knives and Stones).",
       "uses": [
-        "Allzweck wie ein Gyuto (K-Tip-Variante)",
-        "lange, saubere Schnitte"
+        "Allzweckmesser wie das Gyuto (K-Tip-Bauart)"
       ],
-      "avoid": "Die schräge Spitze ist empfindlicher und verlangt mehr Vorsicht; das traditionelle Kiritsuke ist ein Messer für Geübte.",
-      "fun": "Markante Form; als Gyuto-Variante im Alltag nutzbar.",
+      "avoid": "Die schräge Spitze ist laut Knifewear empfindlicher als eine normale Spitze. Das traditionelle Kiritsuke ist einseitig geschliffen und damit händigkeitsgebunden.",
+      "fun": "Als K-Tip-Gyuto lässt es sich wie ein Gyuto führen.",
       "level": 2,
       "lengthMm": [
         210,
@@ -804,21 +944,22 @@
         "ty-321311",
         "ty-333833",
         "ty-465399"
-      ]
+      ],
+      "levelReason": "Die schräge K-Tip-Spitze ist empfindlicher (Knifewear). Das traditionelle Kiritsuke ist einseitig geschliffen; Knifewear nennt das Gerücht, nur Küchenchefs könnten es führen, falsch und spricht von einer Frage der Übung."
     },
     "petty": {
       "label": "Petty",
       "kanji": "ペティ",
       "gloss": "Kleines Universalmesser",
       "group": "klein",
-      "summary": "Kleines Universalmesser zwischen Schäl- und Kochmesser (Klinge meist 120–150 mm); wird in der Hand und auf dem Brett benutzt. Gute Ergänzung zu Gyuto oder Santoku.",
+      "summary": "Kleines Universalmesser zwischen Schäl- und Kochmesser, beidseitig geschliffen; wird in der Hand und auf dem Brett eingesetzt.",
       "uses": [
-        "Obst, Kräuter, Schalotten",
+        "Obst, Kräuter und Schalotten",
         "Schälen und Putzen",
-        "kleine Mengen, wenn das große Messer zu klobig ist"
+        "Kleine Mengen, bei denen ein Gyuto zu groß wäre"
       ],
-      "avoid": "Große Mengen Gemüse oder Fleisch; zu kurz für lange Schnitte.",
-      "fun": "Wendig und handlich.",
+      "avoid": "Große Mengen Gemüse oder Fleisch und lange Schnitte: Die Klinge ist mit typisch 12–15 cm zu kurz.",
+      "fun": "Knifewear rät für die Arbeit in der Hand zu 8–10 cm, bei größeren Händen zu 12–15 cm.",
       "level": 1,
       "bevel": "double",
       "lengthMm": [
@@ -841,20 +982,20 @@
         "ty-109399",
         "ty-896348",
         "ty-465399"
-      ]
+      ],
+      "levelReason": "Beidseitig geschliffen, kurze Klinge. Japanische Fachleute empfehlen für den Haushalt ein Hauptmesser plus ein kleines Messer von 12–15 cm (Kama-asa-Interview bei JETRO)."
     },
     "paring": {
       "label": "Schälmesser (Paring)",
       "kanji": "パーリング",
       "gloss": "Schäl- und Officemesser",
       "group": "klein",
-      "summary": "Sehr kleines Schäl- und Putzmesser (Kudamono, „Obstmesser“) für feine Arbeiten in der Hand; kleiner als ein Petty (Händlerangaben etwa 80–110 mm).",
+      "summary": "Kleines Schäl- und Putzmesser (Kudamono, „Obstmesser“) für die Arbeit in der Hand; mit ca. 8–11 cm (Händlerangaben) kürzer als ein Petty.",
       "uses": [
-        "Schälen, Putzen, Entkernen",
-        "feine Handarbeit"
+        "Schälen, Putzen und Entkernen",
+        "Feinarbeit in der Hand"
       ],
-      "avoid": "Alles, was Klingenlänge braucht.",
-      "fun": "Präzise Handarbeit.",
+      "avoid": "Alles, was Klingenlänge braucht, etwa Schnitte durch größeres Schnittgut.",
       "level": 1,
       "bevel": "double",
       "lengthMm": [
@@ -872,21 +1013,22 @@
         "ty-076474",
         "ty-350430",
         "ty-148096"
-      ]
+      ],
+      "levelReason": "Beidseitig geschliffen, sehr kurze Klinge für Kleinarbeiten."
     },
     "nakiri": {
       "label": "Nakiri",
       "kanji": "菜切",
       "gloss": "Gemüsemesser",
       "group": "gemuese",
-      "summary": "Rechteckiges, beidseitig geschliffenes Gemüsemesser mit gerader Schneide und eckiger Spitze (meist 165–180 mm). Geführt wird es im Auf-und-ab-Schnitt mit vollem Brettkontakt.",
+      "summary": "Rechteckiges, beidseitig geschliffenes Gemüsemesser mit gerader Schneide und eckiger Spitze; geführt wird es im Auf-und-ab-Schnitt mit vollem Brettkontakt.",
       "uses": [
-        "Gemüse, Kohl und Zwiebeln in sauberen Schnitten",
+        "Gemüse, Kohl und Zwiebeln",
         "Kräuter",
-        "dünne Scheiben und Streifen"
+        "Dünne Scheiben und Streifen"
       ],
-      "avoid": "Knochen, Gefrorenes und Wiegen; keine Spitze für Detailarbeit. Für Fleisch urteilen die Quellen unterschiedlich.",
-      "fun": "Wer viel Gemüse schneidet, schätzt den vollen Brettkontakt und den sauberen Schiebeschnitt.",
+      "avoid": "Wiegen und Detailarbeit: Die gerade Schneide erlaubt kein Wiegen von der Spitze zur Ferse, und es gibt keine Spitze für Detailarbeit (Seido Knives). Knochen, Gefrorenes und dichter Kürbis sind für die dünne, harte Klinge zu hart. Ob es für Fleisch taugt, beurteilen die Quellen unterschiedlich (America’s Test Kitchen: ja; ein japanischer Ratgeber: nein).",
+      "fun": "Händler und Tester beschreiben das Nakiri als angenehm für alle, die viel Gemüse schneiden: Die gerade Schneide liegt auf ganzer Länge auf dem Brett auf (America’s Test Kitchen, Knifewear).",
       "level": 1,
       "bevel": "double",
       "lengthMm": [
@@ -911,20 +1053,21 @@
         "ty-278268",
         "ty-271055",
         "ty-410167"
-      ]
+      ],
+      "levelReason": "Beidseitig geschliffen. Das gerade Profil erlaubt nur den Auf-und-ab-Schnitt, kein Wiegen."
     },
     "usuba": {
       "label": "Usuba",
       "kanji": "薄刃",
       "gloss": "Gemüsemesser (Profi, einseitig)",
       "group": "gemuese",
-      "summary": "Einseitig geschliffenes Profi-Gemüsemesser mit gerader, hoher Klinge (meist 180–210 mm). Dient dem Schiebeschnitt und Spezialtechniken wie Katsuramuki (dünne Bahnen vom Gemüsezylinder schälen).",
+      "summary": "Einseitig geschliffenes Profi-Gemüsemesser mit gerader, hoher Klinge für den Schiebeschnitt und für Techniken wie Katsuramuki (dünne Bahnen vom Gemüsezylinder schälen).",
       "uses": [
-        "feines Gemüse",
+        "Feines Gemüse",
         "Katsuramuki und Sengiri (feine Streifen)"
       ],
-      "avoid": "Für Einsteiger meist zu anspruchsvoll; im Haushalt gilt das beidseitig geschliffene Nakiri als Alternative.",
-      "fun": "Technik und Präzision – ein Messer zum Lernen.",
+      "avoid": "Als erstes japanisches Messer: Es ist einseitig geschliffen und damit nur für Rechts- oder Linkshänder gebaut; Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff und empfehlen Einsteigern stattdessen das beidseitig geschliffene Nakiri (Korin, Knifewear).",
+      "fun": "Technik und Schnittbild: Das Usuba ist das Messer für Katsuramuki und Sengiri.",
       "level": 3,
       "bevel": "single",
       "lengthMm": [
@@ -946,7 +1089,9 @@
         "ty-937616",
         "ty-465399",
         "ty-261437"
-      ]
+      ],
+      "levelReason": "Einseitig geschliffen: Das Messer ist händigkeitsgebunden (nur für Rechts- oder Linkshänder gebaut, nicht umarbeitbar), und Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen). Knifewear hält dagegen, dass es kein Profi-Privileg ist, sondern nur Übung verlangt.",
+      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten."
     },
     "mukimono": {
       "label": "Mukimono",
@@ -965,14 +1110,14 @@
       "kanji": "筋引",
       "gloss": "Aufschnitt- und Filetiermesser",
       "group": "fleisch",
-      "summary": "Langes, schmales, meist beidseitig geschliffenes Tranchiermesser (etwa 240–300 mm) für knochenloses Fleisch und Fisch; wird im Zugschnitt geführt.",
+      "summary": "Langes, schmales Tranchiermesser, beidseitig geschliffen, für knochenloses Fleisch und Fisch; wird im Zugschnitt geführt.",
       "uses": [
         "Braten und Schinken aufschneiden",
         "Fleisch parieren",
-        "knochenlosen Fisch filetieren"
+        "Knochenlosen Fisch filetieren"
       ],
-      "avoid": "Gemüse und Knochenarbeit; für Alltagsarbeiten ist ein Gyuto vielseitiger.",
-      "fun": "Lange Schnitte in einem Zug.",
+      "avoid": "Gemüse und alles mit Knochen. Für den Wechsel zwischen Gemüse, Fleisch und Fisch genügt ein Gyuto; das Sujihiki ist für lange Zugschnitte durch knochenloses Fleisch und Fisch gebaut (Korin).",
+      "fun": "Eine lange Klinge schneidet Braten, Schinken oder Fisch mit einem einzigen Zugschnitt in Scheiben.",
       "level": 2,
       "bevel": "double",
       "lengthMm": [
@@ -990,21 +1135,23 @@
       "sources": [
         "ty-873243",
         "ty-262497",
-        "ty-415118"
-      ]
+        "ty-415118",
+        "cktg-guide"
+      ],
+      "levelReason": "Lange Klinge (24–30 cm): Sie braucht ein ausreichend großes Schneidbrett, und Klingen ab 27 cm gelten bei Gyuto als Spezialistenbereich (Chef Knives To Go)."
     },
     "honesuki": {
       "label": "Honesuki",
       "kanji": "骨スキ",
       "gloss": "Ausbeinmesser (v. a. Geflügel)",
       "group": "fleisch",
-      "summary": "Japanisches Ausbeinmesser, vor allem für Geflügel: kurz (meist 145–150 mm), dreieckig mit abgesenkter Spitze. Es arbeitet um Knochen herum und durch Knorpel und Gelenke, nicht durch Knochen.",
+      "summary": "Japanisches Ausbeinmesser, vor allem für Geflügel: kurze, dreieckige Klinge mit abgesenkter Spitze. Es arbeitet um Knochen herum und durch Knorpel und Gelenke, nicht durch Knochen.",
       "uses": [
         "Geflügel zerlegen",
         "Fleisch vom Knochen lösen"
       ],
-      "avoid": "Durch Knochen schneiden oder Gelenke aufhebeln (dünne Spitze, Ausbruchgefahr).",
-      "fun": "Präzises Zerlegen ganzer Hühner.",
+      "avoid": "Durch Knochen schneiden oder Gelenke aufhebeln: Die dünne Spitze bricht dabei aus (Knifewear).",
+      "fun": "Wer ganze Hühner selbst zerlegt, kommt mit der dreieckigen Klinge um die Knochen herum und in die Gelenke.",
       "level": 2,
       "lengthMm": [
         120,
@@ -1025,19 +1172,19 @@
         "ty-949024",
         "ty-779560",
         "ty-601520"
-      ]
+      ],
+      "levelReason": "Spezialmesser für das Zerlegen von Geflügel; die dünne Spitze bricht aus, wenn man damit Gelenke aufhebelt (Knifewear)."
     },
     "garasuki": {
       "label": "Garasuki",
       "kanji": "ガラスキ",
       "gloss": "Kräftiges Ausbeinmesser",
       "group": "fleisch",
-      "summary": "Größeres, dickeres Verwandtes des Honesuki (etwa 180–240 mm) für das Zerlegen ganzer Hühner durch Gelenke und Knorpel; nicht zum Zerhacken von Knochen.",
+      "summary": "Größeres, dickeres und schwereres Verwandtes des Honesuki (typisch 18–24 cm laut Zknives) für ganze Hühner; entstanden in Hühner-Spezialrestaurants.",
       "uses": [
-        "ganze Hühner zerlegen"
+        "Ganze Hühner durch Gelenke und Knorpel zerlegen"
       ],
-      "avoid": "Knochen hacken.",
-      "fun": "Kräftiges Werkzeug für Geflügelfans.",
+      "avoid": "Knochen hacken: Es ist für Gelenke und Knorpel gedacht (Zknives, Korin).",
       "level": 2,
       "lengthMm": [
         180,
@@ -1050,7 +1197,8 @@
         "ty-085929",
         "ty-873243",
         "ty-500571"
-      ]
+      ],
+      "levelReason": "Spezialmesser für eine einzige Aufgabe; dicker und schwerer als das Honesuki."
     },
     "boning": {
       "label": "Ausbeinmesser",
@@ -1099,13 +1247,13 @@
       "kanji": "柳刃",
       "gloss": "Sashimi-Messer",
       "group": "fisch",
-      "summary": "Langes, schmales, einseitig geschliffenes Sashimi-Messer (210–330 mm, im Haushalt meist 210–240 mm), das knochenlose Fischfilets in einem langen Zugschnitt schneidet.",
+      "summary": "Langes, schmales, einseitig geschliffenes Sashimi-Messer mit hohler Rückseite; es schneidet knochenlose Fischfilets in einem langen Zugschnitt.",
       "uses": [
         "Sashimi und Sushi-Zutaten",
-        "knochenlose Fischfilets"
+        "Knochenlose Fischfilets"
       ],
-      "avoid": "Knochen, Gräten und Gefrorenes; einseitige Klingen verlangen Schleiferfahrung.",
-      "fun": "Ein Zug, eine glatte Fläche – Technik als Hobby.",
+      "avoid": "Knochen, Gräten und Gefrorenes. Einseitig geschliffen: nur für Rechts- oder Linkshänder gebaut, der Nachschliff verlangt Schleiferfahrung (Händler).",
+      "fun": "Laut Knifewear liegt der Reiz in der Technik: ein langer Zugschnitt in einer einzigen Bewegung.",
       "level": 3,
       "bevel": "single",
       "lengthMm": [
@@ -1125,19 +1273,20 @@
         "ty-494372",
         "ty-465399",
         "ty-261437"
-      ]
+      ],
+      "levelReason": "Einseitig geschliffen: Das Messer ist händigkeitsgebunden (nur für Rechts- oder Linkshänder gebaut, nicht umarbeitbar), und Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen). Knifewear hält dagegen, dass es kein Profi-Privileg ist, sondern nur Übung verlangt.",
+      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten."
     },
     "takohiki": {
       "label": "Takohiki",
       "kanji": "蛸引",
       "gloss": "Sashimi-Messer (Kantō-Form)",
       "group": "fisch",
-      "summary": "Tokioter (Kantō-)Variante des Yanagiba mit eckiger Spitze: dünner, schmaler und leichter, für gerade Sashimi-Schnitte. Trotz des Namens nicht auf Oktopus beschränkt.",
+      "summary": "Tokioter (Kantō-)Variante des Yanagiba mit eckiger Spitze, für gerade Sashimi-Schnitte; trotz des Namens nicht auf Oktopus beschränkt. Bei 300 mm Klingenlänge wiegt es laut Ichimonji 160 g, das Yanagiba 220 g.",
       "uses": [
         "Sashimi in geraden Schnitten"
       ],
-      "avoid": "Knochen, Gräten.",
-      "fun": "Wie das Yanagiba, mit eckiger Spitze.",
+      "avoid": "Knochen und Gräten.",
       "level": 3,
       "bevel": "single",
       "tasks": {
@@ -1149,19 +1298,20 @@
         "ty-400618",
         "ty-415118",
         "ty-271055"
-      ]
+      ],
+      "levelReason": "Einseitig geschliffen: Das Messer ist händigkeitsgebunden (nur für Rechts- oder Linkshänder gebaut, nicht umarbeitbar), und Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen). Knifewear hält dagegen, dass es kein Profi-Privileg ist, sondern nur Übung verlangt. Ichimonji nennt es anspruchsvoller als das Yanagiba, weil der Schnitt mehr Arm- und Handgelenkseinsatz verlangt (Einzelquelle).",
+      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten."
     },
     "fuguhiki": {
       "label": "Fuguhiki",
       "kanji": "フグ引",
       "gloss": "Sashimi-Messer, sehr dünn",
       "group": "fisch",
-      "summary": "Noch dünneres, leichteres und leicht flexibles Sashimi-Messer für hauchdünne Scheiben (traditionell Kugelfisch). Reines Spezialmesser; laut Korin kein Ersatz für das Yanagiba.",
+      "summary": "Noch dünner und leichter als Yanagiba und Takohiki (bei 300 mm laut Ichimonji 140 g) und leicht flexibel, für hauchdünne Sashimi-Scheiben (traditionell Kugelfisch). Laut Korin kein Ersatz für das Yanagiba.",
       "uses": [
-        "hauchdünne Sashimi-Scheiben"
+        "Hauchdünne Sashimi-Scheiben"
       ],
       "avoid": "Alles außer feinem Sashimi.",
-      "fun": "Für Sashimi-Enthusiasten.",
       "level": 3,
       "bevel": "single",
       "tasks": {
@@ -1171,21 +1321,23 @@
         "ty-426455",
         "ty-489801",
         "ty-873243"
-      ]
+      ],
+      "levelReason": "Einseitig geschliffen: Das Messer ist händigkeitsgebunden (nur für Rechts- oder Linkshänder gebaut, nicht umarbeitbar), und Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen). Knifewear hält dagegen, dass es kein Profi-Privileg ist, sondern nur Übung verlangt. Dazu kommt die flexible, sehr dünne Klinge.",
+      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten."
     },
     "deba": {
       "label": "Deba",
       "kanji": "出刃",
       "gloss": "Fischzerlegemesser",
       "group": "fisch",
-      "summary": "Dickes, schweres, traditionell einseitig geschliffenes Fischmesser zum Köpfen, Filetieren und Zerlegen ganzer Fische (Klinge 100–240 mm, im Haushalt meist 150–165 mm).",
+      "summary": "Dickes, schweres, traditionell einseitig geschliffenes Fischmesser zum Köpfen, Filetieren und Zerlegen ganzer Fische; der Rücken ist typischerweise 5–10 mm dick (Wikipedia).",
       "uses": [
-        "ganze Fische zerlegen",
+        "Ganze Fische zerlegen",
         "Fischköpfe und Gräten",
-        "weiche Geflügelrippen"
+        "Weiche Geflügelrippen"
       ],
-      "avoid": "Kein Hackbeil: dicke Knochen und Schläge von oben sind nicht vorgesehen.",
-      "fun": "Handwerk am ganzen Fisch.",
+      "avoid": "Dicke, große Knochen und Hackbewegungen von oben: Das Deba ist kein Hackbeil.",
+      "fun": "Handwerk am ganzen Fisch: Köpfen, Filetieren und Zerlegen mit einem Messer.",
       "level": 3,
       "bevel": "single",
       "lengthMm": [
@@ -1209,7 +1361,9 @@
         "ty-873243",
         "ty-465399",
         "ty-261437"
-      ]
+      ],
+      "levelReason": "Einseitig geschliffen: Das Messer ist händigkeitsgebunden (nur für Rechts- oder Linkshänder gebaut, nicht umarbeitbar), und Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen). Knifewear hält dagegen, dass es kein Profi-Privileg ist, sondern nur Übung verlangt.",
+      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten."
     },
     "ai-deba": {
       "label": "Ai-Deba",
@@ -1228,12 +1382,11 @@
       "kanji": "身卸",
       "gloss": "Fisch-Filetiermesser",
       "group": "fisch",
-      "summary": "Dünner, länger und leichter als das Deba: Mischform aus Deba und Yanagiba zum Filetieren. Wegen der geringeren Dicke bricht die Schneide bei harten Knochen leichter aus.",
+      "summary": "Dünner, länger und leichter als das Deba: Mischform aus Deba und Yanagiba zum Filetieren. Wegen der geringeren Dicke bricht die Schneide bei harten Knochen leichter aus (Ichimonji).",
       "uses": [
         "Fisch filetieren"
       ],
       "avoid": "Harte Knochen.",
-      "fun": "Wendig beim Filetieren.",
       "level": 3,
       "bevel": "single",
       "typicalMm": [
@@ -1247,7 +1400,9 @@
         "ty-942297",
         "ty-873243",
         "ty-415118"
-      ]
+      ],
+      "levelReason": "Einseitig geschliffen: Das Messer ist händigkeitsgebunden (nur für Rechts- oder Linkshänder gebaut, nicht umarbeitbar), und Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen). Knifewear hält dagegen, dass es kein Profi-Privileg ist, sondern nur Übung verlangt.",
+      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten."
     },
     "salmon": {
       "label": "Lachsmesser",
@@ -1290,12 +1445,12 @@
       "kanji": "パン切",
       "gloss": "Brotmesser",
       "group": "brot",
-      "summary": "Das japanische Brotmesser (Pankiri): lange, gezahnte Klinge, die Brot ohne viel Druck und ohne Zerdrücken schneidet. Die Zähne lassen sich kaum auf dem Wasserstein schärfen.",
+      "summary": "Japanisches Brotmesser (Pankiri) mit langer, gezahnter Klinge.",
       "uses": [
-        "Brot, Brötchen, Kuchen"
+        "Brot, Brötchen und Kuchen"
       ],
       "avoid": "Gemüse und Fleisch.",
-      "fun": "Saubere Scheiben ohne Krümelchaos.",
+      "fun": "Laut Händlern schneidet es Brot ohne viel Druck und ohne es zu zerdrücken.",
       "level": 1,
       "bevel": "double",
       "typicalMm": [
@@ -1311,7 +1466,9 @@
         "ty-132184",
         "ty-353900",
         "ty-642816"
-      ]
+      ],
+      "levelReason": "Gezahnte Klinge: Sie schneidet Brot ohne viel Druck; die Zähne lassen sich kaum auf dem Wasserstein schärfen (Koi Knives).",
+      "sharpenNote": "Wellenschliff: Die Zähne lassen sich laut Koi Knives kaum auf dem Wasserstein schärfen; die Klingen müssen dafür seltener nachgeschärft werden."
     },
     "soba": {
       "label": "Soba-Kiri",
@@ -1324,14 +1481,12 @@
       "kanji": "中華",
       "gloss": "Chinesisches Hackmesser",
       "group": "spezial",
-      "summary": "Rechteckiges, hohes, meist dünnklingiges Messer (Chūka-bōchō) für Gemüse, Fisch und knochenloses Fleisch. Trotz der Bezeichnung „Cleaver“ in der Regel kein Knochenhacker.",
+      "summary": "Rechteckiges, hohes Messer (Chūka-bōchō) für Gemüse, Fisch und knochenloses Fleisch. Korin lässt kleine, weiche Knochen zu, Wikipedia schreibt, solche Messer könnten typischerweise keine Knochen durchtrennen; schwere Knochenhacker sind eine andere Klasse.",
       "uses": [
         "Gemüse in Scheiben und Streifen",
-        "knochenloses Fleisch",
-        "Zutaten auf der Klinge transportieren"
+        "Knochenloses Fleisch"
       ],
-      "avoid": "Dicke Knochen; schwere Knochenhacker sind eine andere Messerklasse.",
-      "fun": "Viel Klingenfläche, viel Kontrolle.",
+      "avoid": "Dicke Knochen.",
       "level": 2,
       "tasks": {
         "gemuese": 0.5,
@@ -1341,7 +1496,8 @@
         "ty-873243",
         "ty-444543",
         "ty-835235"
-      ]
+      ],
+      "levelReason": "Hohe, rechteckige Klinge; für Knochen gilt je nach Quelle unterschiedliches (siehe Beschreibung)."
     },
     "castella": {
       "label": "Castella-Messer",
@@ -1432,5 +1588,55 @@
       "label": "Obst und kleine Handarbeit",
       "hint": "Schälen, Putzen, Kleinkram."
     }
+  },
+  "hardnessScale": {
+    "source": "kns-white2",
+    "note": "Einordnung von Knives and Stones nach Rockwell-Härte (HRC); sie beschreibt Härtebereiche, keine Eigenschaft eines einzelnen Messers. Knives and Stones betont: Höher ist nicht grundsätzlich besser, es hängt davon ab, wie man das Messer benutzt und pflegt.",
+    "classes": [
+      {
+        "id": "soft",
+        "label": "weich",
+        "min": 55,
+        "max": 58,
+        "rank": 1,
+        "retention": "Die Schneide stumpft schneller ab.",
+        "sharpening": "Leicht zu schärfen.",
+        "toughness": "Verzeiht rauen Umgang.",
+        "typical": "Typisch für die meisten deutschen Messer."
+      },
+      {
+        "id": "balanced",
+        "label": "ausgewogen",
+        "min": 59,
+        "max": 61,
+        "rank": 2,
+        "retention": "Gute Schnitthaltigkeit.",
+        "sharpening": "Schärfen ist gut machbar.",
+        "toughness": null,
+        "typical": "Verbreitet bei japanischen Messern der mittleren Preisklasse."
+      },
+      {
+        "id": "hard",
+        "label": "hart",
+        "min": 62,
+        "max": 64,
+        "rank": 3,
+        "retention": "Sehr gute Schnitthaltigkeit; die Schneide hält eine sehr feine Schärfe.",
+        "sharpening": "Verlangt mehr Sorgfalt und einen feinen Stein.",
+        "toughness": null,
+        "typical": null
+      },
+      {
+        "id": "veryhard",
+        "label": "sehr hart",
+        "min": 65,
+        "max": null,
+        "rank": 4,
+        "retention": "Außergewöhnlich lange Schnitthaltigkeit.",
+        "sharpening": null,
+        "toughness": "Spröder: Bei rauem Gebrauch sind Ausbrüche eher möglich.",
+        "typical": null
+      }
+    ]
   }
 }

@@ -188,3 +188,83 @@
   fill: var(--ink-3);
   opacity: 0.55;
 }
+
+/* ── Härte-Skala (HRC) ── */
+.meter {
+  --meter-h: 0.75rem;
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+.meter__track {
+  position: relative;
+  height: var(--meter-h);
+  border-radius: var(--radius-pill);
+  background: var(--paper-3);
+}
+.meter__band {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--paper-3);
+}
+.meter__band--0 {
+  background: color-mix(in srgb, var(--indigo) 14%, var(--surface));
+  border-radius: var(--radius-pill) 0 0 var(--radius-pill);
+}
+.meter__band--1 {
+  background: color-mix(in srgb, var(--indigo) 30%, var(--surface));
+}
+.meter__band--2 {
+  background: color-mix(in srgb, var(--indigo) 48%, var(--surface));
+}
+.meter__band--3 {
+  background: color-mix(in srgb, var(--indigo) 68%, var(--surface));
+  border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
+}
+.meter__range {
+  position: absolute;
+  top: -0.25rem;
+  bottom: -0.25rem;
+  min-width: 0.5rem;
+  border-radius: var(--radius-s);
+  background: var(--ink);
+  outline: 2px solid var(--surface);
+}
+.meter__ticks {
+  position: relative;
+  height: 1.1rem;
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+.meter__ticks span {
+  position: absolute;
+  transform: translateX(-50%);
+}
+.meter__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--step--1);
+  color: var(--ink-2);
+}
+.meter__legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.meter__legend .meter__sw {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 3px;
+  border: 1px solid var(--line-2);
+}
+.meter--compact {
+  --meter-h: 0.5rem;
+  min-width: 5rem;
+}

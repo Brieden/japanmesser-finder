@@ -518,6 +518,10 @@ function createCatalog({ data, router, query }) {
   }
 
   function handGroup() {
+    const single = items.filter((i) => i.category === 'knife' && i.bevel === 'single');
+    const left = single.filter((i) => i.handed === 'left').length;
+    const right = single.filter((i) => i.handed === 'right').length;
+    const rest = single.length - left - right;
     return radioGroup({
       id: 'hand',
       title: 'Händigkeit',
@@ -529,7 +533,7 @@ function createCatalog({ data, router, query }) {
       current: () => state.hand,
       getCount: (v) => counts.hand[v] ?? 0,
       setValue: (v) => commit({ ...state, hand: v }),
-      note: h('p', { class: 'cat-note' }, 'Beidseitig geschliffene Messer passen in beide Hände. Einseitig geschliffene (z. B. Yanagiba, Deba, Usuba) sind laut Katalog meist Rechtshänder-Ausführungen; einige gibt es auch für Linkshänder. Die Auswahl blendet das jeweils unpassende aus, Messer ohne Angabe bleiben sichtbar.'),
+      note: h('p', { class: 'cat-note' }, `Beidseitig geschliffene Messer passen in beide Hände. Von ${single.length} einseitig geschliffenen Messern im Katalog (z. B. Yanagiba, Deba, Usuba) sind ${right} Rechtshänder- und ${left} Linkshänder-Ausführungen${rest ? `, ${rest} ohne Angabe` : ''}. Die Auswahl blendet das jeweils unpassende aus, Messer ohne Angabe bleiben sichtbar.`),
     });
   }
 

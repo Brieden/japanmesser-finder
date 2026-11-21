@@ -1,25 +1,14 @@
 // Messerkunde: rendert content/wissen.json (Abschnitte, Diagramme, Atlas, Stahltabelle, Glossar, Quellen).
 import { h, rich, loadCss, assetUrl } from '../dom.js';
 import { icon } from '../icons.js';
+import { loadWissen } from '../content.js';
+import { jpy, dateDe } from '../format.js';
 import { figure } from '../ui/figures.js';
-import { typeatlas } from '../ui/typeatlas.js';
+import { typeatlas, LEVEL_DEFS, rangeText } from '../ui/typeatlas.js';
 import { steeltable } from '../ui/steeltable.js';
+import { typeStats, rustClassStats } from '../lib/insights.js';
 
 export const title = 'Messerkunde';
-
-let contentPromise = null;
-function loadContent() {
-  contentPromise ??= fetch(assetUrl('content/wissen.json'))
-    .then((r) => {
-      if (!r.ok) throw new Error(`wissen.json: ${r.status}`);
-      return r.json();
-    })
-    .catch((e) => {
-      contentPromise = null;
-      throw e;
-    });
-  return contentPromise;
-}
 
 let cleanup = null;
 export function destroy() {
@@ -29,7 +18,54 @@ export function destroy() {
 
 const TONE_ICON = { info: 'info', warn: 'alert', ok: 'check' };
 
-function block(b, ctx) {
+const num1 = (v) => String(Math.round(v * 10) / 10).replace('.', ',');
+const hardnessText = (s) => (s.hrcKnown ? `Median ${num1(s.hrcMedian)} HRC, Spanne ${num1(s.hrcMin)}–${num1(s.hrcMax)} (bei ${s.hrcKnown} von ${s.n} bekannt)` : '–');
+
+/** Tabelle aus Daten (Zellen: Text oder Node); erste Spalte ist Zeilenkopf. */
+function dataTable(caption, head, rows) {
+  return h(
+    'div',
+    { class: 'table-wrap wissen__table', tabindex: '0', role: 'region', 'aria-label': caption },
+    h('table', { class: 'table' }, h('caption', caption), h('thead', h('tr', head.map((c) => h('th', { scope: 'col' }, c)))), h('tbody', rows.map((r) => h('tr', r.map((c, i) => (i === 0 ? h('th', { scope: 'row' }, c) : h('td', c)))))))
+  );
+}
+
+function hardnessScaleTable(data) {
+  const scale = data.taxonomy.hardnessScale;
+  const rows = (scale?.classes ?? []).map((c) => [c.label, c.max == null ? `ab ${c.min}` : `${c.min}–${c.max}`, c.retention ?? '–', c.toughness ?? '–', c.sharpening ?? '–']);
+  return [dataTable('Härteklassen nach Knives and Stones', ['Klasse', 'HRC', 'Schnitthaltigkeit', 'Zähigkeit', 'Schärfen'], rows), h('p', { class: 'muted wissen__fine' }, `${scale?.note ?? ''} „–“ heißt: Die Skala macht dazu keine Aussage.`)];
+}
+
+function rustStatsTable(data) {
+  const stats = rustClassStats(data);
+  const rows = ['full', 'clad', 'none'].map((id) => [data.taxonomy.rust?.[id]?.label ?? id, String(stats[id].n), hardnessText(stats[id]), stats[id].priceMedian != null ? `Median ${jpy(Math.round(stats[id].priceMedian))}` : '–']);
+  return [dataTable('Rost-Klassen im Katalog', ['Klasse', 'Artikel', 'Härte der Stahlsorten', 'Preis ab'], rows), h('p', { class: 'muted wissen__fine' }, `Haushaltsmesser, Katalogstand vom ${dateDe(data.meta?.fetchedAt)}. Härte: typische Werte der Stahlsorten, nur für Artikel mit bekannter Stahlsorte.`)];
+}
+
+function typeCompareTable(data, router) {
+  const rows = Object.entries(data.taxonomy.types ?? {})
+    .filter(([, t]) => t.summary)
+    .map(([id, t]) => ({ id, t, s: typeStats(id, data) }))
+    .filter((r) => r.s.n > 0)
+    .sort((a, b) => b.s.n - a.s.n || a.t.label.localeCompare(b.t.label, 'de'))
+    .map(({ id, t, s }) => [
+      h('a', { href: router.href('/katalog', { type: id }) }, t.label),
+      String(s.n),
+      t.bevel === 'single' ? 'einseitig' : t.bevel === 'double' ? 'beidseitig' : '–',
+      rangeText(t.typicalMm) || '–',
+      s.hrcKnown ? `${num1(s.hrcMedian)} (${s.hrcKnown} von ${s.n})` : '–',
+      s.priceMedian != null ? jpy(Math.round(s.priceMedian)) : '–',
+      `${Math.round((s.rust.full / s.n) * 100)} %`,
+      t.level ? String(t.level) : '–',
+    ]);
+  const legend = Object.entries(LEVEL_DEFS).map(([n, d]) => `${n} = ${d}`).join('; ');
+  return [
+    dataTable('Messertypen im Katalog', ['Typ', 'Artikel', 'Schliff', 'Länge', 'Härte (Median, HRC)', 'Preis ab (Median)', 'Komplett rostfrei', 'Einstufung'], rows),
+    h('p', { class: 'muted wissen__fine' }, `Haushaltsmesser, Katalogstand vom ${dateDe(data.meta?.fetchedAt)}. Härte: Median der typischen Härte der Stahlsorten, nur für Artikel mit bekannter Stahlsorte (Anzahl in Klammern). Einstufung nach Schliff und Spezialisierung, Händlerangaben und nicht gemessen: ${legend}.`),
+  ];
+}
+
+function block(b, ctx, sources) {
   switch (b.type) {
     case 'p':
       return h('p', rich(b.text));
@@ -52,7 +88,13 @@ function block(b, ctx) {
     case 'typeatlas':
       return typeatlas(ctx);
     case 'steeltable':
-      return steeltable(ctx);
+      return steeltable(ctx, sources);
+    case 'hardnessscale':
+      return h('div', { class: 'wissen__data' }, hardnessScaleTable(ctx.data));
+    case 'ruststats':
+      return h('div', { class: 'wissen__data' }, rustStatsTable(ctx.data));
+    case 'typecompare':
+      return h('div', { class: 'wissen__data' }, typeCompareTable(ctx.data, ctx.router));
     default:
       return null;
   }
@@ -75,7 +117,7 @@ export async function render(ctx) {
   await loadCss(assetUrl('assets/css/views/wissen.css'));
   let content;
   try {
-    content = await loadContent();
+    content = await loadWissen();
   } catch {
     return h('section', { class: 'container--narrow section' }, h('h1', 'Messerkunde'), h('div', { class: 'notice notice--bad', role: 'alert' }, 'Die Inhalte der Messerkunde konnten nicht geladen werden. Bitte lade die Seite neu.'));
   }
@@ -94,7 +136,7 @@ export async function render(ctx) {
       s.kicker ? h('p', { class: 'eyebrow' }, s.kicker) : null,
       h('h2', { id: `${sid(s.id)}-h`, tabindex: '-1' }, s.title),
       s.summary ? h('p', { class: 'lede' }, rich(s.summary)) : null,
-      h('div', { class: 'wissen__blocks' }, (s.blocks ?? []).map((b) => block(b, ctx))),
+      h('div', { class: 'wissen__blocks' }, (s.blocks ?? []).map((b) => block(b, ctx, sources))),
       s.sources?.length && sourceList(s.sources, sources) ? h('details', { class: 'disclosure wissen__src' }, h('summary', `Quellen zu diesem Abschnitt (${s.sources.filter((i) => sources[i]).length})`), h('div', { class: 'disclosure__body' }, sourceList(s.sources, sources))) : null
     )
   );

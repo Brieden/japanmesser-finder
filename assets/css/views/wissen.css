@@ -92,6 +92,9 @@
 .atlas__body ul { margin: 0; padding-left: 1.1rem; font-size: var(--step--1); }
 .atlas__body div > p { margin: 0; font-size: var(--step--1); }
 .atlas__left { display: block; }
+.atlas__why { font-size: var(--step--1); color: var(--ink-2); }
+.atlas__legend { margin: var(--space-3) 0 0; font-size: var(--step--1); }
+.atlas__stats dd { overflow-wrap: anywhere; }
 .atlas__foot { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); flex-wrap: wrap; font-size: var(--step--1); }
 .atlas__foot .btn { min-height: 2.75rem; }
 .atlas__plain { margin-top: var(--space-5); }
@@ -136,7 +139,22 @@
   .wissen__toclink[aria-current] { background: none; color: var(--indigo); border-left-color: var(--indigo); font-weight: 700; }
   .wissen__main { max-width: none; }
   .wissen__main > .wissen__section > :not(.wissen__blocks) { max-width: var(--container-narrow); }
-  .wissen__blocks > :not(.atlas):not(.steeltable):not(.wissen__table):not(.fig) { max-width: var(--container-narrow); }
+  .wissen__blocks > :not(.atlas):not(.steeltable):not(.wissen__table):not(.wissen__data):not(.fig) { max-width: var(--container-narrow); }
   .wissen__section { scroll-margin-top: calc(var(--header-h) + var(--space-4)); }
   .wissen__section > h2 { scroll-margin-top: calc(var(--header-h) + var(--space-4)); }
 }
+
+/* Stahltabelle: Härteklasse, Skala und Quellen */
+.steel-row__sub { display: block; font-size: 0.8rem; color: var(--ink-2); }
+.steel-row__sub.muted { color: var(--ink-3); }
+.steeltable__table td .meter--compact { margin-top: var(--space-1); }
+.steel-row__more ul { margin: 0 0 var(--space-2); padding-left: 1.1rem; font-weight: 400; font-size: var(--step--1); color: var(--ink-2); }
+.steel-row__more li + li { margin-top: var(--space-1); }
+.steeltable__table td { max-width: 22rem; }
+
+/* Datengetriebene Tabellen der Messerkunde */
+.wissen__data { margin-block: var(--space-3); }
+.wissen__fine { margin: var(--space-2) 0 0; font-size: var(--step--1); }
+.steel-row__src { white-space: nowrap; font-size: var(--step--1); }
+/* Bei schmaler Breite bleibt die Typ-/Klassen-Spalte beim seitlichen Wischen sichtbar */
+.wissen__data .table tbody th[scope="row"] { position: sticky; left: 0; z-index: 1; background: var(--surface); box-shadow: 1px 0 0 var(--line); }

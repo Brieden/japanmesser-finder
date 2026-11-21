@@ -4,6 +4,9 @@ Auswahlhilfe für japanische Küchenmesser aus dem Katalog des Tokioter Ladens *
 geführter **Finder**, filterbarer **Katalog**, kurze sachliche **Messerkunde** mit Quellen und eine
 **„Für wen?“-Liste**, mit der sich mehrere Personen in einem Rutsch einkaufen lassen.
 
+Jedes Messer zeigt belegte Besonderheiten, seine Härteklasse und den Vergleich mit den übrigen Messern desselben Typs im Katalog.
+Aussagen nennen ihren Grund und ihre Quelle; was keine Quelle hergibt (z. B. die Schärfe ab Werk), steht nicht da und wird nicht geschätzt.
+
 Statische Seite ohne Build-Schritt (HTML, CSS, ES-Module) – direkt über GitHub Pages auslieferbar.
 Inoffiziell und nicht mit dem Shop verbunden. Keine Cookies, keine Tracker, keine externen Schriften.
 

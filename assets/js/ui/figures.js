@@ -126,7 +126,7 @@ function bevel(c) {
   );
   const nodes = [
     row(0, shape(30, 20, 1, ryoba, {}), ['Ryōba ', { ja: '両刃' }, ': beidseitig'], ['Fase auf beiden Seiten; die', 'Klinge ist symmetrisch.'], 'Händigkeit: egal.'),
-    row(1, shape(30, 20, 1, kataba, {}), ['Kataba ', { ja: '片刃' }, ': einseitig'], ['Fase nur auf einer Seite, die', 'Rückseite ist flach oder leicht', ['hohl (urasuki ', { ja: '裏すき' }, ').']]),
+    row(1, shape(30, 20, 1, kataba, {}), ['Kataba ', { ja: '片刃' }, ': einseitig'], ['Fase nur auf einer Seite, die', 'Rückseite ist flach oder', ['hohlgeschliffen (urasuki ', { ja: '裏すき' }, ').']]),
     row(2, hand, 'Händigkeit', ['Einseitige Messer sind nicht', 'symmetrisch: Standard ist die', 'Rechtshänder-Ausführung, für', 'Linkshänder gibt es gespiegelte.']),
   ];
   return frame(id, 'Beidseitiger und einseitiger Schliff im Querschnitt', 'Schematische Querschnitte: Ryōba mit Fase auf beiden Seiten, Kataba mit Fase auf einer Seite und flacher oder hohler Rückseite (Urasuki), sowie die gespiegelte Ausführung für Linkshänder.', 3 * ROW, nodes, c);
