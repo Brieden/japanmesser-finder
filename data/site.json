@@ -1,0 +1,49 @@
+{
+  "shop": {
+    "name": "Tsubaya",
+    "nameJa": "つば屋庖丁店",
+    "url": "https://tsubaya.jp/en",
+    "address": "3-7-2 Nishiasakusa, Taito-ku, Tokyo",
+    "phone": "+81 3 3845 2005",
+    "hours": "Täglich 10–17 Uhr (auch am Wochenende und an Feiertagen), außer über Jahresende/Neujahr",
+    "hoursSource": "https://tsubaya.jp/en/pages/businesshours",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E3%81%A4%E3%81%B0%E5%B1%8B%E5%BA%96%E4%B8%81%E5%BA%97",
+    "onlineSales": {
+      "status": "suspended",
+      "text": "Der Onlineverkauf ist laut Shop vorübergehend pausiert (Systemumstellung); eine Wiederaufnahme ist für Januar 2027 geplant. Der Kauf im Laden ist davon unberührt.",
+      "resumeExpected": "2027-01",
+      "asOf": "2026-11-21",
+      "source": "https://tsubaya.jp/en/pages/online-sales-suspended"
+    },
+    "hoursShort": "täglich 10–17 Uhr"
+  },
+  "rates": {
+    "asOf": "2026-11-20",
+    "source": "EZB-Referenzkurs",
+    "perUnit": {
+      "EUR": 174.35,
+      "CHF": 189.04
+    }
+  },
+  "customs": {
+    "asOf": "2026-11-21",
+    "note": "Orientierung, keine Rechtsberatung. Maßgeblich sind die Angaben der Zollbehörden.",
+    "EU": {
+      "label": "Deutschland / Österreich (Flugreise aus Nicht-EU-Staat)",
+      "limit": 430,
+      "currency": "EUR",
+      "sources": [
+        "zoll-freimengen",
+        "bmf-at"
+      ]
+    },
+    "CH": {
+      "label": "Schweiz (Mehrwertsteuer-Wertfreigrenze, pro Person und Tag)",
+      "limit": 300,
+      "currency": "CHF",
+      "sources": [
+        "bazg-ch"
+      ]
+    }
+  }
+}

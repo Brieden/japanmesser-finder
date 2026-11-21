@@ -1,0 +1,1436 @@
+{
+  "version": 1,
+  "categories": {
+    "knife": {
+      "label": "Messer"
+    },
+    "sharpening": {
+      "label": "Schleifzubehör"
+    },
+    "tool": {
+      "label": "Küchenhelfer & Zubehör"
+    }
+  },
+  "segments": {
+    "home": {
+      "label": "Haushalt & Hobby",
+      "short": "Haushalt"
+    },
+    "gastro": {
+      "label": "Profi-/Gastro-Linie",
+      "short": "Gastro"
+    },
+    "accessory": {
+      "label": "Zubehör",
+      "short": "Zubehör"
+    }
+  },
+  "rust": {
+    "full": {
+      "label": "Komplett rostfrei",
+      "short": "Rostfrei",
+      "tone": "ok",
+      "explain": "Die Klinge besteht durchgehend aus rostfreiem Stahl (nach Norm mindestens 10,5 % Chrom). Auch die Schneide bleibt blank: keine Patina, kaum Pflegeaufwand – von Hand spülen und abtrocknen genügt. Die sicherste Wahl für Einsteiger und für alle, die Pflege nicht zur Routine machen wollen.",
+      "care": "Von Hand spülen, abtrocknen."
+    },
+    "clad": {
+      "label": "Teilweise rostfrei",
+      "short": "Teils rostfrei",
+      "tone": "warn",
+      "explain": "Die Seiten der Klinge sind rostfrei (Mantel aus rostfreiem Stahl), der Kern mit der Schneide besteht aber aus Kohlenstoffstahl. Der Mantel schützt den größten Teil der Klingenfläche; die Schneide selbst kann wie jeder Kohlenstoffstahl Patina bilden und bei Nässe rosten. Ein Mittelweg: weniger Aufwand als reiner Kohlenstoffstahl, mehr als komplett rostfrei.",
+      "care": "Nach dem Schneiden abspülen und sofort abtrocknen; die Schneide nicht nass liegen lassen."
+    },
+    "none": {
+      "label": "Nicht rostfrei (Kohlenstoffstahl)",
+      "short": "Nicht rostfrei",
+      "tone": "bad",
+      "explain": "Kohlenstoffstahl ohne rostfreien Mantel (häufig mit Weicheisen-Mantel). Er reagiert mit Feuchtigkeit und Säuren, bildet im Gebrauch eine graue Patina und rostet, wenn er nass bleibt. Dafür schätzen ihn Messer-Fans: gut schärfbar, sehr feine Schneide. Ein Hobby für Menschen, die gern pflegen.",
+      "care": "Sofort nach Gebrauch abwischen und abtrocknen; bei längerer Lagerung dünn mit Kamelienöl einölen."
+    }
+  },
+  "steelFamilies": {
+    "stainless": {
+      "label": "Rostfreier Stahl"
+    },
+    "carbon": {
+      "label": "Kohlenstoffstahl"
+    }
+  },
+  "steels": {
+    "shirogami1": {
+      "label": "Shirogami #1 (Weißstahl)",
+      "short": "Shirogami #1",
+      "family": "carbon",
+      "hardnessHrc": [
+        62,
+        65
+      ],
+      "composition": "C ≈ 1,25–1,35 %",
+      "care": "high",
+      "beginnerFriendly": false,
+      "summary": "Reiner Kohlenstoffstahl („Weißstahl“, Proterial/Yasuki): viel Kohlenstoff, kaum Legierungselemente. Nimmt sehr feine Schneiden an, reagiert aber schnell mit Feuchtigkeit.",
+      "sources": [
+        "kns-white2",
+        "kns-steels"
+      ]
+    },
+    "shirogami2": {
+      "label": "Shirogami #2 (Weißstahl)",
+      "short": "Shirogami #2",
+      "family": "carbon",
+      "hardnessHrc": [
+        60,
+        64
+      ],
+      "composition": "C ≈ 1,05–1,15 %",
+      "care": "high",
+      "beginnerFriendly": false,
+      "summary": "Reiner Kohlenstoffstahl („Weißstahl“) mit etwas weniger Kohlenstoff als Shirogami #1. Gilt als gut schärfbar; nicht rostfrei, nach jedem Gebrauch trocknen.",
+      "sources": [
+        "kns-white2",
+        "kns-steels"
+      ]
+    },
+    "shirogami3": {
+      "label": "Shirogami #3 (Weißstahl)",
+      "short": "Shirogami #3",
+      "family": "carbon"
+    },
+    "aogami1": {
+      "label": "Aogami #1 (Blaustahl)",
+      "short": "Aogami #1",
+      "family": "carbon",
+      "hardnessHrc": [
+        61,
+        64
+      ],
+      "composition": "C ≈ 1,25–1,35 %, Cr ≈ 0,3–0,5 %, W ≈ 1,5–2,0 %",
+      "care": "high",
+      "beginnerFriendly": false,
+      "summary": "Kohlenstoffstahl („Blaustahl“) mit Chrom- und Wolframzusatz. Trotz Chrom nicht rostfrei; die Zusätze verändern vor allem das Verschleißverhalten.",
+      "sources": [
+        "proterial-aogami1",
+        "kns-steels"
+      ]
+    },
+    "aogami2": {
+      "label": "Aogami #2 (Blaustahl)",
+      "short": "Aogami #2",
+      "family": "carbon",
+      "hardnessHrc": [
+        61,
+        63
+      ],
+      "composition": "C ≈ 1,1 %, Cr ≈ 0,35 %, W ≈ 1,25 % (Näherung)",
+      "care": "high",
+      "beginnerFriendly": false,
+      "summary": "Kohlenstoffstahl („Blaustahl“) mit Chrom- und Wolframzusatz, weniger Kohlenstoff als Aogami #1. Nicht rostfrei, bildet Patina.",
+      "sources": [
+        "kns-steels"
+      ]
+    },
+    "aogami-super": {
+      "label": "Aogami Super (Blaustahl)",
+      "short": "Aogami Super",
+      "family": "carbon",
+      "hardnessHrc": [
+        62,
+        65
+      ],
+      "composition": "C ≈ 1,45 %, Cr ≈ 0,4 %, V ≈ 0,4 %, W ≈ 2,25 %",
+      "care": "high",
+      "beginnerFriendly": false,
+      "summary": "Kohlenstoffstahl mit Chrom, Vanadium und Wolfram. Laut Händler sehr reaktiv (hoher Kohlenstoff, nur ca. 0,4 % Chrom): gründlich trocknen ist Pflicht.",
+      "sources": [
+        "kns-bluesuper",
+        "kns-steels"
+      ]
+    },
+    "vtoku1": {
+      "label": "V-Toku #1 (Takefu, Kohlenstoffstahl)",
+      "short": "V-Toku #1",
+      "family": "carbon",
+      "hardnessHrc": [
+        62,
+        64
+      ],
+      "composition": "C ≈ 1,15 %, Cr ≈ 0,35 %, W ≈ 2,25 %",
+      "care": "high",
+      "beginnerFriendly": false,
+      "summary": "Kohlenstoffstahl von Takefu Special Steel; der Shop weist ausdrücklich darauf hin, dass er leicht rostet.",
+      "sources": [
+        "kns-steels"
+      ]
+    },
+    "vtoku2": {
+      "label": "V-Toku #2 (Takefu, Kohlenstoffstahl)",
+      "short": "V-Toku #2",
+      "family": "carbon",
+      "hardnessHrc": [
+        62,
+        64
+      ],
+      "composition": "C ≈ 1,05 %, Cr ≈ 0,25 %, W ≈ 1,25 %",
+      "care": "high",
+      "beginnerFriendly": false,
+      "summary": "Kohlenstoffstahl von Takefu Special Steel; der Shop weist ausdrücklich darauf hin, dass er leicht rostet.",
+      "sources": [
+        "kns-steels"
+      ]
+    },
+    "sk": {
+      "label": "SK-Kohlenstoffstahl",
+      "short": "SK",
+      "family": "carbon",
+      "hardnessHrc": [
+        58,
+        62
+      ],
+      "composition": "C ≈ 0,8 %",
+      "care": "high",
+      "beginnerFriendly": false,
+      "summary": "Einfacher Kohlenstoff-Werkzeugstahl; in Messern etwas weniger hart als Weiß- oder Blaustahl. Nicht rostfrei.",
+      "sources": [
+        "kns-steels"
+      ]
+    },
+    "carbon-unspecified": {
+      "label": "Kohlenstoffstahl (Sorte nicht angegeben)",
+      "short": "Kohlenstoffstahl",
+      "family": "carbon"
+    },
+    "ginsan3": {
+      "label": "Ginsan #3 (Silver #3)",
+      "short": "Ginsan #3",
+      "family": "stainless",
+      "hardnessHrc": [
+        60,
+        62
+      ],
+      "composition": "C ≈ 1,0 %, Cr ≈ 13,75 %",
+      "care": "low",
+      "beginnerFriendly": true,
+      "summary": "Rostfreier Stahl (Ginsan #3, „Silver #3“) mit rund 1 % Kohlenstoff und knapp 14 % Chrom: rostfrei und trotzdem hart.",
+      "sources": [
+        "kns-steels"
+      ]
+    },
+    "vg1": {
+      "label": "VG-1",
+      "short": "VG-1",
+      "family": "stainless",
+      "hardnessHrc": [
+        61,
+        62
+      ],
+      "composition": "C ≈ 0,95 %, Cr ≈ 13 %",
+      "care": "low",
+      "beginnerFriendly": true,
+      "summary": "Rostfreier Stahl; Härte laut Hersteller ab etwa 61 HRC.",
+      "sources": [
+        "kns-steels"
+      ]
+    },
+    "vg2": {
+      "label": "VG-2",
+      "short": "VG-2",
+      "family": "stainless"
+    },
+    "vg7": {
+      "label": "VG-7",
+      "short": "VG-7",
+      "family": "stainless"
+    },
+    "vg10": {
+      "label": "VG-10",
+      "short": "VG-10",
+      "family": "stainless",
+      "hardnessHrc": [
+        59,
+        61
+      ],
+      "composition": "C ≈ 1,0 %, Cr ≈ 15 %, Mo ≈ 1 %, V ≈ 0,25 %, Co ≈ 1,55 %",
+      "care": "low",
+      "beginnerFriendly": true,
+      "summary": "Weit verbreiteter rostfreier Messerstahl mit rund 15 % Chrom; für den Alltag unkompliziert.",
+      "sources": [
+        "kns-steels"
+      ]
+    },
+    "aus8": {
+      "label": "AUS-8",
+      "short": "AUS-8",
+      "family": "stainless",
+      "hardnessHrc": [
+        57,
+        59
+      ],
+      "composition": "C ≈ 0,7 %, Cr ≈ 13 %",
+      "care": "low",
+      "beginnerFriendly": true,
+      "summary": "Rostfreier Stahl mit moderater Härte; einsteigerfreundlich.",
+      "sources": [
+        "kns-steels"
+      ]
+    },
+    "aus10": {
+      "label": "AUS-10",
+      "short": "AUS-10",
+      "family": "stainless",
+      "hardnessHrc": [
+        58,
+        60
+      ],
+      "composition": "C ≈ 0,95 %, Cr ≈ 13 %",
+      "care": "low",
+      "beginnerFriendly": true,
+      "summary": "Rostfreier Stahl mit etwas mehr Kohlenstoff als AUS-8; ebenfalls einsteigerfreundlich.",
+      "sources": [
+        "kns-steels"
+      ]
+    },
+    "zdp189": {
+      "label": "ZDP-189",
+      "short": "ZDP-189",
+      "family": "stainless",
+      "hardnessHrc": [
+        65,
+        67
+      ],
+      "composition": "C ≈ 3 %, Cr ≈ 20 %",
+      "care": "low",
+      "beginnerFriendly": false,
+      "summary": "Rostfreier Stahl mit sehr viel Kohlenstoff und Chrom: Härte laut Hersteller ab etwa 65 HRC. Sehr hart bedeutet tendenziell weniger zäh; Ausbrüche sind eher möglich.",
+      "sources": [
+        "kns-steels",
+        "kns-chip"
+      ]
+    },
+    "za18": {
+      "label": "ZA-18",
+      "short": "ZA-18",
+      "family": "stainless",
+      "hardnessHrc": [
+        60,
+        62
+      ],
+      "care": "low",
+      "summary": "Rostfreier Stahl; die Händlertabelle nennt etwa 60–62 HRC.",
+      "sources": [
+        "kns-steels"
+      ],
+      "beginnerFriendly": null
+    },
+    "hss": {
+      "label": "Pulver-HSS (Schnellarbeitsstahl, Sorte nicht angegeben)",
+      "short": "Pulver-HSS",
+      "family": "stainless",
+      "hardnessHrc": [
+        61,
+        65
+      ],
+      "care": "low",
+      "summary": "Im Katalog nur als „HSS“ (Pulver-Schnellarbeitsstahl) bezeichnet. Für SG2/R2, die unter dieser Klasse üblichen rostfreien Pulverstähle, nennt die Händlertabelle 61–65 HRC; welche Sorte verbaut ist, sagt der Shop nicht.",
+      "sources": [
+        "kns-steels"
+      ],
+      "beginnerFriendly": null
+    },
+    "cobalt": {
+      "label": "Kobaltstahl (Bezeichnung laut Shop)",
+      "short": "Kobaltstahl",
+      "family": "stainless",
+      "care": "low",
+      "beginnerFriendly": true,
+      "summary": "Bezeichnung „Kobaltstahl“ laut Shop; rostfrei. Die genaue Sorte ist nicht angegeben.",
+      "sources": []
+    },
+    "swedish": {
+      "label": "Schwedischer Stahl (Bezeichnung laut Shop)",
+      "short": "Schwed. Stahl",
+      "family": "stainless",
+      "care": "low",
+      "beginnerFriendly": true,
+      "summary": "Bezeichnung „Schwedischer Stahl“ laut Shop; rostfrei. Die genaue Sorte ist nicht angegeben.",
+      "sources": []
+    },
+    "mov": {
+      "label": "Molybdän-Vanadium-Stahl",
+      "short": "Mo-V-Stahl",
+      "family": "stainless",
+      "hardnessHrc": [
+        54,
+        60
+      ],
+      "care": "low",
+      "beginnerFriendly": true,
+      "summary": "Molybdän-Vanadium-Stahl (Sammelbezeichnung, Zusammensetzung je Hersteller verschieden): rostfrei; Härte laut Händlertabelle etwa 54–60 HRC.",
+      "sources": [
+        "kns-steels"
+      ]
+    },
+    "mo": {
+      "label": "Molybdän-Stahl",
+      "short": "Mo-Stahl",
+      "family": "stainless",
+      "care": "low",
+      "beginnerFriendly": true,
+      "summary": "Molybdän-Stahl laut Shop: rostfrei; die genaue Sorte ist nicht angegeben.",
+      "sources": []
+    },
+    "inox": {
+      "label": "INOX (rostfrei)",
+      "short": "INOX",
+      "family": "stainless",
+      "hardnessHrc": [
+        57,
+        59
+      ],
+      "composition": "C ≈ 0,5 %, Cr ≈ 13,5 %",
+      "care": "low",
+      "beginnerFriendly": true,
+      "summary": "„Inox“: rostfreier Standard-Messerstahl; Händlertabelle: etwa 57–59 HRC.",
+      "sources": [
+        "kns-steels"
+      ]
+    },
+    "stainless-unspecified": {
+      "label": "Rostfreier Stahl (Sorte nicht angegeben)",
+      "short": "Rostfrei (o. A.)",
+      "family": "stainless"
+    },
+    "unknown": {
+      "label": "Stahl nicht angegeben",
+      "short": "o. A.",
+      "family": null
+    }
+  },
+  "construction": {
+    "solid": {
+      "label": "Monostahl (ein Stahl durchgehend)",
+      "short": "Monostahl",
+      "explain": "Monostahl (zenkō): Die ganze Klinge besteht aus einem Stahl. Bei rostfreien Messern üblich und unkompliziert."
+    },
+    "warikomi": {
+      "label": "Mehrlagig, Kern zwischen zwei Mantellagen (Warikomi)",
+      "short": "Warikomi",
+      "explain": "Mehrlagig (Warikomi): Ein harter Kernstahl sitzt zwischen zwei Mantellagen („San-mai“). Die Schneide besteht aus dem Kern."
+    },
+    "kasumi": {
+      "label": "Hartstahl auf Weicheisen (Kasumi/Awase)",
+      "short": "Kasumi",
+      "explain": "Kasumi („Nebel“): Hartstahl ist auf Weicheisen geschmiedet; das Weicheisen sieht nach dem Schleifen neblig-matt aus. Der Hartstahl bildet die Schneide."
+    },
+    "laminated": {
+      "label": "Mehrlagig",
+      "short": "Mehrlagig",
+      "explain": "Mehrlagig: Hartstahl-Kern mit weicherem Mantelmaterial verbunden; Details nennt der Shop nicht."
+    }
+  },
+  "bevels": {
+    "double": {
+      "label": "Beidseitig geschliffen",
+      "short": "Beidseitig",
+      "explain": "Beidseitig geschliffen (ryōba): beide Seiten laufen zur Schneide zu. Der Schnitt läuft gerade, das Messer eignet sich für Links- und Rechtshänder. Üblich bei Gyuto, Santoku und Nakiri."
+    },
+    "single": {
+      "label": "Einseitig geschliffen",
+      "short": "Einseitig",
+      "explain": "Einseitig geschliffen (kataba): Nur eine Seite ist zur Schneide geschliffen, die andere ist flach, oft leicht hohl (urasuki). Traditionell bei Sashimi- und Profi-Gemüsemessern. Die Klinge ist händigkeitsgebunden und verlangt mehr Übung und Schleiferfahrung; Linkshänder brauchen eine Linkshänder-Ausführung."
+    }
+  },
+  "handed": {
+    "both": {
+      "label": "Für Links- und Rechtshänder",
+      "short": "Beidhändig"
+    },
+    "right": {
+      "label": "Für Rechtshänder",
+      "short": "Rechtshänder"
+    },
+    "left": {
+      "label": "Für Linkshänder",
+      "short": "Linkshänder"
+    }
+  },
+  "handleStyles": {
+    "wa": {
+      "label": "Japanischer Griff (Wa)",
+      "short": "Wa-Griff",
+      "explain": "Japanischer Griff (Wa): meist Holz, achteckig, oval oder D-förmig; leichter als westliche Griffe und verlagert den Schwerpunkt nach vorn zur Klinge. Ausgelegt für den „Pinch-Grip“, bei dem die Finger die Klinge direkt vor dem Griff fassen."
+    },
+    "yo": {
+      "label": "Westlicher Griff (Yō)",
+      "short": "Yō-Griff",
+      "explain": "Westlicher Griff (Yō): meist schwerer und vernietet, vertraut für alle, die westliche Messer gewohnt sind."
+    },
+    "steel": {
+      "label": "Ganzmetallgriff",
+      "short": "Metallgriff",
+      "explain": "Griff aus Edelstahl: kein Holz, das durch Wasser quellen kann."
+    },
+    "unknown": {
+      "label": "Griff nicht angegeben",
+      "short": "o. A."
+    }
+  },
+  "handleMaterials": {
+    "magnolia": {
+      "label": "Magnolie (Honoki)"
+    },
+    "walnut": {
+      "label": "Walnuss"
+    },
+    "rosewood": {
+      "label": "Palisander (Shitan)"
+    },
+    "ebony": {
+      "label": "Ebenholz"
+    },
+    "oak": {
+      "label": "Eiche"
+    },
+    "teak": {
+      "label": "Teak"
+    },
+    "micarta": {
+      "label": "Micarta"
+    },
+    "ironwood": {
+      "label": "Eisenholz"
+    },
+    "yew": {
+      "label": "Eibe"
+    },
+    "elm": {
+      "label": "Ulme"
+    },
+    "mahogany": {
+      "label": "Mahagoni"
+    },
+    "satine": {
+      "label": "Satiné"
+    },
+    "zelkova": {
+      "label": "Zelkove (Keyaki)"
+    },
+    "cherry": {
+      "label": "Kirsche"
+    },
+    "tagayasan": {
+      "label": "Tagayasan"
+    },
+    "wenge": {
+      "label": "Wengé"
+    },
+    "hinoki": {
+      "label": "Hinoki (Japanische Zypresse)"
+    },
+    "burl": {
+      "label": "Maserholz"
+    },
+    "resin": {
+      "label": "Kunstharz"
+    },
+    "plastic": {
+      "label": "Kunststoff"
+    },
+    "steel": {
+      "label": "Edelstahl"
+    },
+    "wood": {
+      "label": "Holz"
+    }
+  },
+  "handleShapes": {
+    "octagonal": {
+      "label": "Achteckig"
+    },
+    "oval": {
+      "label": "Oval"
+    },
+    "round": {
+      "label": "Rund"
+    },
+    "straight": {
+      "label": "Gerade"
+    },
+    "curved": {
+      "label": "Gebogen"
+    }
+  },
+  "finishes": {
+    "kurouchi": {
+      "label": "Kurouchi (schwarze Schmiedehaut)",
+      "short": "Kurouchi",
+      "explain": "Kurouchi: die dunkle Schmiedehaut bleibt stehen. Vor allem Optik; sie nutzt sich im Gebrauch allmählich ab."
+    },
+    "tsuchime": {
+      "label": "Tsuchime (Hammerschlag)",
+      "short": "Hammerschlag",
+      "explain": "Tsuchime: Hammerschlag auf der Klinge. Optik; Händler nennen außerdem, dass Schnittgut weniger anhaftet."
+    },
+    "nashiji": {
+      "label": "Nashiji (Birnenhaut)",
+      "short": "Nashiji",
+      "explain": "Nashiji („Birnenhaut“): fein strukturierte, matte Oberfläche; Optik."
+    },
+    "damascus": {
+      "label": "Damast (sichtbares Lagenmuster)",
+      "short": "Damast",
+      "explain": "Damast: sichtbares Lagenmuster aus verschmiedeten Stählen, bei japanischen Messern meist im Mantel; die Schneide bildet der Kernstahl. Vor allem Optik."
+    },
+    "fine-finish": {
+      "label": "Feinpoliert",
+      "short": "Feinpoliert",
+      "explain": "Feinpoliert (Migaki/Superfine): glatte, polierte Oberfläche."
+    },
+    "mirror": {
+      "label": "Spiegelpolitur",
+      "short": "Spiegel",
+      "explain": "Spiegelpolitur: hochglänzende Oberfläche; Optik."
+    },
+    "kasumi": {
+      "label": "Kasumi-Finish",
+      "short": "Kasumi",
+      "explain": "Kasumi-Finish: mattierte Mantelfläche neben der glänzenden Schneidfase."
+    },
+    "dimple": {
+      "label": "Dimple (Mulden im Klingenblatt)",
+      "short": "Dimple",
+      "explain": "Mulden im Klingenblatt (Dimple): Oberflächenstruktur, ähnlicher Zweck wie Hammerschlag."
+    }
+  },
+  "origins": {
+    "JP": {
+      "label": "Japan"
+    },
+    "DE": {
+      "label": "Deutschland"
+    },
+    "CH": {
+      "label": "Schweiz"
+    }
+  },
+  "makers": {
+    "Tsubaya": {
+      "label": "Tsubaya (Hausmarke)"
+    },
+    "Takeda Hamono": {
+      "label": "Takeda Hamono"
+    },
+    "Yoshida Hamono": {
+      "label": "Yoshida Hamono"
+    },
+    "Saji Takeshi": {
+      "label": "Saji Takeshi"
+    },
+    "Tanaka Shigeki": {
+      "label": "Tanaka Shigeki"
+    },
+    "Masahiro": {
+      "label": "Masahiro"
+    },
+    "Kanehide": {
+      "label": "Kanehide"
+    },
+    "Naniwa": {
+      "label": "Naniwa"
+    },
+    "Shapton": {
+      "label": "Shapton"
+    },
+    "DICK": {
+      "label": "DICK"
+    },
+    "Victorinox": {
+      "label": "Victorinox"
+    },
+    "Vallorbe": {
+      "label": "Vallorbe"
+    },
+    "Caribou": {
+      "label": "Caribou"
+    },
+    "Morihei": {
+      "label": "Morihei"
+    },
+    "栗忠製作所": {
+      "label": "栗忠製作所"
+    },
+    "MINOVA": {
+      "label": "MINOVA"
+    },
+    "VROAD": {
+      "label": "VROAD"
+    }
+  },
+  "types": {
+    "gyuto": {
+      "label": "Gyuto",
+      "kanji": "牛刀",
+      "gloss": "Kochmesser (Allzweck)",
+      "group": "allround",
+      "summary": "Die japanische Ausprägung des westlichen Kochmessers: meist beidseitig geschliffen, dünner und leichter als europäische Vorbilder. Ein Allzweckmesser für Gemüse, Fleisch und Fisch.",
+      "uses": [
+        "Gemüse, Kräuter, Zwiebeln",
+        "Fleisch parieren und schneiden",
+        "Wiegeschnitt dank gewölbter Schneide"
+      ],
+      "avoid": "Knochen, Gefrorenes und sehr harte Kerne (z. B. dichter Kürbis); nicht hebeln oder verdrehen.",
+      "fun": "Vielseitig und vertraut: Die gewölbte Schneide erlaubt Wiegen und Schieben, die Spitze feine Arbeiten.",
+      "level": 1,
+      "bevel": "double",
+      "lengthMm": [
+        150,
+        360
+      ],
+      "typicalMm": [
+        210,
+        240
+      ],
+      "tasks": {
+        "allround": 1,
+        "fleisch": 0.8,
+        "gemuese": 0.6,
+        "fisch": 0.3,
+        "gefluegel": 0.2
+      },
+      "sources": [
+        "ty-148096",
+        "ty-873243",
+        "ty-843394",
+        "ty-260749",
+        "ty-896348",
+        "ty-743282",
+        "ty-109399",
+        "ty-650083"
+      ]
+    },
+    "santoku": {
+      "label": "Santoku",
+      "kanji": "三徳",
+      "gloss": "Allzweckmesser, kompakt",
+      "group": "allround",
+      "summary": "Kompaktes Allzweckmesser („drei Tugenden“) mit flacher Schneide und abgerundeter, abwärts gezogener Spitze („Schafsfuß“). Kürzer und flacher als ein Gyuto, für Schiebeschnitte ausgelegt.",
+      "uses": [
+        "Gemüse im Schiebeschnitt",
+        "Fleisch und Fisch ohne Knochen",
+        "kleine Bretter und Küchen"
+      ],
+      "avoid": "Knochen und Gefrorenes; für ausgiebiges Wiegen ist die flache Schneide weniger geeignet.",
+      "fun": "Schnelles, sauberes Schneiden mit vollem Brettkontakt; die hohe Klinge hält die Knöchel über dem Brett.",
+      "level": 1,
+      "bevel": "double",
+      "lengthMm": [
+        150,
+        200
+      ],
+      "typicalMm": [
+        165,
+        180
+      ],
+      "tasks": {
+        "allround": 0.9,
+        "gemuese": 0.85,
+        "fleisch": 0.6,
+        "fisch": 0.3
+      },
+      "sources": [
+        "ty-415118",
+        "ty-011778",
+        "ty-896348",
+        "ty-494372",
+        "ty-109399",
+        "ty-148096",
+        "ty-743282"
+      ]
+    },
+    "bunka": {
+      "label": "Bunka",
+      "kanji": "文化",
+      "gloss": "Allzweckmesser mit „Tanto“-Spitze",
+      "group": "allround",
+      "summary": "Ähnelt dem Santoku, hat aber eine eckig abgeschrägte Spitze („Reverse-Tanto“, „K-Tip“) für Detailarbeit. In Japan werden Bunka und Santoku teils als dasselbe Messer behandelt.",
+      "uses": [
+        "Allzweck wie ein Santoku",
+        "Detailarbeit mit der Spitze"
+      ],
+      "avoid": "Die Spitze ist empfindlicher als eine runde Santoku-Spitze; nicht zum Aufhebeln benutzen.",
+      "fun": "Santoku-Handling mit präziser Spitze.",
+      "level": 1,
+      "bevel": "double",
+      "typicalMm": [
+        165,
+        180
+      ],
+      "tasks": {
+        "allround": 0.7,
+        "gemuese": 0.6,
+        "obst": 0.2
+      },
+      "sources": [
+        "ty-415118",
+        "ty-333833",
+        "ty-873243"
+      ]
+    },
+    "kiritsuke": {
+      "label": "Kiritsuke",
+      "kanji": "切付",
+      "gloss": "Messer mit schräg abgeschnittener Spitze",
+      "group": "allround",
+      "summary": "Zwei Dinge heißen so: das traditionelle, einseitig geschliffene Kiritsuke (lang, flach, schräge Spitze) und das heute häufige Kiritsuke-Gyuto („K-Tip“, beidseitig geschliffen). Ersteres verlangt viel Messerkontrolle, Letzteres ist alltagstauglich.",
+      "uses": [
+        "Allzweck wie ein Gyuto (K-Tip-Variante)",
+        "lange, saubere Schnitte"
+      ],
+      "avoid": "Die schräge Spitze ist empfindlicher und verlangt mehr Vorsicht; das traditionelle Kiritsuke ist ein Messer für Geübte.",
+      "fun": "Markante Form; als Gyuto-Variante im Alltag nutzbar.",
+      "level": 2,
+      "lengthMm": [
+        210,
+        300
+      ],
+      "typicalMm": [
+        210,
+        270
+      ],
+      "tasks": {
+        "allround": 0.5
+      },
+      "sources": [
+        "ty-415118",
+        "ty-321311",
+        "ty-333833",
+        "ty-465399"
+      ]
+    },
+    "petty": {
+      "label": "Petty",
+      "kanji": "ペティ",
+      "gloss": "Kleines Universalmesser",
+      "group": "klein",
+      "summary": "Kleines Universalmesser zwischen Schäl- und Kochmesser (Klinge meist 120–150 mm); wird in der Hand und auf dem Brett benutzt. Gute Ergänzung zu Gyuto oder Santoku.",
+      "uses": [
+        "Obst, Kräuter, Schalotten",
+        "Schälen und Putzen",
+        "kleine Mengen, wenn das große Messer zu klobig ist"
+      ],
+      "avoid": "Große Mengen Gemüse oder Fleisch; zu kurz für lange Schnitte.",
+      "fun": "Wendig und handlich.",
+      "level": 1,
+      "bevel": "double",
+      "lengthMm": [
+        75,
+        180
+      ],
+      "typicalMm": [
+        120,
+        150
+      ],
+      "tasks": {
+        "obst": 1,
+        "allround": 0.4,
+        "gefluegel": 0.3,
+        "gemuese": 0.3
+      },
+      "sources": [
+        "ty-260749",
+        "ty-494372",
+        "ty-109399",
+        "ty-896348",
+        "ty-465399"
+      ]
+    },
+    "paring": {
+      "label": "Schälmesser (Paring)",
+      "kanji": "パーリング",
+      "gloss": "Schäl- und Officemesser",
+      "group": "klein",
+      "summary": "Sehr kleines Schäl- und Putzmesser (Kudamono, „Obstmesser“) für feine Arbeiten in der Hand; kleiner als ein Petty (Händlerangaben etwa 80–110 mm).",
+      "uses": [
+        "Schälen, Putzen, Entkernen",
+        "feine Handarbeit"
+      ],
+      "avoid": "Alles, was Klingenlänge braucht.",
+      "fun": "Präzise Handarbeit.",
+      "level": 1,
+      "bevel": "double",
+      "lengthMm": [
+        50,
+        110
+      ],
+      "typicalMm": [
+        80,
+        100
+      ],
+      "tasks": {
+        "obst": 0.9
+      },
+      "sources": [
+        "ty-076474",
+        "ty-350430",
+        "ty-148096"
+      ]
+    },
+    "nakiri": {
+      "label": "Nakiri",
+      "kanji": "菜切",
+      "gloss": "Gemüsemesser",
+      "group": "gemuese",
+      "summary": "Rechteckiges, beidseitig geschliffenes Gemüsemesser mit gerader Schneide und eckiger Spitze (meist 165–180 mm). Geführt wird es im Auf-und-ab-Schnitt mit vollem Brettkontakt.",
+      "uses": [
+        "Gemüse, Kohl und Zwiebeln in sauberen Schnitten",
+        "Kräuter",
+        "dünne Scheiben und Streifen"
+      ],
+      "avoid": "Knochen, Gefrorenes und Wiegen; keine Spitze für Detailarbeit. Für Fleisch urteilen die Quellen unterschiedlich.",
+      "fun": "Wer viel Gemüse schneidet, schätzt den vollen Brettkontakt und den sauberen Schiebeschnitt.",
+      "level": 1,
+      "bevel": "double",
+      "lengthMm": [
+        150,
+        200
+      ],
+      "typicalMm": [
+        165,
+        180
+      ],
+      "tasks": {
+        "gemuese": 1,
+        "allround": 0.3
+      },
+      "sources": [
+        "ty-852481",
+        "ty-151558",
+        "ty-730921",
+        "ty-910114",
+        "ty-260749",
+        "ty-353900",
+        "ty-278268",
+        "ty-271055",
+        "ty-410167"
+      ]
+    },
+    "usuba": {
+      "label": "Usuba",
+      "kanji": "薄刃",
+      "gloss": "Gemüsemesser (Profi, einseitig)",
+      "group": "gemuese",
+      "summary": "Einseitig geschliffenes Profi-Gemüsemesser mit gerader, hoher Klinge (meist 180–210 mm). Dient dem Schiebeschnitt und Spezialtechniken wie Katsuramuki (dünne Bahnen vom Gemüsezylinder schälen).",
+      "uses": [
+        "feines Gemüse",
+        "Katsuramuki und Sengiri (feine Streifen)"
+      ],
+      "avoid": "Für Einsteiger meist zu anspruchsvoll; im Haushalt gilt das beidseitig geschliffene Nakiri als Alternative.",
+      "fun": "Technik und Präzision – ein Messer zum Lernen.",
+      "level": 3,
+      "bevel": "single",
+      "lengthMm": [
+        150,
+        240
+      ],
+      "typicalMm": [
+        180,
+        210
+      ],
+      "tasks": {
+        "gemuese": 0.8
+      },
+      "sources": [
+        "ty-825595",
+        "ty-148096",
+        "ty-337418",
+        "ty-832778",
+        "ty-937616",
+        "ty-465399",
+        "ty-261437"
+      ]
+    },
+    "mukimono": {
+      "label": "Mukimono",
+      "kanji": "むきもの",
+      "gloss": "Garnier- und Dekormesser (Gemüse)",
+      "group": "gemuese"
+    },
+    "mentori": {
+      "label": "Mentori",
+      "kanji": "面取り",
+      "gloss": "Spezialmesser für Gemüse",
+      "group": "gemuese"
+    },
+    "sujihiki": {
+      "label": "Sujihiki",
+      "kanji": "筋引",
+      "gloss": "Aufschnitt- und Filetiermesser",
+      "group": "fleisch",
+      "summary": "Langes, schmales, meist beidseitig geschliffenes Tranchiermesser (etwa 240–300 mm) für knochenloses Fleisch und Fisch; wird im Zugschnitt geführt.",
+      "uses": [
+        "Braten und Schinken aufschneiden",
+        "Fleisch parieren",
+        "knochenlosen Fisch filetieren"
+      ],
+      "avoid": "Gemüse und Knochenarbeit; für Alltagsarbeiten ist ein Gyuto vielseitiger.",
+      "fun": "Lange Schnitte in einem Zug.",
+      "level": 2,
+      "bevel": "double",
+      "lengthMm": [
+        240,
+        300
+      ],
+      "typicalMm": [
+        240,
+        270
+      ],
+      "tasks": {
+        "fleisch": 0.7,
+        "fisch": 0.4
+      },
+      "sources": [
+        "ty-873243",
+        "ty-262497",
+        "ty-415118"
+      ]
+    },
+    "honesuki": {
+      "label": "Honesuki",
+      "kanji": "骨スキ",
+      "gloss": "Ausbeinmesser (v. a. Geflügel)",
+      "group": "fleisch",
+      "summary": "Japanisches Ausbeinmesser, vor allem für Geflügel: kurz (meist 145–150 mm), dreieckig mit abgesenkter Spitze. Es arbeitet um Knochen herum und durch Knorpel und Gelenke, nicht durch Knochen.",
+      "uses": [
+        "Geflügel zerlegen",
+        "Fleisch vom Knochen lösen"
+      ],
+      "avoid": "Durch Knochen schneiden oder Gelenke aufhebeln (dünne Spitze, Ausbruchgefahr).",
+      "fun": "Präzises Zerlegen ganzer Hühner.",
+      "level": 2,
+      "lengthMm": [
+        120,
+        180
+      ],
+      "typicalMm": [
+        145,
+        150
+      ],
+      "tasks": {
+        "gefluegel": 1,
+        "fleisch": 0.4
+      },
+      "sources": [
+        "ty-260749",
+        "ty-085929",
+        "ty-642816",
+        "ty-949024",
+        "ty-779560",
+        "ty-601520"
+      ]
+    },
+    "garasuki": {
+      "label": "Garasuki",
+      "kanji": "ガラスキ",
+      "gloss": "Kräftiges Ausbeinmesser",
+      "group": "fleisch",
+      "summary": "Größeres, dickeres Verwandtes des Honesuki (etwa 180–240 mm) für das Zerlegen ganzer Hühner durch Gelenke und Knorpel; nicht zum Zerhacken von Knochen.",
+      "uses": [
+        "ganze Hühner zerlegen"
+      ],
+      "avoid": "Knochen hacken.",
+      "fun": "Kräftiges Werkzeug für Geflügelfans.",
+      "level": 2,
+      "lengthMm": [
+        180,
+        240
+      ],
+      "tasks": {
+        "gefluegel": 0.6
+      },
+      "sources": [
+        "ty-085929",
+        "ty-873243",
+        "ty-500571"
+      ]
+    },
+    "boning": {
+      "label": "Ausbeinmesser",
+      "kanji": "",
+      "gloss": "Ausbeinmesser (Gastro)",
+      "group": "fleisch"
+    },
+    "butcher": {
+      "label": "Metzgermesser",
+      "kanji": "",
+      "gloss": "Metzgermesser",
+      "group": "fleisch"
+    },
+    "carving": {
+      "label": "Tranchiermesser",
+      "kanji": "",
+      "gloss": "Tranchiermesser",
+      "group": "fleisch"
+    },
+    "ham-slicer": {
+      "label": "Schinkenmesser",
+      "kanji": "",
+      "gloss": "Schinkenmesser",
+      "group": "fleisch"
+    },
+    "steak": {
+      "label": "Steakmesser",
+      "kanji": "ステーキナイフ",
+      "gloss": "Steakmesser",
+      "group": "fleisch"
+    },
+    "deer": {
+      "label": "Wild-Zerlegemesser",
+      "kanji": "鹿さばき",
+      "gloss": "Wild-Zerlegemesser",
+      "group": "fleisch"
+    },
+    "honekiri": {
+      "label": "Honekiri",
+      "kanji": "骨切",
+      "gloss": "Kräftiges Messer für Knochen (Hamo)",
+      "group": "fleisch"
+    },
+    "yanagiba": {
+      "label": "Yanagiba",
+      "kanji": "柳刃",
+      "gloss": "Sashimi-Messer",
+      "group": "fisch",
+      "summary": "Langes, schmales, einseitig geschliffenes Sashimi-Messer (210–330 mm, im Haushalt meist 210–240 mm), das knochenlose Fischfilets in einem langen Zugschnitt schneidet.",
+      "uses": [
+        "Sashimi und Sushi-Zutaten",
+        "knochenlose Fischfilets"
+      ],
+      "avoid": "Knochen, Gräten und Gefrorenes; einseitige Klingen verlangen Schleiferfahrung.",
+      "fun": "Ein Zug, eine glatte Fläche – Technik als Hobby.",
+      "level": 3,
+      "bevel": "single",
+      "lengthMm": [
+        210,
+        330
+      ],
+      "typicalMm": [
+        210,
+        240
+      ],
+      "tasks": {
+        "fisch": 1
+      },
+      "sources": [
+        "ty-832778",
+        "ty-253424",
+        "ty-494372",
+        "ty-465399",
+        "ty-261437"
+      ]
+    },
+    "takohiki": {
+      "label": "Takohiki",
+      "kanji": "蛸引",
+      "gloss": "Sashimi-Messer (Kantō-Form)",
+      "group": "fisch",
+      "summary": "Tokioter (Kantō-)Variante des Yanagiba mit eckiger Spitze: dünner, schmaler und leichter, für gerade Sashimi-Schnitte. Trotz des Namens nicht auf Oktopus beschränkt.",
+      "uses": [
+        "Sashimi in geraden Schnitten"
+      ],
+      "avoid": "Knochen, Gräten.",
+      "fun": "Wie das Yanagiba, mit eckiger Spitze.",
+      "level": 3,
+      "bevel": "single",
+      "tasks": {
+        "fisch": 0.8
+      },
+      "sources": [
+        "ty-832778",
+        "ty-489801",
+        "ty-400618",
+        "ty-415118",
+        "ty-271055"
+      ]
+    },
+    "fuguhiki": {
+      "label": "Fuguhiki",
+      "kanji": "フグ引",
+      "gloss": "Sashimi-Messer, sehr dünn",
+      "group": "fisch",
+      "summary": "Noch dünneres, leichteres und leicht flexibles Sashimi-Messer für hauchdünne Scheiben (traditionell Kugelfisch). Reines Spezialmesser; laut Korin kein Ersatz für das Yanagiba.",
+      "uses": [
+        "hauchdünne Sashimi-Scheiben"
+      ],
+      "avoid": "Alles außer feinem Sashimi.",
+      "fun": "Für Sashimi-Enthusiasten.",
+      "level": 3,
+      "bevel": "single",
+      "tasks": {
+        "fisch": 0.5
+      },
+      "sources": [
+        "ty-426455",
+        "ty-489801",
+        "ty-873243"
+      ]
+    },
+    "deba": {
+      "label": "Deba",
+      "kanji": "出刃",
+      "gloss": "Fischzerlegemesser",
+      "group": "fisch",
+      "summary": "Dickes, schweres, traditionell einseitig geschliffenes Fischmesser zum Köpfen, Filetieren und Zerlegen ganzer Fische (Klinge 100–240 mm, im Haushalt meist 150–165 mm).",
+      "uses": [
+        "ganze Fische zerlegen",
+        "Fischköpfe und Gräten",
+        "weiche Geflügelrippen"
+      ],
+      "avoid": "Kein Hackbeil: dicke Knochen und Schläge von oben sind nicht vorgesehen.",
+      "fun": "Handwerk am ganzen Fisch.",
+      "level": 3,
+      "bevel": "single",
+      "lengthMm": [
+        100,
+        240
+      ],
+      "typicalMm": [
+        150,
+        165
+      ],
+      "tasks": {
+        "fisch": 0.8,
+        "gefluegel": 0.2
+      },
+      "sources": [
+        "ty-148096",
+        "ty-942297",
+        "ty-415118",
+        "ty-832778",
+        "ty-278268",
+        "ty-873243",
+        "ty-465399",
+        "ty-261437"
+      ]
+    },
+    "ai-deba": {
+      "label": "Ai-Deba",
+      "kanji": "相出刃",
+      "gloss": "Deba, mittlere Größe",
+      "group": "fisch"
+    },
+    "yo-deba": {
+      "label": "Yō-Deba",
+      "kanji": "洋出刃",
+      "gloss": "Deba in westlicher Bauform",
+      "group": "fisch"
+    },
+    "mioroshi": {
+      "label": "Mioroshi-Deba",
+      "kanji": "身卸",
+      "gloss": "Fisch-Filetiermesser",
+      "group": "fisch",
+      "summary": "Dünner, länger und leichter als das Deba: Mischform aus Deba und Yanagiba zum Filetieren. Wegen der geringeren Dicke bricht die Schneide bei harten Knochen leichter aus.",
+      "uses": [
+        "Fisch filetieren"
+      ],
+      "avoid": "Harte Knochen.",
+      "fun": "Wendig beim Filetieren.",
+      "level": 3,
+      "bevel": "single",
+      "typicalMm": [
+        210,
+        240
+      ],
+      "tasks": {
+        "fisch": 0.6
+      },
+      "sources": [
+        "ty-942297",
+        "ty-873243",
+        "ty-415118"
+      ]
+    },
+    "salmon": {
+      "label": "Lachsmesser",
+      "kanji": "鮭切",
+      "gloss": "Lachsmesser",
+      "group": "fisch"
+    },
+    "unagi": {
+      "label": "Unagi-Messer",
+      "kanji": "鰻裂き",
+      "gloss": "Aalmesser",
+      "group": "fisch"
+    },
+    "kaisaki": {
+      "label": "Kaisaki",
+      "kanji": "貝裂き",
+      "gloss": "Muschelmesser",
+      "group": "fisch"
+    },
+    "sole": {
+      "label": "Solenmesser",
+      "kanji": "ソール",
+      "gloss": "Fischmesser (Seezunge)",
+      "group": "fisch"
+    },
+    "kawahagi": {
+      "label": "Kawahagi",
+      "kanji": "",
+      "gloss": "Spezialmesser (Fisch)",
+      "group": "spezial"
+    },
+    "atamatori": {
+      "label": "Atamatori",
+      "kanji": "",
+      "gloss": "Spezialmesser (Fisch)",
+      "group": "spezial"
+    },
+    "bread": {
+      "label": "Brotmesser",
+      "kanji": "パン切",
+      "gloss": "Brotmesser",
+      "group": "brot",
+      "summary": "Das japanische Brotmesser (Pankiri): lange, gezahnte Klinge, die Brot ohne viel Druck und ohne Zerdrücken schneidet. Die Zähne lassen sich kaum auf dem Wasserstein schärfen.",
+      "uses": [
+        "Brot, Brötchen, Kuchen"
+      ],
+      "avoid": "Gemüse und Fleisch.",
+      "fun": "Saubere Scheiben ohne Krümelchaos.",
+      "level": 1,
+      "bevel": "double",
+      "typicalMm": [
+        240,
+        270
+      ],
+      "tasks": {
+        "brot": 1
+      },
+      "sources": [
+        "ty-873243",
+        "ty-856596",
+        "ty-132184",
+        "ty-353900",
+        "ty-642816"
+      ]
+    },
+    "soba": {
+      "label": "Soba-Kiri",
+      "kanji": "そば切",
+      "gloss": "Nudelmesser (Sobateig)",
+      "group": "spezial"
+    },
+    "cleaver": {
+      "label": "Hackmesser (Chūka)",
+      "kanji": "中華",
+      "gloss": "Chinesisches Hackmesser",
+      "group": "spezial",
+      "summary": "Rechteckiges, hohes, meist dünnklingiges Messer (Chūka-bōchō) für Gemüse, Fisch und knochenloses Fleisch. Trotz der Bezeichnung „Cleaver“ in der Regel kein Knochenhacker.",
+      "uses": [
+        "Gemüse in Scheiben und Streifen",
+        "knochenloses Fleisch",
+        "Zutaten auf der Klinge transportieren"
+      ],
+      "avoid": "Dicke Knochen; schwere Knochenhacker sind eine andere Messerklasse.",
+      "fun": "Viel Klingenfläche, viel Kontrolle.",
+      "level": 2,
+      "tasks": {
+        "gemuese": 0.5,
+        "allround": 0.4
+      },
+      "sources": [
+        "ty-873243",
+        "ty-444543",
+        "ty-835235"
+      ]
+    },
+    "castella": {
+      "label": "Castella-Messer",
+      "kanji": "カステラ",
+      "gloss": "Kuchenmesser",
+      "group": "spezial"
+    },
+    "frozen": {
+      "label": "Tiefkühlmesser",
+      "kanji": "冷凍包丁",
+      "gloss": "Kräftiges Messer für Tiefgekühltes",
+      "group": "spezial"
+    },
+    "sasanoha": {
+      "label": "Sasanoha",
+      "kanji": "笹の葉",
+      "gloss": "Bambusblatt-Form (Takeda)",
+      "group": "spezial"
+    },
+    "funayuki": {
+      "label": "Funayuki",
+      "kanji": "舟行",
+      "gloss": "Fischer-Allroundmesser",
+      "group": "spezial"
+    },
+    "kogatana": {
+      "label": "Kogatana",
+      "kanji": "小刀",
+      "gloss": "Kleines Messer",
+      "group": "klein"
+    },
+    "other-knife": {
+      "label": "Sonstiges Messer",
+      "kanji": "",
+      "gloss": "Sonstiges Messer",
+      "group": "spezial"
+    }
+  },
+  "typeGroups": {
+    "allround": {
+      "label": "Allrounder"
+    },
+    "klein": {
+      "label": "Kleine Messer"
+    },
+    "gemuese": {
+      "label": "Gemüse"
+    },
+    "fleisch": {
+      "label": "Fleisch & Geflügel"
+    },
+    "fisch": {
+      "label": "Fisch & Meeresfrüchte"
+    },
+    "brot": {
+      "label": "Brot"
+    },
+    "spezial": {
+      "label": "Spezialmesser"
+    }
+  },
+  "tasks": {
+    "allround": {
+      "label": "Alles Mögliche im Alltag",
+      "hint": "Ein Messer für Gemüse, Fleisch und Fisch."
+    },
+    "gemuese": {
+      "label": "Vor allem Gemüse und Kräuter",
+      "hint": "Viel Schneiden auf dem Brett."
+    },
+    "fleisch": {
+      "label": "Fleisch, auch Braten aufschneiden",
+      "hint": "Parieren, portionieren, tranchieren."
+    },
+    "gefluegel": {
+      "label": "Geflügel zerlegen, Fleisch auslösen",
+      "hint": "Um Knochen herum arbeiten."
+    },
+    "fisch": {
+      "label": "Fisch und Sashimi",
+      "hint": "Filetieren oder Sashimi schneiden."
+    },
+    "brot": {
+      "label": "Brot",
+      "hint": "Laib und Brötchen."
+    },
+    "obst": {
+      "label": "Obst und kleine Handarbeit",
+      "hint": "Schälen, Putzen, Kleinkram."
+    }
+  }
+}

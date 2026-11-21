@@ -1,0 +1,72 @@
+.hero {
+  padding-block: var(--space-7) var(--space-4);
+}
+.hero h1 {
+  max-width: 18ch;
+  margin-bottom: var(--space-4);
+}
+.hero .hamon {
+  max-width: 14rem;
+}
+
+.paths {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  padding-block: var(--space-4);
+}
+
+.path {
+  color: var(--ink);
+  text-decoration: none;
+  height: 100%;
+}
+.path:hover {
+  color: var(--ink);
+}
+.path .card__body {
+  height: 100%;
+  align-content: start;
+  gap: var(--space-3);
+}
+.path__icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius);
+  background: var(--paper-2);
+  color: var(--indigo);
+}
+.path--primary .path__icon {
+  background: var(--shu);
+  color: var(--on-shu);
+}
+.path__text {
+  margin: 0;
+  color: var(--ink-2);
+}
+.path__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-2);
+  font-weight: 650;
+  color: var(--indigo);
+}
+
+.list-teaser__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+.list-teaser__body p {
+  margin: 0;
+}
+
+.home__stand {
+  margin-top: var(--space-4);
+}

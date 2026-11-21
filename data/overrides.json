@@ -1,0 +1,3 @@
+{
+  "_hinweis": "Geprüfte Korrekturen je Produkt-Handle; Felder werden beim Bauen von knives.json überschrieben. Beispiel: { \"mein-handle\": { \"rust\": \"clad\", \"grip\": { \"material\": \"walnut\" } } }"
+}

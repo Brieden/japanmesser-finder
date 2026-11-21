@@ -1,0 +1,384 @@
+/* Geführter Finder (#/finder): Fragen, Weitermachen/Neu starten, Ergebnis. Nur Token-Variablen; Dark Mode kommt über die Tokens. */
+
+/* ── Kopf mit Fortschritt ── */
+.fhead {
+  margin-bottom: var(--space-5);
+}
+.fhead .eyebrow {
+  margin-bottom: var(--space-2);
+}
+
+/* ── Frage ── */
+.fq__set {
+  min-width: 0;
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  border: 0;
+}
+.fq__legend {
+  width: 100%;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+}
+.fq__title {
+  margin: 0 0 var(--space-3);
+  font-size: var(--step-3);
+}
+.fq__lead {
+  max-width: 60ch;
+  margin-bottom: var(--space-4);
+  color: var(--ink-2);
+}
+.fq__field {
+  display: grid;
+  gap: var(--space-2);
+}
+.fq__field p {
+  margin: 0;
+}
+.fq__notes:empty {
+  display: none;
+}
+.fq__notes {
+  margin-block: var(--space-4);
+}
+.fq__max {
+  margin: var(--space-2) 0 0;
+}
+.fq__error {
+  margin: var(--space-3) 0 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--bad);
+  border-left-width: 4px;
+  border-radius: var(--radius);
+  background: var(--bad-weak);
+  color: var(--bad);
+  font-weight: 650;
+}
+.fq__why {
+  margin-top: var(--space-4);
+}
+
+/* ── Antwortkarten (Radio/Checkbox in <label>) ── */
+.fopts {
+  display: grid;
+  gap: var(--space-2);
+}
+@media (min-width: 40rem) {
+  .fopts--grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.fopt {
+  min-height: 3.5rem;
+  padding: var(--space-3) var(--space-4);
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.fopt input[type="radio"],
+.fopt input[type="checkbox"] {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-top: 0.125rem;
+}
+.fopt:hover {
+  border-color: var(--ink-3);
+}
+.fopt:has(input:checked) {
+  border-color: var(--indigo);
+  background: var(--indigo-weak);
+  box-shadow: inset 0 0 0 1px var(--indigo);
+}
+.fopt:has(input:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.fopt:has(input:disabled) {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.fopt__label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+  font-weight: 650;
+}
+.fopt__tag {
+  font-weight: 650;
+}
+
+/* ── Aktionsleiste (bleibt über der mobilen Navigation sichtbar) ── */
+.fbar {
+  position: sticky;
+  bottom: calc(var(--bottom-nav-h) + env(safe-area-inset-bottom));
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+}
+.fbar .btn {
+  padding-inline: var(--space-3);
+}
+.fbar__main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+@media (min-width: 52rem) {
+  .fbar {
+    bottom: 0;
+  }
+  .fbar .btn {
+    padding-inline: var(--space-4);
+  }
+}
+
+/* ── Erklärlisten (Taxonomie-Texte) ── */
+.fexplain {
+  display: grid;
+  gap: var(--space-1);
+  margin: var(--space-3) 0 0;
+}
+.fexplain dt {
+  margin-top: var(--space-2);
+  font-weight: 650;
+}
+.fexplain dd {
+  margin: 0;
+  color: var(--ink-2);
+}
+.fexplain__care {
+  display: block;
+  margin-top: var(--space-1);
+  color: var(--ink-3);
+}
+
+/* ── Weitermachen / Neu starten ── */
+.fresume__actions {
+  margin-block: var(--space-4);
+}
+
+/* ── Profil-Chips (Klick → zurück zur Frage) ── */
+.fchips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+.fchips li {
+  max-width: 100%;
+  margin: 0;
+}
+.fchip {
+  min-height: 2.75rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 550;
+  line-height: 1.3;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+a.fchip:hover {
+  border-color: var(--ink-3);
+  background: var(--paper-2);
+  color: var(--ink);
+}
+.fchip--static {
+  min-height: 0;
+  border-style: dashed;
+  background: var(--paper-2);
+  color: var(--ink-2);
+}
+
+/* ── Ergebnis ── */
+.fres-head {
+  padding-block: var(--space-6) var(--space-4);
+}
+.fres-head h1 {
+  max-width: 24ch;
+  overflow-wrap: anywhere;
+}
+.fres-head .lede {
+  margin-bottom: var(--space-4);
+}
+.finder--result h2 {
+  font-size: var(--step-2);
+}
+.finder--result .container > .notice {
+  margin-bottom: var(--space-4);
+}
+
+/* Typ-Karten */
+.ftypes {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+}
+.ftype {
+  height: 100%;
+}
+.ftype__sil {
+  display: grid;
+  place-items: center;
+  min-height: 6.5rem;
+  padding: var(--space-5) var(--space-4) var(--space-3);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-2);
+}
+.ftype__sil .sil {
+  width: 100%;
+  max-width: 16rem;
+  height: auto;
+}
+.ftype__rank,
+.ftype__gloss,
+.ftype__summary {
+  margin: 0;
+}
+.ftype__ja {
+  color: var(--ink-3);
+  font-size: 0.8em;
+  font-weight: 500;
+}
+.ftype__gloss {
+  font-size: var(--step--1);
+}
+.ftype .card__body > p {
+  margin-bottom: 0;
+}
+.ftype__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 2.75rem;
+  font-weight: 600;
+}
+
+/* Stahl und Pflege */
+.fsteel .card__body {
+  gap: var(--space-3);
+}
+.fbullets {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fbullet {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: 0;
+}
+.fbullet svg {
+  flex: none;
+  margin-top: 0.2rem;
+  color: var(--ok);
+}
+.fbullet--warn {
+  font-weight: 650;
+}
+.fbullet--warn svg {
+  color: var(--warn);
+}
+.ftiers {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ftier {
+  margin: 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--line);
+}
+.ftier:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+.ftier__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-2);
+}
+.ftier p:not(.ftier__head) {
+  margin-bottom: var(--space-2);
+}
+.ftier p:last-child {
+  margin-bottom: 0;
+}
+
+/* Treffer */
+.fmatches-host > * + * {
+  margin-top: var(--space-3);
+}
+.fcontrols {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+}
+.fcontrols__count {
+  margin: 0;
+  font-weight: 600;
+}
+.fswitch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+.fswitch input {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+.fmore {
+  margin: var(--space-4) 0 0;
+  text-align: center;
+}
+.fmatches-host .empty h3 {
+  margin-bottom: 0;
+}
+.fmatches-host .empty p,
+.ftypes-host .empty p {
+  max-width: 52ch;
+  margin: 0;
+}
+.ftypes-host .empty h3 {
+  margin-bottom: 0;
+}
+
+/* Aktionen */
+.fres-actions {
+  margin-bottom: var(--space-3);
+}
+.fsave {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* Der Fokus springt nach einem Schrittwechsel zur Überschrift (nicht bedienbar, daher ohne Rahmen) */
+.finder h1[tabindex="-1"]:focus {
+  outline: none;
+}

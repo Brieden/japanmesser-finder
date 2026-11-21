@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Japanmesser-Finder – das richtige Messer für die richtige Person</title>
+  <meta name="description" content="Auswahlhilfe für japanische Küchenmesser: geführter Finder, filterbarer Katalog und eine kurze, sachliche Messerkunde ohne Hype.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/ui.css">
+  <script>
+    // Farbschema vor dem ersten Rendern setzen (verhindert Aufblitzen)
+    try { var t = localStorage.getItem('jmf:v1:theme'); if (t) { t = JSON.parse(t); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } } catch (e) {}
+  </script>
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#/" aria-label="Japanmesser-Finder – Startseite">
+        <span class="brand__mark" lang="ja" aria-hidden="true">刃</span>
+        <span class="brand__text">Japanmesser<span class="brand__sub">-Finder</span></span>
+      </a>
+      <nav class="nav nav--top" aria-label="Hauptnavigation">
+        <a href="#/finder" data-nav="finder">Finder</a>
+        <a href="#/katalog" data-nav="katalog">Katalog</a>
+        <a href="#/wissen" data-nav="wissen">Messerkunde</a>
+        <a href="#/liste" data-nav="liste">Liste <span class="badge" data-list-count hidden>0</span></a>
+      </nav>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Farbschema wechseln (hell, dunkel, automatisch)"></button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div id="app">
+      <p class="container loading">Wird geladen …</p>
+    </div>
+  </main>
+
+  <nav class="nav nav--bottom" aria-label="Hauptnavigation (mobil)">
+    <a href="#/finder" data-nav="finder"><span data-icon="compass"></span><span>Finder</span></a>
+    <a href="#/katalog" data-nav="katalog"><span data-icon="search"></span><span>Katalog</span></a>
+    <a href="#/wissen" data-nav="wissen"><span data-icon="book"></span><span>Wissen</span></a>
+    <a href="#/liste" data-nav="liste"><span data-icon="bookmark"></span><span>Liste</span><span class="badge" data-list-count hidden>0</span></a>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>Inoffizielle, private Auswahlhilfe. Nicht mit dem Shop verbunden; Preise und Verfügbarkeit stammen aus dem öffentlichen Online-Katalog und können abweichen.</p>
+      <p><a href="#/hinweise">Hinweise, Datenstand &amp; Quellen</a></p>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="container" style="padding-block: 2rem">
+      <p><strong>Diese Seite benötigt JavaScript</strong>, um den Katalog zu laden und zu filtern.</p>
+    </div>
+  </noscript>
+</body>
+</html>

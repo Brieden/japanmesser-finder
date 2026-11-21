@@ -1,0 +1,971 @@
+{
+ "version": 1,
+ "updated": "2026-11-21",
+ "intro": {
+  "title": "Messerkunde",
+  "lede": "Kurz, sachlich und mit Quellen: was japanische Küchenmesser tatsächlich anders macht, wie du die Begriffe im Katalog liest und worauf es beim Verschenken ankommt."
+ },
+ "sections": [
+  {
+   "id": "grundlagen",
+   "kicker": "Grundlagen",
+   "title": "Was japanische Messer anders macht",
+   "summary": "Dünnere Klingen, härterer Stahl, spitzere Schneidwinkel: Das bringt Schneidleistung und kostet Robustheit.",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Japanische Küchenmesser unterscheiden sich von europäischen Standardmessern vor allem in drei Punkten: **Geometrie**, **Härte** und **Form**. Keiner davon ist ein Wundermittel, jeder ein Kompromiss."
+    },
+    {
+     "type": "h3",
+     "text": "Geometrie: dünn und spitz"
+    },
+    {
+     "type": "p",
+     "text": "Die Schneide wird oft in einem engeren Winkel geschliffen, und die Klinge ist hinter der Schneide dünner. Händler nennen für japanische Kohlenstoffstahlmesser etwa 15° pro Seite, für typische westliche Klingen 20–25°. Wie viel das ausmacht: Larrin Thomas (Knife Steel Nerds) schreibt, die Schneidengeometrie sei für die Leistung wichtiger als Wärmebehandlung oder Stahlsorte."
+    },
+    {
+     "type": "h3",
+     "text": "Härte: länger scharf, weniger zäh"
+    },
+    {
+     "type": "p",
+     "text": "Gemessen wird die Härte in Rockwell (HRC). America’s Test Kitchen nennt für getestete japanische Gyuto 58–65 HRC, für westliche Kochmesser etwa 55–58 HRC. Härtere Klingen behalten die Schneide länger, sind aber weniger zäh: Wo ein weicher Stahl sich verbiegt, bricht bei hartem Stahl eher ein kleines Stück aus."
+    },
+    {
+     "type": "h3",
+     "text": "Form: für Aufgaben gebaut"
+    },
+    {
+     "type": "p",
+     "text": "Es gibt viele Spezialformen, vom Gemüsemesser bis zum Sashimi-Messer. Ihre Form gehört zu einer Schnitttechnik (Schiebeschnitt, Zugschnitt, Wiegen). Mehr dazu im Abschnitt zu den Messertypen."
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Was das für den Kauf heißt",
+     "text": "Ein dünnes, hartes Messer schneidet mit wenig Kraft sauber, verlangt aber Brett, Technik und Pflege, die dazu passen: kein Hebeln, kein Verdrehen, keine Knochen. Ob sich das lohnt, hängt weniger vom Messer ab als davon, wie die Person kocht."
+    }
+   ],
+   "sources": [
+    "cktg-carbon",
+    "kns-nerds",
+    "atk-gyuto",
+    "kns-chip",
+    "jki-faq"
+   ]
+  },
+  {
+   "id": "stahl",
+   "kicker": "Stahl",
+   "title": "Stahl und „rostfrei“",
+   "summary": "Was „rostfrei“ nach Norm heißt und was komplett, teilweise oder nicht rostfrei in der Praxis bedeutet.",
+   "blocks": [
+    {
+     "type": "h3",
+     "text": "Was „rostfrei“ heißt"
+    },
+    {
+     "type": "p",
+     "text": "Nach der Norm EN 10088-1 sind nichtrostende Stähle Stähle mit **mindestens 10,5 % Chrom** und **höchstens 1,2 % Kohlenstoff**. Das Chrom bildet an der Oberfläche eine dünne Schutzschicht. Rostfrei heißt deshalb „deutlich korrosionsträger“, nicht „rostet nie“: Auch rostfreie Messer können in einer geschlossenen, feuchten Umgebung rosten."
+    },
+    {
+     "type": "h3",
+     "text": "Drei Klassen im Katalog"
+    },
+    {
+     "type": "figure",
+     "id": "rust-tiers",
+     "caption": "Komplett, teilweise oder nicht rostfrei: wo der Schutz sitzt."
+    },
+    {
+     "type": "table",
+     "caption": "Die drei Rost-Klassen im Vergleich",
+     "head": [
+      "Klasse",
+      "Aufbau",
+      "Verhalten",
+      "Pflege"
+     ],
+     "rows": [
+      [
+       "**Komplett rostfrei**",
+       "Klinge einschließlich Schneide aus rostfreiem Stahl (z. B. VG-10, AUS-8/10, Ginsan #3)",
+       "Blank, keine Patina, kaum Fleckenbildung",
+       "Von Hand spülen, abtrocknen"
+      ],
+      [
+       "**Teilweise rostfrei**",
+       "Rostfreier Mantel, Kern und Schneide aus Kohlenstoffstahl („stainless-clad“)",
+       "Seiten geschützt; die Schneide kann Patina bilden und bei Nässe rosten",
+       "Sofort abtrocknen; Schneide wie Kohlenstoffstahl behandeln"
+      ],
+      [
+       "**Nicht rostfrei**",
+       "Kohlenstoffstahl, meist mit Weicheisen-Mantel oder als Monostahl",
+       "Reagiert mit Feuchtigkeit und Säuren, bildet Patina, kann rosten",
+       "Sofort abtrocknen, bei Lagerung ölen (Kamelienöl)"
+      ]
+     ]
+    },
+    {
+     "type": "callout",
+     "tone": "ok",
+     "title": "Faustregel für Einsteiger",
+     "text": "Wer nicht sicher ist, ob die Pflege klappt, wenn viel Saures geschnitten wird oder mehrere Personen das Messer benutzen, greift laut Japanese Knife Imports besser zu rostfreiem Stahl. Teilweise rostfreie Messer beschreibt der Händler als Mittelweg: Kohlenstoffkern an der Schneide, rostfreier Mantel über dem Großteil der Klingenfläche."
+    },
+    {
+     "type": "h3",
+     "text": "Patina"
+    },
+    {
+     "type": "p",
+     "text": "Auf Kohlenstoffstahl bildet sich mit der Zeit eine graue bis dunkle Oxidschicht, die Patina. Sie ist normal und verlangsamt weiteres Rosten. Ihre Farbe entsteht durch das Schnittgut; säurehaltige Zutaten wie Zwiebeln und Eiweiß aus Fleisch beschleunigen sie. Aus anfangs bunten Tönen wird mit der Zeit ein stabiles Anthrazitgrau."
+    },
+    {
+     "type": "h3",
+     "text": "Stähle im Katalog"
+    },
+    {
+     "type": "p",
+     "text": "Die Werte sind typische Spannen aus Hersteller- und Händlerangaben (Härte in HRC, Kohlenstoff und Chrom in Masse-%). Einzelne Messer können abweichen."
+    },
+    {
+     "type": "steeltable"
+    },
+    {
+     "type": "callout",
+     "tone": "warn",
+     "title": "Sorte nicht angegeben",
+     "text": "Bei vielen Messern nennt der Shop nur Sammelbezeichnungen wie „Molybdenum Steel“, „Swedish Steel“ oder „Cobalt Steel“. Die genaue Legierung ist dann unbekannt; die Einordnung „rostfrei“ stammt aus dem Katalogeintrag."
+    },
+    {
+     "type": "h3",
+     "text": "Was heißt das für die Wahl?"
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      "**Wenig Pflegeaufwand gewünscht:** komplett rostfrei. VG-10, AUS-8/10 und Ginsan #3 sind verbreitet und unkompliziert.",
+      "**Schärfen als Hobby:** Kohlenstoffstahl (Shirogami, Aogami) passt laut Händlern zu Köchen, die eine sehr feine Schneide wollen, gern auf dem Stein schärfen und die Klinge nach jedem Gebrauch trocknen.",
+      "**Sehr harte Stähle (z. B. ZDP-189, ab ca. 65 HRC):** Die Schneide bleibt lange scharf, ist aber tendenziell weniger zäh; Ausbrüche sind eher möglich."
+     ]
+    }
+   ],
+   "sources": [
+    "en10088",
+    "kns-white2",
+    "jki-faq",
+    "zahocho-patina",
+    "kns-steels",
+    "proterial-aogami1",
+    "kns-bluesuper",
+    "kns-chip"
+   ]
+  },
+  {
+   "id": "bauweise",
+   "kicker": "Bauweise",
+   "title": "Monostahl, mehrlagig, Damast",
+   "summary": "Wie die Klinge aufgebaut ist, erklärt viel, nur nicht, wie scharf sie wird.",
+   "blocks": [
+    {
+     "type": "figure",
+     "id": "construction",
+     "caption": "Querschnitte: Monostahl, Warikomi (San-mai) und Kasumi."
+    },
+    {
+     "type": "p",
+     "text": "**Monostahl (zenkō):** Die ganze Klinge besteht aus einem Stahl. Bei rostfreien Messern ist das üblich und unkompliziert. Der Begriff *Honyaki* meint im engeren Sinn ein aus einem Stück Kohlenstoffstahl geschmiedetes und gehärtetes Messer, aufwendig und teuer. Rostfreie Monostahl-Messer werden zwar manchmal so genannt, sind es im engeren Sinn aber nicht. Im Katalog heißt eine Linie „Honyaki INOX“; gemeint ist rostfreier Monostahl."
+    },
+    {
+     "type": "p",
+     "text": "**Mehrlagig:** Ein harter Kernstahl (*hagane*) wird mit weicherem Mantelmaterial (*jigane*) verbunden. Beim **Warikomi** sitzt der Kern zwischen zwei Mantellagen („San-mai“), beim **Kasumi** ist der Hartstahl auf Weicheisen geschmiedet; dessen Fläche sieht nach dem Schleifen neblig-matt aus („Kasumi“ heißt „Nebel“). In beiden Fällen bildet der Kern die Schneide. Der Mantel kann aus rostfreiem Stahl oder aus Weicheisen bestehen; Weicheisen patiniert und rostet ebenfalls."
+    },
+    {
+     "type": "h3",
+     "text": "Damast"
+    },
+    {
+     "type": "p",
+     "text": "Echter Damast ist mustergeschweißter Stahl: Lagen verschiedener Stähle werden verschmiedet, geschliffen und geätzt. Bei japanischen Messern liegt das Muster im **Mantel**, die Schneide bildet der **Kernstahl**. Daneben gibt es reine Oberflächenmuster (Laser, Ätzung), die nur Optik sind. Wie gut ein Damast-Messer schneidet, entscheiden Kernstahl und Geometrie, nicht das Muster."
+    },
+    {
+     "type": "h3",
+     "text": "Oberflächen"
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      "**Kurouchi:** dunkle Schmiedehaut; vor allem Optik, nutzt sich im Gebrauch ab.",
+      "**Tsuchime (Hammerschlag):** Optik; Händler nennen außerdem, dass Schnittgut weniger anhaftet.",
+      "**Nashiji („Birnenhaut“) und Migaki (poliert):** unterschiedliche Optik von matt-strukturiert bis nahezu spiegelnd."
+     ]
+    }
+   ],
+   "sources": [
+    "hocho-honyaki",
+    "knifewear-shapes",
+    "korin-about",
+    "cktg-damascus",
+    "cktg-glossary",
+    "kireaji-hammered",
+    "cktg-guide"
+   ]
+  },
+  {
+   "id": "schliff",
+   "kicker": "Schliff und Griff",
+   "title": "Einseitig oder beidseitig, Wa oder Yō",
+   "summary": "Schliff und Griff entscheiden, ob ein Messer zur Person passt: Händigkeit, Übung und Gewohnheit zählen.",
+   "blocks": [
+    {
+     "type": "figure",
+     "id": "bevel",
+     "caption": "Beidseitiger (ryōba) und einseitiger Schliff (kataba) im Querschnitt."
+    },
+    {
+     "type": "p",
+     "text": "**Beidseitig geschliffene** Messer (ryōba) sind die Regel bei Gyuto, Santoku und Nakiri; sie führen den Schnitt gerade und eignen sich für Links- und Rechtshänder. **Einseitig geschliffene** (kataba) wie Yanagiba, Deba und Usuba haben eine flache, oft leicht hohle Rückseite (*urasuki*). Sie sind für Rechts- oder Linkshänder gebaut und lassen sich nicht umarbeiten."
+    },
+    {
+     "type": "callout",
+     "tone": "warn",
+     "title": "Linkshänder",
+     "text": "Einseitig geschliffene Messer gibt es für Linkshänder nur in einer eigenen Ausführung (im Katalog: „For Left-Handed“). Doppelschliff-Messer gelten als beidhändig, manche haben eine leichte Asymmetrie. Die Händler erwarten, dass bei einseitigen Messern die Händigkeit geklärt wird."
+    },
+    {
+     "type": "h3",
+     "text": "Griffe"
+    },
+    {
+     "type": "p",
+     "text": "**Wa-Griffe** (japanisch) sind meist aus Holz und achteckig, oval oder D-förmig. Sie sind leichter als westliche Griffe und verlagern den Schwerpunkt nach vorn zur Klinge; ausgelegt sind sie für den Pinch-Grip, bei dem die Finger die Klinge direkt vor dem Griff fassen. **Yō-Griffe** (westlich) sind schwerer, meist vernietet und für Nutzer westlicher Messer vertraut. Laut Japanese Knife Imports ist keiner „besser“; es ist Geschmackssache."
+    },
+    {
+     "type": "p",
+     "text": "Achteckige und runde Griffe sind symmetrisch. D-förmige Griffe sind meist für Rechtshänder ausgelegt; manche Linkshänder kommen trotzdem gut damit zurecht."
+    }
+   ],
+   "sources": [
+    "korin-faq",
+    "korin-about",
+    "jki-faq",
+    "cktg-guide",
+    "kireaji-handle"
+   ]
+  },
+  {
+   "id": "typen",
+   "kicker": "Messertypen",
+   "title": "Welcher Typ wofür – und wann er Spaß macht",
+   "summary": "Typen, Längen und Einsatz im Überblick, mit ehrlicher Einordnung von Aufwand und Nutzen.",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Für den Haushalt reichen laut japanischen Fachleuten meist ein **Hauptmesser** (Gyuto oder Santoku) und ein kleines **Petty**; Brotmesser, Nakiri oder Sujihiki sind sinnvolle Ergänzungen. Knifewear rechnet insgesamt mit drei bis fünf Messern."
+    },
+    {
+     "type": "p",
+     "text": "**Santoku oder Gyuto?** Beide sind Allzweckmesser. Das Santoku ist kürzer (typisch 165–180 mm), flacher und auf Schiebeschnitte ausgelegt; das Gyuto ist länger (typisch 210–240 mm), stärker gewölbt und eignet sich auch zum Wiegen. Keines ist pauschal besser: Es hängt von Schneidstil, Brettgröße und Hand ab."
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Spezialmesser: für wen sinnvoll?",
+     "text": "Yanagiba, Deba und Usuba sind vor allem für Menschen gedacht, die die traditionelle japanische Zubereitung bewusst lernen wollen. Die Aufgaben lassen sich auch mit Kochmesser, Ausbeinmesser oder Sujihiki erledigen. Der Reiz dieser Messer liegt in Technik und Anspruch, nicht in Vielseitigkeit."
+    },
+    {
+     "type": "typeatlas"
+    }
+   ],
+   "sources": [
+    "ty-109399",
+    "ty-465399",
+    "ty-410167",
+    "ty-743282"
+   ]
+  },
+  {
+   "id": "pflege",
+   "kicker": "Pflege",
+   "title": "Pflege und Schärfen",
+   "summary": "Wenige Regeln verhindern die meisten Schäden.",
+   "blocks": [
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      "**Von Hand spülen und sofort abtrocknen.** Nicht in die Spülmaschine: Das Messer wird herumgeschleudert, Hitze, Wasser und Reiniger schädigen auch den Griff.",
+      "**Brett:** Holz oder weiches Gummi. Glas- und Steinbretter sind zu hart; auch Bambus gilt als sehr hart und lässt Klingen leicht ausbrechen.",
+      "**Nicht schneiden:** Knochen, Gefrorenes, harte Kerne. Nicht hebeln oder verdrehen. Das sind die typischen Ursachen für Ausbrüche.",
+      "**Trocken lagern**, etwa an der Magnetleiste oder im Block mit Luftzirkulation; in einer geschlossenen, feuchten Scheide können selbst rostfreie Messer rosten."
+     ]
+    },
+    {
+     "type": "h3",
+     "text": "Schärfen"
+    },
+    {
+     "type": "p",
+     "text": "Mit einem **Wasserstein** (ein 1000er zum Schärfen, ein 3000er oder feiner zum Verfeinern) lassen sich japanische Messer am besten schärfen. Durchzieh-Schleifer entfernen zu viel Material und passen nicht zu dünnen Klingen. Gerillte Stahl-Wetzstäbe sind für weichere europäische Messer gedacht und können harte japanische Klingen beschädigen; Keramikstäbe sind eine Alternative. Wer nicht selbst schärfen mag, lässt schleifen."
+    },
+    {
+     "type": "h3",
+     "text": "Kohlenstoffstahl"
+    },
+    {
+     "type": "p",
+     "text": "Nach Gebrauch abwischen und abtrocknen, bei längerer Lagerung dünn mit Kamelienöl einölen. Patina ist normal."
+    }
+   ],
+   "sources": [
+    "jki-faq",
+    "jki-care",
+    "kns-chip",
+    "seisuke-chip",
+    "kns-bluesuper",
+    "cktg-guide",
+    "cktg-honing",
+    "cktg-carbon"
+   ]
+  },
+  {
+   "id": "mythen",
+   "kicker": "Kurz geprüft",
+   "title": "Vier verbreitete Annahmen",
+   "summary": "Was an gängigen Sprüchen dran ist.",
+   "blocks": [
+    {
+     "type": "table",
+     "caption": "",
+     "head": [
+      "Annahme",
+      "Einordnung"
+     ],
+     "rows": [
+      [
+       "„Härter ist besser.“",
+       "Härte erhöht die Schnitthaltigkeit, senkt aber die Zähigkeit. Ausbrüche sind die Kehrseite."
+      ],
+      [
+       "„Damast schneidet besser.“",
+       "Das Muster liegt bei japanischen Messern im Mantel; geschnitten wird mit dem Kernstahl."
+      ],
+      [
+       "„Japanische Messer sind nichts für Anfänger.“",
+       "Beidseitig geschliffene, rostfreie Modelle (z. B. Gyuto, Santoku) sind gängige Einsteigermesser. Anspruchsvoller sind einseitig geschliffene Messer und reaktive Kohlenstoffstähle."
+      ],
+      [
+       "„Rostfrei heißt: keine Pflege.“",
+       "Auch rostfreie Messer gehören nicht in die Spülmaschine und nicht nass in eine geschlossene Scheide."
+      ]
+     ]
+    }
+   ],
+   "sources": [
+    "kns-chip",
+    "cktg-damascus",
+    "korin-faq",
+    "jki-faq"
+   ]
+  },
+  {
+   "id": "mitbringen",
+   "kicker": "Praktisches",
+   "title": "Mitbringen aus Japan (Stand: 21.11.2026)",
+   "summary": "Steuererstattung, Transport, Flug, Zoll und Waffenrecht, geprüft an Behörden- und Airline-Quellen.",
+   "blocks": [
+    {
+     "type": "callout",
+     "tone": "warn",
+     "title": "Keine Rechtsberatung",
+     "text": "Die Angaben beruhen auf den unten verlinkten Quellen mit Stand November 2026. Regeln ändern sich: Vor der Reise bei Airline und Zoll nachsehen. Für Österreich und die Schweiz wurden nur Zollfreigrenzen, nicht aber Regeln zum Mitführen von Messern geprüft."
+    },
+    {
+     "type": "h3",
+     "text": "Kaufen in Tokio"
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      "**Tsubaya:** Der Laden ist täglich von 10 bis 17 Uhr geöffnet (außer über Jahresende und Neujahr). Der Onlineverkauf ist laut Shop pausiert; eine Wiederaufnahme ist für Januar 2027 geplant.",
+      "**Steuer:** Seit dem 1. November 2026 gilt für Touristen in Japan das **Erstattungsverfahren**. Du zahlst den Preis inklusive Verbrauchsteuer; erstattet wird, nachdem der Zoll bei der Ausreise bestätigt hat, dass du die Ware innerhalb von **90 Tagen** nach dem Kauf ausführst. Mindestbetrag: 5.000 ¥ ohne Steuer; der Reisepass wird vorgelegt.",
+      "**Nicht geprüft:** Ob Tsubaya das Erstattungsverfahren anbietet und ob es Gravur oder Schleifservice gibt, konnte nicht festgestellt werden. Das lässt sich im Laden klären."
+     ]
+    },
+    {
+     "type": "h3",
+     "text": "Transport in Japan"
+    },
+    {
+     "type": "p",
+     "text": "Das Gesetz über Schusswaffen und Schwerter erlaubt es niemandem, Klingen über 6 cm ohne berechtigten Grund bei sich zu führen. Als Beispiel für einen berechtigten Grund nennt die Polizei ausdrücklich den Kauf und Heimtransport einer Klinge. Praktischer Rat: Messer verpackt lassen, auf direktem Weg transportieren und den Kaufbeleg aufbewahren."
+    },
+    {
+     "type": "h3",
+     "text": "Im Flugzeug"
+    },
+    {
+     "type": "p",
+     "text": "Messer gehören ins **Aufgabegepäck**. ANA schreibt, dass alle Klingen, auch Messer, nicht in die Kabine dürfen; die EU-Verordnung 2015/1998 führt „Messer mit Klingen von mehr als 6 cm“ unter den verbotenen Gegenständen im Handgepäck. Klingen vor dem Einchecken sicher verpacken (Scheide oder Karton)."
+    },
+    {
+     "type": "h3",
+     "text": "Einfuhr"
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      "**Deutschland und Österreich:** Andere Waren sind bei Flugreisen bis zu einem Gesamtwert von **430 €** abgabenfrei (sonst 300 €); gerechnet wird der Wert aller mitgebrachten Waren zusammen.",
+      "**Schweiz:** Waren für den Privatgebrauch oder zum Verschenken sind bis zu einem Gesamtwert von **300 CHF** mehrwertsteuerfrei (einmal pro Tag und Person); darüber fallen Abgaben an."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Die Liste auf dieser Seite rechnet Yen zum EZB-Referenzkurs in Euro um, damit du die Freigrenze im Blick behältst."
+    },
+    {
+     "type": "h3",
+     "text": "Heimweg in Deutschland"
+    },
+    {
+     "type": "p",
+     "text": "§ 42a WaffG verbietet, feststehende Messer mit einer Klinge über 12 cm zu führen. Ausgenommen ist der **Transport in einem verschlossenen Behältnis**. Messer also im Koffer oder in einer verschlossenen Tasche lassen, nicht griffbereit in der Jackentasche."
+    }
+   ],
+   "sources": [
+    "tsubaya-hours",
+    "tsubaya-suspended",
+    "nta-refund",
+    "police-kagoshima",
+    "ana-restricted",
+    "eu-2015-1998",
+    "zoll-freimengen",
+    "bmf-at",
+    "bazg-ch",
+    "waffg-42a"
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "term": "Hagane",
+   "ja": "鋼",
+   "text": "Der harte Kernstahl, der bei mehrlagigen Messern die Schneide bildet."
+  },
+  {
+   "term": "Jigane",
+   "ja": "地金",
+   "text": "Der weichere Mantel aus Weicheisen oder rostfreiem Stahl."
+  },
+  {
+   "term": "Kasumi",
+   "ja": "霞",
+   "text": "„Nebel“: Bauweise mit Hartstahl auf Weicheisen; die Weicheisen-Fläche wirkt nach dem Schleifen neblig-matt."
+  },
+  {
+   "term": "Warikomi",
+   "ja": "割込",
+   "text": "Mehrlagiger Aufbau, bei dem der Kernstahl zwischen zwei Mantellagen sitzt (San-mai)."
+  },
+  {
+   "term": "Zenkō",
+   "ja": "全鋼",
+   "text": "Monostahl: Die ganze Klinge besteht aus einem Stahl."
+  },
+  {
+   "term": "Honyaki",
+   "ja": "本焼",
+   "text": "Aus einem Stück Kohlenstoffstahl geschmiedetes und gehärtetes Messer; aufwendig und teuer."
+  },
+  {
+   "term": "Kurouchi",
+   "ja": "黒打",
+   "text": "Dunkle Schmiedehaut, die auf der Klinge stehen bleibt."
+  },
+  {
+   "term": "Tsuchime",
+   "ja": "鎚目",
+   "text": "Hammerschlag-Oberfläche."
+  },
+  {
+   "term": "Nashiji",
+   "ja": "梨地",
+   "text": "„Birnenhaut“: fein strukturierte, matte Oberfläche."
+  },
+  {
+   "term": "Ryōba",
+   "ja": "両刃",
+   "text": "Beidseitig geschliffen."
+  },
+  {
+   "term": "Kataba",
+   "ja": "片刃",
+   "text": "Einseitig geschliffen; händigkeitsgebunden."
+  },
+  {
+   "term": "Urasuki",
+   "ja": "裏すき",
+   "text": "Leicht hohle Rückseite bei einseitig geschliffenen Messern."
+  },
+  {
+   "term": "Wa-Griff",
+   "ja": "和式柄",
+   "text": "Japanischer Holzgriff (achteckig, oval oder D-förmig), leichter als westliche Griffe."
+  },
+  {
+   "term": "Yō-Griff",
+   "ja": "洋式柄",
+   "text": "Westlicher, meist vernieteter Griff."
+  },
+  {
+   "term": "Saya",
+   "ja": "鞘",
+   "text": "Holzscheide zum Schutz der Klinge."
+  },
+  {
+   "term": "Patina",
+   "ja": "",
+   "text": "Graue bis dunkle Oxidschicht auf Kohlenstoffstahl; normal und verlangsamt weiteres Rosten."
+  },
+  {
+   "term": "HRC",
+   "ja": "",
+   "text": "Rockwell-Härte (Skala C); höher bedeutet härter."
+  },
+  {
+   "term": "Pinch-Grip",
+   "ja": "",
+   "text": "Griffhaltung, bei der Daumen und Zeigefinger die Klinge direkt vor dem Griff fassen."
+  }
+ ],
+ "sources": {
+  "en10088": {
+   "title": "EN 10088-1 (2005): Nichtrostende Stähle – Verzeichnis der nichtrostenden Stähle, Abschn. 3.1",
+   "publisher": "CEN",
+   "note": "Norm-Definition: mindestens 10,5 % Chrom, höchstens 1,2 % Kohlenstoff."
+  },
+  "proterial-aogami1": {
+   "title": "Aogami 1 – chemische Zusammensetzung (YSS)",
+   "publisher": "Proterial (ehem. Hitachi Metals)",
+   "url": "https://www.proterial.com/e/yss/search/aogami1.html",
+   "note": "Herstellerangabe: C 1,25–1,35 %, Cr 0,30–0,50 %, W 1,50–2,00 %."
+  },
+  "kns-steels": {
+   "title": "Knife steel comparison (Steel & Materials)",
+   "publisher": "Knives and Stones",
+   "url": "https://www.knivesandstones.com.au/pages/steels",
+   "note": "Händlertabelle: typische Härte (HRC) und Zusammensetzung der in japanischen Messern üblichen Stähle."
+  },
+  "kns-white2": {
+   "title": "White #2 / Shirogami #2",
+   "publisher": "Knives and Stones",
+   "url": "https://www.knivesandstones.com.au/pages/steel/white-2-shirogami-2",
+   "note": "Zitiert Proterial: Shirogami 1 mit 1,25–1,35 % C, Shirogami 2 mit 1,05–1,15 % C; nicht rostfrei."
+  },
+  "kns-bluesuper": {
+   "title": "Blue Super / Aogami Super",
+   "publisher": "Knives and Stones",
+   "url": "https://www.knivesandstones.com.au/pages/steel/blue-super-aogami-super",
+   "note": "Beschreibt Patina und Pflege von Kohlenstoffstahl."
+  },
+  "kns-nerds": {
+   "title": "How to Pick the Best Steel for Every Knife",
+   "publisher": "Knife Steel Nerds (Larrin Thomas)",
+   "url": "https://knifesteelnerds.com/2019/05/20/how-to-pick-the-best-steel-for-every-knife/",
+   "note": "Schneidengeometrie sei für die Schneidleistung wichtiger als Wärmebehandlung oder Stahlwahl."
+  },
+  "atk-gyuto": {
+   "title": "The Best Gyuto",
+   "publisher": "America's Test Kitchen",
+   "url": "https://www.americastestkitchen.com/equipment-reviews/2648-the-best-gyuto",
+   "note": "Getestete japanische Gyuto: 58–65 HRC; westliche Kochmesser: etwa 55–58 HRC."
+  },
+  "cktg-carbon": {
+   "title": "Carbon Steel Care Guide",
+   "publisher": "Chef Knives To Go",
+   "url": "https://www.chefknivestogo.com/carbon-steel-care-guide.html",
+   "note": "Schliffwinkel japanischer Kohlenstoffstahlmesser ca. 15° pro Seite gegenüber 20–25° bei westlichen Klingen; Kamelienöl, Patina."
+  },
+  "cktg-guide": {
+   "title": "Japanese Knife Buyer's Guide",
+   "publisher": "Chef Knives To Go",
+   "url": "https://www.chefknivestogo.com/japanese-knife-buyers-guide.html",
+   "note": "Wa- vs. Yō-Griff, Oberflächen, Wasserstein-Körnungen."
+  },
+  "cktg-damascus": {
+   "title": "What is Damascus Steel?",
+   "publisher": "Chef Knives To Go",
+   "url": "https://www.chefknivestogo.com/what-is-damascus-steel.html",
+   "note": "Bei japanischen Damast-Messern liegt das Muster im Mantel, die Schneide bildet der Kernstahl."
+  },
+  "cktg-glossary": {
+   "title": "Japanese Knife Glossary",
+   "publisher": "Chef Knives To Go",
+   "url": "https://www.chefknivestogo.com/japanese-knife-glossary.html",
+   "note": "Definitionen u. a. zu Kurouchi, Tsuchime, Nashiji, Migaki."
+  },
+  "cktg-honing": {
+   "title": "Honing Rod Guide",
+   "publisher": "Chef Knives To Go",
+   "url": "https://www.chefknivestogo.com/honing-rod.html",
+   "note": "Gerillte Stahl-Wetzstäbe sind für weichere europäische Messer gedacht und können harte japanische Klingen beschädigen."
+  },
+  "korin-about": {
+   "title": "About Japanese Knives",
+   "publisher": "Korin",
+   "url": "https://www.korin.com/about-japanese-knives",
+   "note": "Kasumi, Honyaki, einseitig/beidseitig, Typen."
+  },
+  "korin-faq": {
+   "title": "Japanese Knife FAQ",
+   "publisher": "Korin",
+   "url": "https://www.korin.com/japanese-knife-faq",
+   "note": "Einseitiger Schliff, Händigkeit, typische Ausbruchursachen."
+  },
+  "jki-faq": {
+   "title": "FAQ",
+   "publisher": "Japanese Knife Imports",
+   "url": "https://www.japaneseknifeimports.com/pages/faq",
+   "note": "Spülmaschine, Ausbruchursachen, Wa- vs. Yō-Griff, stainless-clad Kohlenstoffstahl, Linkshänder."
+  },
+  "jki-care": {
+   "title": "About Knife Care",
+   "publisher": "Japanese Knife Imports",
+   "url": "https://www.japaneseknifeimports.com/pages/about-knife-care",
+   "note": "Pflegehinweise (von Hand spülen und trocknen)."
+  },
+  "kns-chip": {
+   "title": "Why did my knife chip or go dull?",
+   "publisher": "Knives and Stones",
+   "url": "https://www.knivesandstones.com.au/pages/care/why-knife-chipped-dull",
+   "note": "Kein Glas- oder Steinbrett; weiches Gummi- oder Holzbrett."
+  },
+  "seisuke-chip": {
+   "title": "How to avoid chipping your Japanese kitchen knife",
+   "publisher": "Seisuke Knife",
+   "url": "https://us.seisukeknife.com/blogs/news/how-to-avoid-chipping-your-japanese-kitchen-knife-and-what-to-do-if-you-do",
+   "note": "Bambus- und Glasbretter sind sehr hart und lassen Klingen leicht ausbrechen."
+  },
+  "hocho-honyaki": {
+   "title": "Why stainless knives are cheap even if made with a single steel, like expensive Honyaki",
+   "publisher": "Hocho-Knife.com",
+   "url": "https://blog.hocho-knife.com/knife-structure/why-stainless-knives-so-cheap-even-if-made-with-a-single-steel-like-expensive-honyaki",
+   "note": "Honyaki im engeren Sinn vs. rostfreier Monostahl; Kasumi aus Hagane + Weicheisen."
+  },
+  "knifewear-shapes": {
+   "title": "Every Japanese Kitchen Knife Shape Explained",
+   "publisher": "Knifewear",
+   "url": "https://knifewear.com/blogs/articles/every-japanese-kitchen-knife-shape-explained",
+   "note": "Laminierte Klingen (Awase/Kasumi), Jigane und Hagane, Messerformen."
+  },
+  "kireaji-handle": {
+   "title": "Type of handle",
+   "publisher": "Kireaji (Sakai)",
+   "url": "https://kireaji.ca/pages/type-of-handle",
+   "note": "D-förmige Griffe sind meist für Rechtshänder ausgelegt."
+  },
+  "kireaji-hammered": {
+   "title": "Hammered finish (Tsuchime)",
+   "publisher": "Kireaji (Sakai)",
+   "url": "https://kireaji.ca/pages/wiki-hammered-finish",
+   "note": "Hammerschlag: weniger anhaftendes Schnittgut, Optik."
+  },
+  "zahocho-patina": {
+   "title": "Patina on Japanese Knives: A Comprehensive Guide",
+   "publisher": "Zahocho",
+   "url": "https://zahocho.com/blogs/japanese-knife-101/patina-on-japanese-knives-a-comprehensive-guide",
+   "note": "Säurehaltige Zutaten und Fleischproteine beschleunigen die Patinabildung; von blau/orange zu stabilem Anthrazitgrau."
+  },
+  "tsubaya-hours": {
+   "title": "Business days and hours",
+   "publisher": "Tsubaya",
+   "url": "https://tsubaya.jp/en/pages/businesshours",
+   "note": "Täglich 10–17 Uhr, außer über Jahresende/Neujahr."
+  },
+  "tsubaya-suspended": {
+   "title": "Online Sales Suspended",
+   "publisher": "Tsubaya",
+   "url": "https://tsubaya.jp/en/pages/online-sales-suspended",
+   "note": "Onlineverkauf pausiert; Wiederaufnahme für Januar 2027 geplant."
+  },
+  "nta-refund": {
+   "title": "Tax-Free Shopping System – Refund Method (FY2025 tax reform)",
+   "publisher": "National Tax Agency, Japan",
+   "url": "https://www.nta.go.jp/publication/pamph/shohi/menzei/202506/pdf/0025006-106.pdf",
+   "note": "Ab 1. November 2026: Verkauf inkl. Verbrauchsteuer, Erstattung nach Zollbestätigung bei Ausreise innerhalb von 90 Tagen; Mindestbetrag 5.000 ¥ (ohne Steuer)."
+  },
+  "police-kagoshima": {
+   "title": "Klingen nicht ohne berechtigten Grund mitführen (銃砲刀剣類所持等取締法)",
+   "publisher": "Polizei der Präfektur Kagoshima",
+   "url": "https://www.pref.kagoshima.jp/ja09/police/oshirase/index/hamono_keitai.html",
+   "note": "Klingen über 6 cm dürfen ohne berechtigten Grund nicht mitgeführt werden; Beispiele für berechtigte Gründe: Kauf und Heimtransport, Küchenarbeit."
+  },
+  "ana-restricted": {
+   "title": "Eingeschränkte und verbotene Gegenstände (Auslandsflüge)",
+   "publisher": "ANA",
+   "url": "https://www.ana.co.jp/en/jp/international/prepare/baggage/limit/caution-restriction02.html",
+   "note": "Alle Klingen (auch Messer) dürfen nicht in die Kabine; als Aufgabegepäck einchecken."
+  },
+  "eu-2015-1998": {
+   "title": "Durchführungsverordnung (EU) 2015/1998, Anhang 4-C (verbotene Gegenstände)",
+   "publisher": "EUR-Lex",
+   "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32015R1998",
+   "note": "Messer mit Klingen über 6 cm sind im Handgepäck verboten."
+  },
+  "zoll-freimengen": {
+   "title": "Reisefreimengen bei Einreise aus einem Nicht-EU-Staat",
+   "publisher": "Zoll (Deutschland)",
+   "url": "https://www.zoll.de/DE/Privatpersonen/Reisen/Reisen-nach-Deutschland-aus-einem-nicht-eu-Staat/Zoll-und-Steuern/Reisefreimengen/reisefreimengen_node.html",
+   "note": "Andere Waren bis 300 €, bei Flug- und Seereisenden bis 430 € Gesamtwert abgabenfrei."
+  },
+  "bmf-at": {
+   "title": "Freigrenze bei Einreise aus Nicht-EU-Staaten",
+   "publisher": "BMF Österreich",
+   "url": "https://www.bmf.gv.at/zoll/reise/einreise-aus-nicht-eu/freigrenze.html",
+   "note": "300 € je Reisenden, 430 € für Flugreisende (nichtgewerblich)."
+  },
+  "bazg-ch": {
+   "title": "Ich wohne im Ausland und reise in die Schweiz / Wertfreigrenze",
+   "publisher": "BAZG Schweiz",
+   "url": "https://www.bazg.admin.ch/de/ich-wohne-im-ausland-und-reise-in-die-schweiz",
+   "note": "Waren für Privatgebrauch oder zum Verschenken bis 300 CHF Gesamtwert mehrwertsteuerfrei; einmal pro Tag und Person."
+  },
+  "waffg-42a": {
+   "title": "§ 42a WaffG – Verbot des Führens von Anscheinswaffen und bestimmten tragbaren Gegenständen",
+   "publisher": "Gesetze im Internet",
+   "url": "https://www.gesetze-im-internet.de/waffg_2002/__42a.html",
+   "note": "Feststehende Messer mit Klinge über 12 cm dürfen nicht geführt werden; ausgenommen: Transport in einem verschlossenen Behältnis."
+  },
+  "ty-261437": {
+   "title": "Japanese Knife FAQ",
+   "publisher": "Korin",
+   "url": "https://www.korin.com/japanese-knife-faq"
+  },
+  "ty-896348": {
+   "title": "Santoku vs. Gyuto",
+   "publisher": "Sakai Ichimonji Mitsuhide",
+   "url": "https://global.ichimonji.co.jp/blogs/a-craftsmans-eyes-view/santoku-vs-gyuto"
+  },
+  "ty-873243": {
+   "title": "Japanese Kitchen Knife Types And Styles",
+   "publisher": "Zknives",
+   "url": "https://zknives.com/knives/kitchen/misc/usetype/all/index.shtml"
+  },
+  "ty-253424": {
+   "title": "Yanagiba (Wegweiser)",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Yanagiba"
+  },
+  "ty-843394": {
+   "title": "Types of Knives",
+   "publisher": "KIREAJI (Sakai)",
+   "url": "https://kireaji.ca/pages/japanese-knife-academy-types-of-knives"
+  },
+  "ty-415118": {
+   "title": "Japanese kitchen knife (Wegweiser)",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Japanese_kitchen_knife"
+  },
+  "ty-642816": {
+   "title": "Japanese Knife Guide",
+   "publisher": "Koi Knives",
+   "url": "https://www.koiknives.com/blogs/japanese-knives/knife-guide"
+  },
+  "ty-650083": {
+   "title": "Japanese Knife Buyer's Guide",
+   "publisher": "Chef Knives To Go",
+   "url": "https://www.chefknivestogo.com/japanese-knife-buyers-guide.html"
+  },
+  "ty-353900": {
+   "title": "The Three Knives Every Cook Should Have",
+   "publisher": "America's Test Kitchen",
+   "url": "https://www.americastestkitchen.com/articles/8204-three-essential-knives"
+  },
+  "ty-148096": {
+   "title": "Knife Type Guide",
+   "publisher": "Seisuke Knife",
+   "url": "https://seisukeknife.com/pages/knife-type-guide"
+  },
+  "ty-260749": {
+   "title": "Every Japanese Kitchen Knife Shape Explained",
+   "publisher": "Knifewear",
+   "url": "https://knifewear.com/blogs/articles/every-japanese-kitchen-knife-shape-explained"
+  },
+  "ty-743282": {
+   "title": "What is a Gyuto?",
+   "publisher": "Chef Knives To Go",
+   "url": "https://www.chefknivestogo.com/what-is-a-gyuto--the-complete-guide-to-japan-all-purpose-chef-knife.html"
+  },
+  "ty-011778": {
+   "title": "三徳包丁とは",
+   "publisher": "Zwilling Japan",
+   "url": "https://www.zwilling.com/jp/magazine/product-guide-knives/knife-about-santoku.html"
+  },
+  "ty-494372": {
+   "title": "How to Choose a Japanese Kitchen Knife",
+   "publisher": "Sakai Ichimonji Mitsuhide",
+   "url": "https://global.ichimonji.co.jp/pages/choose-japanese-kitchen-knife"
+  },
+  "ty-109399": {
+   "title": "One Cut Above (Interview Kama-asa, Kappabashi)",
+   "publisher": "JETRO Taste of Japan",
+   "url": "https://japan-food.jetro.go.jp/en/japanesecuisine/129.html"
+  },
+  "ty-852481": {
+   "title": "Nakiri bōchō (Wegweiser)",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Nakiri_b%C5%8Dch%C5%8D"
+  },
+  "ty-151558": {
+   "title": "Nakiri (Vegetable Knife)",
+   "publisher": "Korin",
+   "url": "https://www.korin.com/japanese-knives/styles/nakiri"
+  },
+  "ty-730921": {
+   "title": "What Are Nakiri Knives Used For?",
+   "publisher": "Seido Knives",
+   "url": "https://seidoknives.com/blogs/news/what-are-nakiri-knives-used-for"
+  },
+  "ty-910114": {
+   "title": "4 Things to Know Before You Buy a Nakiri",
+   "publisher": "America's Test Kitchen",
+   "url": "https://www.americastestkitchen.com/articles/3429-4-things-to-know-before-you-buy-a-nakiri"
+  },
+  "ty-278268": {
+   "title": "Can Nakiri, Deba and Gyuto cut soft bones?",
+   "publisher": "Seisuke Knife",
+   "url": "https://seisukeknife.com/blogs/hiro-s-blog/113299270-nakiri-deba-and-gyoto-japanese-chef-knives-can-cut-soft-bones"
+  },
+  "ty-271055": {
+   "title": "和包丁の種類と特徴",
+   "publisher": "GOOD LUCK TRIP",
+   "url": "https://www.gltjp.com/ja/article/item/20749/"
+  },
+  "ty-076474": {
+   "title": "Fruit Knife",
+   "publisher": "Korin",
+   "url": "https://www.korin.com/japanese-knives/styles/fruit-knife"
+  },
+  "ty-350430": {
+   "title": "Koh 3.5-inch Kudamono",
+   "publisher": "Zwilling Miyabi",
+   "url": "https://www.zwilling.com/us/miyabi-koh-4000fc-3.5-inch-paring-knife-33950-093/33950-093-0.html"
+  },
+  "ty-333833": {
+   "title": "What's a K-Tip? Kiritsuke vs. Bunka vs. Hakata",
+   "publisher": "Knifewear",
+   "url": "https://knifewear.com/blogs/articles/whats-a-k-tip-kiritsuke-v-s-bunka-v-s-hakata"
+  },
+  "ty-321311": {
+   "title": "K-tip Gyuto vs Kiritsuke",
+   "publisher": "Knives and Stones",
+   "url": "https://www.knivesandstones.com.au/pages/kns-faq/faq-ktip-gyuto-vs-kiritsuke"
+  },
+  "ty-465399": {
+   "title": "Do I Really Need a Block of Kitchen Knives?",
+   "publisher": "Knifewear",
+   "url": "https://knifewear.com/blogs/articles/do-i-really-need-a-block-of-kitchen-knives-how-to-build-your-collection"
+  },
+  "ty-262497": {
+   "title": "Sujihiki (Slicing Knife)",
+   "publisher": "Korin",
+   "url": "https://www.korin.com/japanese-knives/styles/sujihiki"
+  },
+  "ty-856596": {
+   "title": "Bread and Pastry Knives",
+   "publisher": "Korin",
+   "url": "https://www.korin.com/japanese-knives/styles/pastry-and-bread-knives"
+  },
+  "ty-132184": {
+   "title": "Pankiri",
+   "publisher": "Koi Knives",
+   "url": "https://koiknives.com/blogs/japanese-knives/pankiri"
+  },
+  "ty-444543": {
+   "title": "Chinese Style Cleaver",
+   "publisher": "Korin",
+   "url": "https://www.korin.com/japanese-knives/styles/chinese-style-cleaver"
+  },
+  "ty-835235": {
+   "title": "Chinese cleaver (Wegweiser)",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Chinese_cleaver"
+  },
+  "ty-832778": {
+   "title": "About Japanese Knives",
+   "publisher": "Korin",
+   "url": "https://www.korin.com/about-japanese-knives"
+  },
+  "ty-489801": {
+   "title": "What is a Yanagiba?",
+   "publisher": "Sakai Ichimonji Mitsuhide",
+   "url": "https://global.ichimonji.co.jp/blogs/knife-guide/what-is-a-yanagiba"
+  },
+  "ty-400618": {
+   "title": "Takohiki",
+   "publisher": "KIREAJI (Sakai)",
+   "url": "https://kireaji.ca/pages/types-of-knives-q8-takohiki"
+  },
+  "ty-426455": {
+   "title": "Fugubiki",
+   "publisher": "Korin",
+   "url": "https://www.korin.com/japanese-knives/styles/fugubiki"
+  },
+  "ty-942297": {
+   "title": "The Many Kinds of Deba",
+   "publisher": "Sakai Ichimonji Mitsuhide",
+   "url": "https://global.ichimonji.co.jp/blogs/a-craftsmans-eyes-view/the-many-kinds-of-deba-knife"
+  },
+  "ty-825595": {
+   "title": "Usuba bōchō (Wegweiser)",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Usuba_b%C5%8Dch%C5%8D"
+  },
+  "ty-337418": {
+   "title": "Gyuto or Santoku?",
+   "publisher": "Hasu-Seizo (Sakai Takayuki)",
+   "url": "https://hasuseizo.com/blogs/japanese-kitchen-knives/should-i-buy-a-gyuto-or-santoku-knife"
+  },
+  "ty-937616": {
+   "title": "Kanto vs Kansai Knife Shapes",
+   "publisher": "Japanese Knife Imports",
+   "url": "https://japaneseknifeimports.com/blogs/news/64518341-kanto-vs-kansai-knife-shapes-a-lesson-in-history"
+  },
+  "ty-085929": {
+   "title": "Boning Knife",
+   "publisher": "Korin",
+   "url": "https://www.korin.com/japanese-knives/styles/boning-knife"
+  },
+  "ty-949024": {
+   "title": "Boning Knife",
+   "publisher": "Hocho-Knife.com",
+   "url": "https://www.hocho-knife.com/boning-knife"
+  },
+  "ty-779560": {
+   "title": "Honesuki-Maru",
+   "publisher": "Zknives",
+   "url": "https://zknives.com/knives/kitchen/misc/type/Honesuki-Maru.shtml"
+  },
+  "ty-601520": {
+   "title": "Knife vs. Knife: How to Choose a Boning Knife",
+   "publisher": "Knifewear",
+   "url": "https://knifewear.com/blogs/articles/knife-vs-knife-how-to-choose-a-boning-knife"
+  },
+  "ty-500571": {
+   "title": "Traditional Japanese Knives",
+   "publisher": "KIREAJI (Sakai)",
+   "url": "https://kireaji.ca/pages/japanese-knife-academy-types-of-knives-traditional-japanese-knives"
+  },
+  "ty-410167": {
+   "title": "Santoku vs. Gyuto",
+   "publisher": "Knifewear",
+   "url": "https://knifewear.com/blogs/articles/santoku-v-s-gyuto-the-best-multipurpose-kitchen-knife"
+  }
+ }
+}

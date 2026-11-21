@@ -1,0 +1,5 @@
+# Rohdaten der Katalog-Pipeline (werden bei Bedarf neu geladen)
+data/raw/
+node_modules/
+.DS_Store
+*.log

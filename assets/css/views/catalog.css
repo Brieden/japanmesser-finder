@@ -1,0 +1,452 @@
+/* Katalog: Kopf, Filterpanel (klebende Seitenleiste ab 60 rem, darunter Bottom-Sheet), Chips, Ergebnisraster.
+   Nur Token-Variablen; Dark Mode kommt über die Tokens. */
+
+.cat {
+  padding-block: var(--space-5) var(--space-6);
+}
+
+/* ── Kopf ── */
+
+.cat-head {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.cat-head__title h1 {
+  margin: 0 0 var(--space-1);
+  font-size: var(--step-3);
+}
+.cat-count {
+  margin: 0;
+  color: var(--ink-2);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.cat-head__stand {
+  margin: var(--space-1) 0 0;
+}
+
+.cat-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-3);
+  align-items: end;
+}
+.cat-search {
+  position: relative;
+  grid-column: 1 / -1;
+}
+.cat-search input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-left: 2.75rem;
+}
+.cat-search__icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  color: var(--ink-3);
+  pointer-events: none;
+}
+.cat-sort {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.cat-sort label {
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--ink-3);
+}
+.cat-sort select {
+  min-width: 11rem;
+}
+
+@media (min-width: 40rem) {
+  .cat-toolbar {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+  }
+  .cat-search {
+    grid-column: auto;
+  }
+}
+
+/* ── Layout ── */
+
+.cat-grid {
+  --grid-min: 17rem;
+  --grid-gap: var(--space-4);
+}
+
+.cat-notice {
+  margin-bottom: var(--space-4);
+}
+.cat-layout {
+  display: grid;
+  gap: var(--space-4);
+}
+.cat-main {
+  min-width: 0;
+}
+.cat-filters {
+  display: none; /* unter 60 rem wohnt das Panel im Bottom-Sheet */
+}
+
+@media (min-width: 60rem) {
+  .cat-layout {
+    grid-template-columns: 18.5rem minmax(0, 1fr);
+    gap: var(--space-5);
+    align-items: start;
+  }
+  .cat-filters {
+    display: block;
+    position: sticky;
+    top: calc(var(--header-h) + var(--space-3));
+    max-height: calc(100dvh - var(--header-h) - var(--space-5));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 2px 6px 2px 2px;
+    scrollbar-gutter: stable;
+  }
+  .cat-toolbar .cat-filterbtn {
+    display: none;
+  }
+  .cat-toolbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .cat-grid {
+    --grid-min: 15rem;
+  }
+}
+
+/* ── Filterpanel ── */
+
+.cat-panel {
+  display: grid;
+  gap: var(--space-2);
+}
+.cat-panel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 2.75rem;
+}
+.cat-panel__title {
+  margin: 0;
+  font-size: var(--step-1);
+}
+
+.cat-toggles {
+  display: grid;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.cat-toggles__row {
+  border-top: 1px solid var(--line);
+}
+
+.cat-group__title {
+  margin-right: auto;
+}
+.cat-group__badge {
+  flex: none;
+}
+details.cat-group > .cat-group__body {
+  padding: 0 var(--space-3) var(--space-3);
+}
+details.cat-group > summary {
+  min-height: 2.75rem;
+}
+
+/* Untergruppen (Typgruppen, Stahlfamilien) */
+.cat-sub {
+  border-top: 1px solid var(--line);
+}
+.cat-sub:first-child {
+  border-top: 0;
+}
+.cat-sub > summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  list-style: none;
+  cursor: pointer;
+  font-size: var(--step--1);
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  color: var(--ink-2);
+}
+.cat-sub > summary::-webkit-details-marker {
+  display: none;
+}
+.cat-sub > summary::before {
+  content: "";
+  flex: none;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid var(--ink-3);
+  border-bottom: 2px solid var(--ink-3);
+  transform: rotate(-45deg);
+  transition: transform var(--dur) var(--ease);
+}
+.cat-sub[open] > summary::before {
+  transform: rotate(45deg);
+}
+.cat-sub__count {
+  margin-left: auto;
+  color: var(--ink-3);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.cat-sub__body {
+  padding-left: var(--space-3);
+}
+
+/* Auswahlzeile mit Anzahl */
+.cat-opts {
+  margin: 0;
+}
+.fopt {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  min-height: 2.75rem;
+  padding: 0.5rem 0.25rem;
+  border-radius: var(--radius-s);
+  cursor: pointer;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.fopt:hover {
+  background: var(--paper-2);
+}
+.fopt:has(input:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+}
+.fopt input {
+  margin-top: 0.15rem;
+}
+.fopt__main {
+  display: grid;
+  flex: 1;
+  gap: 2px;
+  min-width: 0;
+}
+.fopt__label {
+  overflow-wrap: anywhere;
+}
+.fopt:has(input:checked) .fopt__label {
+  font-weight: 700;
+}
+.fopt__ja {
+  margin-left: 0.15em;
+  color: var(--ink-3);
+  font-size: 0.95em;
+  font-weight: 400;
+}
+.fopt__sub {
+  color: var(--ink-3);
+  font-size: var(--step--1);
+  font-weight: 400;
+}
+.fopt__count {
+  flex: none;
+  min-width: 2ch;
+  padding-top: 0.1rem;
+  color: var(--ink-2);
+  font-size: var(--step--1);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+/* Ohne Treffer: gedämpft (Text bleibt lesbar, Zähler „0“ nennt den Grund), aber wählbar */
+.fopt.is-zero .fopt__label,
+.fopt.is-zero .fopt__count {
+  color: var(--ink-3);
+  font-weight: 400;
+}
+
+/* Zahlfelder (Länge, Preis) */
+.cat-range {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-2);
+}
+.cat-range__field {
+  display: grid;
+  flex: 1;
+  gap: 2px;
+  min-width: 0;
+}
+.cat-range__field label {
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.cat-range__input {
+  position: relative;
+}
+.cat-range__input input {
+  padding-right: 2.1rem;
+}
+.cat-range__unit {
+  position: absolute;
+  right: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-3);
+  pointer-events: none;
+}
+.cat-range__dash {
+  padding-bottom: 0.65rem;
+  color: var(--ink-3);
+}
+.cat-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+.cat-presets .chip-select {
+  min-height: 2.75rem;
+}
+.cat-note {
+  margin: var(--space-3) 0 0;
+  color: var(--ink-3);
+  font-size: var(--step--1);
+}
+
+/* Bottom-Sheet: Panel im Dialog, Übernehmen-Leiste klebt unten */
+.cat-panel__apply {
+  display: none;
+}
+.cat-panel.is-sheet .cat-panel__title {
+  display: none;
+}
+.cat-panel.is-sheet .cat-panel__head {
+  justify-content: flex-end;
+  min-height: 0;
+}
+.cat-panel.is-sheet .cat-panel__apply {
+  display: block;
+  position: sticky;
+  bottom: 0;
+  margin: var(--space-3) calc(-1 * var(--space-5)) calc(-1 * var(--space-5));
+  padding: var(--space-3) var(--space-5);
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+/* ── Aktive Filter ── */
+
+.cat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.cat-chips__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cat-chips__list li {
+  margin: 0;
+}
+.cat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  padding: 0.25rem 0.75rem 0.25rem 0.9rem;
+  border: 1px solid var(--indigo);
+  border-radius: var(--radius-pill);
+  background: var(--indigo-weak);
+  color: var(--indigo);
+  font: 600 var(--step--1) / 1.2 var(--font-sans);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.cat-chip:hover {
+  background: var(--surface);
+  border-color: var(--indigo-2);
+}
+.cat-chip svg {
+  flex: none;
+}
+/* Touch-Ziele: unter 60 rem mindestens 44 px, auch bei kleinen Buttons */
+.cat-panel__reset,
+.cat-chips .btn--sm {
+  min-height: 2.75rem;
+}
+/* Nur mit Maus/Trackpad auf breiten Schirmen etwas kompakter (ein iPad im Querformat bleibt bei 44 px) */
+@media (min-width: 60rem) and (pointer: fine) {
+  .cat-chip,
+  .cat-presets .chip-select,
+  .cat-panel__reset,
+  .cat-chips .btn--sm {
+    min-height: 2.25rem;
+  }
+}
+
+/* ── Ergebnisse ── */
+
+/* Touch-Ziele der geteilten Karte: Buttons mindestens 44 px hoch */
+.cat-grid .pcard__actions .btn {
+  min-height: 2.75rem;
+}
+.cat-more {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+.cat-more__info {
+  margin: 0;
+  font-size: var(--step--1);
+}
+
+.cat-empty__help {
+  display: grid;
+  gap: var(--space-2);
+  width: min(100%, 30rem);
+}
+.cat-empty__lede {
+  margin: 0;
+  font-weight: 650;
+}
+.cat-empty__list {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cat-empty__list li {
+  margin: 0;
+}
+.cat-empty__list .btn {
+  width: 100%;
+  justify-content: space-between;
+  text-align: left;
+}
+.cat-empty__n {
+  flex: none;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+.cat-empty p {
+  margin: 0;
+  max-width: 46ch;
+}
