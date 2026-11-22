@@ -47,8 +47,8 @@ export function priceBlock(item, data) {
   return h('div', { class: 'price' }, multi && h('span', { class: 'price__alt' }, 'ab'), h('span', { class: 'price__main' }, main), alt && h('span', { class: 'price__alt' }, alt));
 }
 
-export function productCard(item, { data, reasons = [], warnings = [], sizeIndex = 0, onPickDone } = {}) {
-  const head = itemHeadline(data, item);
+/** „Merken“-Schaltfläche (öffnet den Dialog „Zur Liste hinzufügen“); zeigt danach „Vorgemerkt“. */
+export function pickButton(item, { data, sizeIndex = 0, onPickDone } = {}) {
   const picked = shortlist.isPicked(item.handle);
   const pickBtn = h(
     'button',
@@ -72,6 +72,12 @@ export function productCard(item, { data, reasons = [], warnings = [], sizeIndex
     icon(picked ? 'bookmark-fill' : 'bookmark', { size: 16 }),
     picked ? 'Vorgemerkt' : 'Merken'
   );
+  return pickBtn;
+}
+
+export function productCard(item, { data, reasons = [], warnings = [], sizeIndex = 0, onPickDone } = {}) {
+  const head = itemHeadline(data, item);
+  const pickBtn = pickButton(item, { data, sizeIndex, onPickDone });
 
   return h(
     'article',

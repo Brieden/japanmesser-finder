@@ -311,6 +311,17 @@
       "Ohne genannte Stahlsorte (z. B. „Molybdenum Steel“) gibt es zu diesen drei Skalen keine Schätzung.",
       "Der Preis spiegelt auch Handwerk und Hersteller; die Skala „Preis im Typ“ vergleicht nur Preise, nicht den Gegenwert."
      ]
+    },
+    {
+     "type": "h3",
+     "text": "Sichere Wahl auf der Startseite"
+    },
+    {
+     "type": "p",
+     "text": "Die Auswahl auf der Startseite nutzt diese Skalen. Sie gilt für eine bestimmte Annahme (vegetarische Küche, Einkauf in der Schweiz) und ist keine Empfehlung für alle. Zwei Kennzahlen kommen dazu: **Sorglos** und **Preis-Leistung**."
+    },
+    {
+     "type": "picksrules"
     }
    ],
    "sources": [
@@ -323,7 +334,10 @@
     "koi-pankiri",
     "knifewear-ktip",
     "knifewear-honesuki",
-    "ty-942297"
+    "ty-942297",
+    "kireaji-hammered",
+    "cktg-glossary",
+    "bazg-ch"
    ]
   },
   {

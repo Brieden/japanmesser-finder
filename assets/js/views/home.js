@@ -1,8 +1,9 @@
-// Startseite: die drei Wege zum passenden Messer + Liste + Einkaufshinweis.
+// Startseite: die drei Wege zum passenden Messer + „Sichere Wahl“ (ui/picks.js) + Liste + Einkaufshinweis.
 import { h, loadCss, assetUrl } from '../dom.js';
 import { icon } from '../icons.js';
 import { shortlist } from '../shortlist.js';
 import { shopNotice } from '../ui/shop-notice.js';
+import { picksSection } from '../ui/picks.js';
 import { num, dateDe } from '../format.js';
 
 export const title = '';
@@ -43,6 +44,7 @@ export async function render(ctx) {
       path('#/katalog', 'search', 'Katalog durchsuchen', `${num(homeKnives.length)} Haushalts- und Hobbymesser filtern nach Typ, Stahl, rostfrei, Länge, Griff, Händigkeit und Preis – ohne Umweg.`, 'Zum Katalog'),
       path('#/wissen', 'book', 'Messerkunde', 'Kurz, sachlich und ohne Hype: Stahl, Bauweise, Messertypen und Pflege – mit Quellen. Dazu: wann welcher Typ sinnvoll ist und Spaß macht.', 'Nachlesen')
     ),
+    picksSection(data),
     h(
       'section',
       { class: 'container section--tight' },

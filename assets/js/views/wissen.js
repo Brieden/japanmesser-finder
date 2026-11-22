@@ -8,6 +8,7 @@ import { typeatlas, LEVEL_DEFS, rangeText } from '../ui/typeatlas.js';
 import { steeltable } from '../ui/steeltable.js';
 import { typeStats, rustClassStats } from '../lib/insights.js';
 import { KPI_DEFS, kpiRules } from '../lib/predict.js';
+import { pickRules } from '../lib/picks.js';
 
 export const title = 'Messerkunde';
 
@@ -35,6 +36,21 @@ function kpiTable() {
   const rules = kpiRules();
   const rows = KPI_DEFS.map((d) => [`${d.label} (${d.kind === 'estimate' ? 'Schätzung' : 'Katalogangabe'})`, d.ask, d.five, d.basis, rules[d.id]]);
   return dataTable('Die sechs Skalen der Einschätzung', ['Skala', 'Frage', '5 Sterne bedeuten', 'Grundlage', 'Regel'], rows);
+}
+
+function picksRulesBlock(data) {
+  const rules = pickRules(data.site?.customs?.CH?.limit ?? 300);
+  const list = (items) => h('ul', { class: 'wissen__list' }, items.map((t) => h('li', t)));
+  return h(
+    'div',
+    { class: 'wissen__data' },
+    h('h4', 'Annahmen'),
+    list(rules.assumptions),
+    h('h4', 'Kennzahlen'),
+    h('dl', { class: 'wissen__glossary' }, rules.kpis.map(([k, v]) => h('div', { class: 'wissen__term' }, h('dt', k), h('dd', v)))),
+    h('h4', 'Auswahl'),
+    list(rules.selection)
+  );
 }
 
 function hardnessScaleTable(data) {
@@ -98,6 +114,8 @@ function block(b, ctx, sources) {
       return steeltable(ctx, sources);
     case 'hardnessscale':
       return h('div', { class: 'wissen__data' }, hardnessScaleTable(ctx.data));
+    case 'picksrules':
+      return picksRulesBlock(ctx.data);
     case 'kpitable':
       return h('div', { class: 'wissen__data' }, kpiTable());
     case 'ruststats':

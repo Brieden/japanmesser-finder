@@ -125,7 +125,8 @@ Die Inhaltsfelder (werden schrittweise ergänzt – Ansichten müssen **graceful
         { "type": "hardnessscale" },  // Härteklassen-Tabelle aus taxonomy.hardnessScale
         { "type": "ruststats" },      // Kennzahlen je Rost-Klasse aus dem Katalog (lib/insights.js)
         { "type": "typecompare" },    // Messertypen im Vergleich (Anzahl, Länge, Härte-Median, Preis, Rostfrei-Anteil)
-        { "type": "kpitable" }        // die sechs Skalen der Einschätzung (aus lib/predict.js)
+        { "type": "kpitable" },       // die sechs Skalen der Einschätzung (aus lib/predict.js)
+        { "type": "picksrules" }       // Annahmen, Kennzahlen und Regeln der „Sicheren Wahl“ (aus lib/picks.js)
       ],
       "sources": ["src-01"] } ],
   "glossary": [ { "term": "Hagane", "ja": "鋼", "text": "…" } ],
@@ -169,6 +170,7 @@ Alle Routen sind umgesetzt und im Browser geprüft (Desktop/Mobil, hell/dunkel; 
 | Finder (Fragen, Bewertung, Begründung) | `lib/finder-engine.js`, `views/finder.js`, `css/views/finder.css` |
 | Messerkunde (Atlas, Stahltabelle, Diagramme) | `views/wissen.js`, `ui/typeatlas.js`, `ui/steeltable.js`, `ui/figures.js`, `content.js` (gemeinsamer Lader für `wissen.json`) |
 | Einschätzung mit Sternen (Schätzung) | `lib/predict.js` (reine Logik: sechs Skalen, Schwellen als Konstanten, Eignung je Aufgabe), `ui/stars.js`, `ui/kpis.js` (Abschnitt „Einschätzung für den Alltag“), `ui/sources.js` (Quellen nachladen), `tests/predict.test.mjs` |
+| „Sichere Wahl“ auf der Startseite (Sorglos, Preis-Leistung) | `lib/picks.js` (reine Logik: Annahmen, Tor, Preisstufen, Auswahl; Regeln als Text für die Messerkunde), `ui/picks.js`, Block `picksrules` in `views/wissen.js`, `tests/picks.test.mjs` |
 | Vergleich nebeneinander (`#/vergleich?m=handle1,handle2,…`, bis 4 Messer) | `views/compare.js`, `css/views/compare.css`; Einstiege: „Ähnliche Messer“ auf der Detailseite, „Messer vergleichen“ je Person in `views/liste.js`, „Die ersten Treffer vergleichen“ im Finder-Ergebnis |
 | Vergleiche und Besonderheiten je Messer | `lib/insights.js` (reine Logik: Härteklasse, Einordnung im Typ, belegte „Was dieses Messer besonders macht“-Aussagen), `ui/meter.js` (Härte-Skala), Abschnitte „Besonderheiten“ und „Im Vergleich“ in `views/detail.js` |
 | Liste („Für wen?“, Text/Druck/Zeigen) | `views/liste.js`, `css/views/liste.css` |
