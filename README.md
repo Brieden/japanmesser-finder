@@ -6,6 +6,7 @@ geführter **Finder**, filterbarer **Katalog**, kurze sachliche **Messerkunde** 
 
 Jedes Messer zeigt belegte Besonderheiten, seine Härteklasse und den Vergleich mit den übrigen Messern desselben Typs im Katalog.
 Aussagen nennen ihren Grund und ihre Quelle; was keine Quelle hergibt (z. B. die Schärfe ab Werk), steht nicht da und wird nicht geschätzt.
+Sechs Sterne-Skalen (Schnitthaltigkeit, Schärfbarkeit, Ausbruch-Festigkeit, Rostschutz, Eingewöhnung, Preis im Typ) sind als **Schätzung** gekennzeichnet und lassen sich für bis zu vier Messer nebeneinander vergleichen (`#/vergleich`).
 
 Statische Seite ohne Build-Schritt (HTML, CSS, ES-Module) – direkt über GitHub Pages auslieferbar.
 Inoffiziell und nicht mit dem Shop verbunden. Keine Cookies, keine Tracker, keine externen Schriften.

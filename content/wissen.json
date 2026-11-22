@@ -259,6 +259,74 @@
    ]
   },
   {
+   "id": "schaetzung",
+   "kicker": "Einschätzung",
+   "title": "So entsteht die Einschätzung für den Alltag",
+   "summary": "Sterne für Schnitthaltigkeit, Schärfbarkeit, Ausbruch-Festigkeit, Rostschutz, Eingewöhnung und Preis: was sie bedeuten, woraus sie berechnet werden und was sie nicht sagen.",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Jedes Messer bekommt auf seiner Seite sechs Skalen mit Sternen und einer kurzen Begründung. **Das sind Schätzungen:** Sie entstehen nach festen Regeln aus den Angaben des Katalogs (Stahlsorte, Rost-Klasse, Schliff, Typ, Preis) und aus den Quellen dieser Seite. Gemessen wurde nichts, und kein Hersteller hat die Werte bestätigt."
+    },
+    {
+     "type": "h3",
+     "text": "Sterne zeigen die Lage im Katalog"
+    },
+    {
+     "type": "p",
+     "text": "5 Sterne heißen: oberes Ende unter den Messern dieses Katalogs, 1 Stern: unteres Ende. Die Schwellen sind so gesetzt, dass sich die Messer auf alle fünf Stufen verteilen; nur dann lassen sich zwei Messer an den Sternen unterscheiden. Ein Messer mit 5 Sternen ist deshalb nicht „das beste Messer“, sondern das mit dem höchsten Wert auf dieser einen Skala."
+    },
+    {
+     "type": "h3",
+     "text": "Die sechs Skalen"
+    },
+    {
+     "type": "kpitable"
+    },
+    {
+     "type": "h3",
+     "text": "Eignung je Aufgabe"
+    },
+    {
+     "type": "p",
+     "text": "Die Detailseite zeigt zusätzlich, wofür sich der Typ eignet (Gemüse, Fleisch, Fisch …). Die Sterne sind das Gewicht, mit dem die Messerkunde dem Typ die Aufgabe zuordnet, mal 5 und gerundet. Die Gewichte stammen aus den Beschreibungen „Wofür“ und „Weniger geeignet“ und sind ebenfalls Schätzungen; sie gelten für den Typ, nicht für das einzelne Messer."
+    },
+    {
+     "type": "callout",
+     "tone": "warn",
+     "title": "Nicht geschätzt",
+     "text": "Schärfe ab Werk, Gewicht, Balance sowie Klingendicke und -höhe: Der Katalog nennt sie nicht, ohne diese Angaben wäre jede Zahl geraten. Wie scharf ein Messer schneidet, hängt laut Knife Steel Nerds vor allem von der Schneidengeometrie ab, nicht vom Stahl."
+    },
+    {
+     "type": "h3",
+     "text": "Grenzen"
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      "Die Härte ist der Richtwert der Stahlsorte (bei VG-10 typisch 59–61 HRC), nicht am einzelnen Messer gemessen; die Wärmebehandlung des Herstellers kann abweichen.",
+      "Laut Knife Steel Nerds folgt die Schnitthaltigkeit der Verschleißfestigkeit des Stahls, also Härte und Karbidanteil. Die Schätzung nutzt nur die Härte-Richtwerte; den Karbidanteil kennt sie nicht.",
+      "Schnitthaltigkeit, Schärfbarkeit und Ausbruch-Festigkeit stehen im Gegensatz zueinander: Je härter der Stahl, desto länger hält die Schneide, desto eher bricht sie aus und desto schwerer lässt sie sich schärfen. Zwei Messer mit gleicher Härte unterscheiden sich in diesen Skalen deshalb nicht, außer bei den belegten Ausnahmen (Weißstahl, Blue Super, Schliff, Spitze).",
+      "Ohne genannte Stahlsorte (z. B. „Molybdenum Steel“) gibt es zu diesen drei Skalen keine Schätzung.",
+      "Der Preis spiegelt auch Handwerk und Hersteller; die Skala „Preis im Typ“ vergleicht nur Preise, nicht den Gegenwert."
+     ]
+    }
+   ],
+   "sources": [
+    "kns-white2",
+    "kns-tungsten",
+    "kns-nerds",
+    "ichi-w1",
+    "ichi-bs",
+    "jki-faq",
+    "koi-pankiri",
+    "knifewear-ktip",
+    "knifewear-honesuki",
+    "ty-942297"
+   ]
+  },
+  {
    "id": "bauweise",
    "kicker": "Bauweise",
    "title": "Monostahl, mehrlagig, Damast",

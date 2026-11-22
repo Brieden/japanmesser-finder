@@ -14,6 +14,7 @@ const ROUTES = [
   { pattern: '/messer/:handle', nav: 'katalog', load: () => import('./views/detail.js') },
   { pattern: '/wissen', nav: 'wissen', load: () => import('./views/wissen.js') },
   { pattern: '/wissen/:section', nav: 'wissen', load: () => import('./views/wissen.js') },
+  { pattern: '/vergleich', nav: null, load: () => import('./views/compare.js') },
   { pattern: '/liste', nav: 'liste', load: () => import('./views/liste.js') },
   { pattern: '/hinweise', nav: null, load: () => import('./views/about.js') },
 ];

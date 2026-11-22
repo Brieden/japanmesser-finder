@@ -7,6 +7,7 @@ import { figure } from '../ui/figures.js';
 import { typeatlas, LEVEL_DEFS, rangeText } from '../ui/typeatlas.js';
 import { steeltable } from '../ui/steeltable.js';
 import { typeStats, rustClassStats } from '../lib/insights.js';
+import { KPI_DEFS, kpiRules } from '../lib/predict.js';
 
 export const title = 'Messerkunde';
 
@@ -28,6 +29,12 @@ function dataTable(caption, head, rows) {
     { class: 'table-wrap wissen__table', tabindex: '0', role: 'region', 'aria-label': caption },
     h('table', { class: 'table' }, h('caption', caption), h('thead', h('tr', head.map((c) => h('th', { scope: 'col' }, c)))), h('tbody', rows.map((r) => h('tr', r.map((c, i) => (i === 0 ? h('th', { scope: 'row' }, c) : h('td', c)))))))
   );
+}
+
+function kpiTable() {
+  const rules = kpiRules();
+  const rows = KPI_DEFS.map((d) => [`${d.label} (${d.kind === 'estimate' ? 'Schätzung' : 'Katalogangabe'})`, d.ask, d.five, d.basis, rules[d.id]]);
+  return dataTable('Die sechs Skalen der Einschätzung', ['Skala', 'Frage', '5 Sterne bedeuten', 'Grundlage', 'Regel'], rows);
 }
 
 function hardnessScaleTable(data) {
@@ -91,6 +98,8 @@ function block(b, ctx, sources) {
       return steeltable(ctx, sources);
     case 'hardnessscale':
       return h('div', { class: 'wissen__data' }, hardnessScaleTable(ctx.data));
+    case 'kpitable':
+      return h('div', { class: 'wissen__data' }, kpiTable());
     case 'ruststats':
       return h('div', { class: 'wissen__data' }, rustStatsTable(ctx.data));
     case 'typecompare':

@@ -102,6 +102,7 @@ Die Inhaltsfelder (werden schrittweise ergänzt – Ansichten müssen **graceful
 
 * `types.<id>`: `kanji`, `gloss`, `group`, `summary`, `uses[]`, `avoid`, `fun`, `level` (1–3 nach Schliff und Spezialisierung, **keine Wertung der Person**) mit Pflichtfeld `levelReason` (der konkrete Grund, mit Quelle), `sharpenNote` (Schärfen), `bevel`, `lengthMm:[min,max]`, `typicalMm:[a,b]`, `tasks[]` (siehe Finder), `leftHandNote`, `sources[]`
 * `steels.<id>`: `summary`, `hardnessHrc` (nur wenn die Quelle die Sorte eindeutig zuordnet; Sammelbezeichnungen wie „Molybdenum Steel“ haben keine), `facts[{t,s}]` (belegte Aussagen, `s` = Quellen-ID), `sharpen{level,text,source}` (belegte Aussage zum Schärfaufwand), `beginnerReason` (konkreter Grund statt „für Einsteiger geeignet“), `beginnerFriendly` (nur Sortierhilfe der Finder-Engine), `care`, `sources[]`
+* `types.<id>.chip{text,sources}` (belegte Empfindlichkeit der Spitze/Schneide, 1 Stern Abzug bei „Ausbruch-Festigkeit“), `types.<id>.levelSources[]` (Quellen der Einstufung); `makers.<name>.rustNote` (Hinweis zur Rost-Klasse); `kpi.chip.kTip` (K-Tip-Spitze)
 * `hardnessScale`: `source`, `note`, `classes[{id,label,min,max,retention,toughness,sharpening,typical}]` – Härteklassen nach Knives and Stones (weich 55–58, ausgewogen 59–61, hart 62–64, sehr hart ab 65 HRC)
 * `rust.<id>`: `explain` (ausführlich), `care`
 * `construction.<id>`, `bevels.<id>`, `handleStyles.<id>`, `finishes.<id>`: `explain`
@@ -123,7 +124,8 @@ Die Inhaltsfelder (werden schrittweise ergänzt – Ansichten müssen **graceful
         { "type": "steeltable" },     // Stahl-Übersicht aus taxonomy.steels (Härteklasse, belegte Schärf-Aussage, Quellen)
         { "type": "hardnessscale" },  // Härteklassen-Tabelle aus taxonomy.hardnessScale
         { "type": "ruststats" },      // Kennzahlen je Rost-Klasse aus dem Katalog (lib/insights.js)
-        { "type": "typecompare" }     // Messertypen im Vergleich (Anzahl, Länge, Härte-Median, Preis, Rostfrei-Anteil)
+        { "type": "typecompare" },    // Messertypen im Vergleich (Anzahl, Länge, Härte-Median, Preis, Rostfrei-Anteil)
+        { "type": "kpitable" }        // die sechs Skalen der Einschätzung (aus lib/predict.js)
       ],
       "sources": ["src-01"] } ],
   "glossary": [ { "term": "Hagane", "ja": "鋼", "text": "…" } ],
@@ -166,6 +168,8 @@ Alle Routen sind umgesetzt und im Browser geprüft (Desktop/Mobil, hell/dunkel; 
 | Detailseite, „Im Laden zeigen“ | `views/detail.js`, `css/views/detail.css` |
 | Finder (Fragen, Bewertung, Begründung) | `lib/finder-engine.js`, `views/finder.js`, `css/views/finder.css` |
 | Messerkunde (Atlas, Stahltabelle, Diagramme) | `views/wissen.js`, `ui/typeatlas.js`, `ui/steeltable.js`, `ui/figures.js`, `content.js` (gemeinsamer Lader für `wissen.json`) |
+| Einschätzung mit Sternen (Schätzung) | `lib/predict.js` (reine Logik: sechs Skalen, Schwellen als Konstanten, Eignung je Aufgabe), `ui/stars.js`, `ui/kpis.js` (Abschnitt „Einschätzung für den Alltag“), `ui/sources.js` (Quellen nachladen), `tests/predict.test.mjs` |
+| Vergleich nebeneinander (`#/vergleich?m=handle1,handle2,…`, bis 4 Messer) | `views/compare.js`, `css/views/compare.css`; Einstiege: „Ähnliche Messer“ auf der Detailseite, „Messer vergleichen“ je Person in `views/liste.js`, „Die ersten Treffer vergleichen“ im Finder-Ergebnis |
 | Vergleiche und Besonderheiten je Messer | `lib/insights.js` (reine Logik: Härteklasse, Einordnung im Typ, belegte „Was dieses Messer besonders macht“-Aussagen), `ui/meter.js` (Härte-Skala), Abschnitte „Besonderheiten“ und „Im Vergleich“ in `views/detail.js` |
 | Liste („Für wen?“, Text/Druck/Zeigen) | `views/liste.js`, `css/views/liste.css` |
 | Hinweise, Datenschutz, Einstellungen | `views/about.js`, `css/views/about.css` |

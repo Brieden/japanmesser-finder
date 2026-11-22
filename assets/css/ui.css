@@ -268,3 +268,32 @@
   --meter-h: 0.5rem;
   min-width: 5rem;
 }
+
+/* ── Sterne ── */
+.stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+.stars__row {
+  display: inline-flex;
+  letter-spacing: 0.05em;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+.stars i {
+  font-style: normal;
+  color: var(--line-2);
+}
+.stars i.is-on {
+  color: var(--indigo);
+}
+.stars__num {
+  font-size: var(--step--1);
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.stars--none {
+  color: var(--ink-3);
+}

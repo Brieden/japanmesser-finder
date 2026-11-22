@@ -15,7 +15,8 @@ import { silhouette } from '../ui/silhouette.js';
 import { similarItems } from '../lib/filters.js';
 import { highlights, compareInClass, hardnessSentence, priceSentence, knifeHardness, hardnessNote, sharpeningStatement, hrcText } from '../lib/insights.js';
 import { hardnessMeter } from '../ui/meter.js';
-import { loadWissen } from '../content.js';
+import { fillSources } from '../ui/sources.js';
+import { kpiSection } from '../ui/kpis.js';
 
 // Der Router liest `title` nach dem Rendern (lebendige Bindung) → Tab-Titel mit dem konkreten Messer.
 export let title = 'Messer';
@@ -395,15 +396,6 @@ function specSection(data, item) {
 
 // ───────────────────────────── Besonderheiten und Vergleich ─────────────────────────────
 
-const newTab = h('span', { class: 'visually-hidden' }, ' (öffnet in neuem Tab)');
-
-function sourceNodes(ids, sources) {
-  const list = ids.map((id) => sources?.[id]).filter(Boolean);
-  if (!list.length) return [];
-  // flach zurückgeben: replaceChildren() wandelt verschachtelte Arrays in Text um
-  return [' Quelle: ', ...list.flatMap((s, i) => [i ? ', ' : '', s.url ? h('a', { href: s.url, target: '_blank', rel: 'noopener noreferrer', title: s.title }, s.publisher ?? s.title, newTab.cloneNode(true)) : (s.publisher ?? s.title)])];
-}
-
 /** „Was dieses Messer besonders macht“: belegte Aussagen mit Folge für den Alltag; Quellen werden nachgeladen. */
 function highlightsSection(data, item) {
   const list = highlights(item, data);
@@ -414,11 +406,7 @@ function highlightsSection(data, item) {
     slots.push([slot, hl.sources]);
     return h('li', h('strong', withJa(hl.lead)), ' ', withJa(hl.text), slot);
   });
-  loadWissen()
-    .then((content) => {
-      for (const [slot, ids] of slots) slot.replaceChildren(...sourceNodes(ids, content.sources));
-    })
-    .catch(() => {}); // ohne Quellenliste bleibt jede Aussage lesbar; ihre Herkunft steht dann im Satz
+  fillSources(slots); // ohne Quellenliste bleibt jede Aussage lesbar; ihre Herkunft steht dann im Satz
   return h(
     'section',
     { class: 'detail__section', 'aria-labelledby': 'detail-special' },
@@ -581,6 +569,8 @@ function similarSection(data, item, origin) {
   const list = similarItems(item, data, 4);
   if (!list.length) return null;
   const grid = h('div', { class: 'grid detail__similar-grid' }, list.map((s) => productCard(s, { data })));
+  const peers = list.filter((s) => s.category === 'knife').slice(0, 3);
+  const compareHref = item.category === 'knife' && peers.length ? `#/vergleich?m=${[item.handle, ...peers.map((s) => s.handle)].map(encodeURIComponent).join(',')}` : null;
   grid.addEventListener('click', (event) => {
     if (!origin || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     if (!event.target.closest?.('a[href^="#/messer/"]')) return;
@@ -595,6 +585,7 @@ function similarSection(data, item, origin) {
     { class: 'detail__similar', 'aria-labelledby': 'detail-similar' },
     h('h2', { id: 'detail-similar' }, item.category === 'knife' ? 'Ähnliche Messer' : 'Ähnliche Artikel'),
     h('p', { class: 'muted' }, item.type ? 'Gleicher Typ, ähnlicher Preis; vorrätige Artikel laut Katalog zuerst.' : 'Gleiche Art, ähnlicher Preis.'),
+    compareHref ? h('p', h('a', { class: 'btn', href: compareHref }, icon('check', { size: 18 }), 'Dieses Messer mit den ähnlichen vergleichen'), h('span', { class: 'muted small' }, ' Sterne und Eckdaten nebeneinander')) : null,
     grid
   );
 }
@@ -679,7 +670,7 @@ export async function render(ctx) {
     h('div', { class: 'detail__top' }, gallery(item), summary),
     cautionsBox(data, item),
     sizesSection(data, item, picks, origin),
-    h('div', { class: 'detail__cols' }, h('div', { class: 'detail__main' }, highlightsSection(data, item), compareSection(data, item), specSection(data, item)), h('div', { class: 'detail__side' }, typeCard(data, item), learnLinks(item))),
+    h('div', { class: 'detail__cols' }, h('div', { class: 'detail__main' }, kpiSection(data, item), highlightsSection(data, item), compareSection(data, item), specSection(data, item)), h('div', { class: 'detail__side' }, typeCard(data, item), learnLinks(item))),
     similarSection(data, item, origin)
   );
 }

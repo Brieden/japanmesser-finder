@@ -745,7 +745,8 @@
       "note": "Schmied: Shosui Takeda, Niimi (Präfektur Okayama). Chef Knives To Go führt Takeda-Messer der Linie „NAS“ als San-mai mit Kern aus Aogami Super, rostfreiem Mantel, Kurouchi-Oberfläche und beidseitig gleichem (50/50) Schliff. Der Tsubaya-Katalog nennt den Mantel nicht und stuft die Messer als nicht rostfrei ein; bis zur Klärung im Laden sind sie wie Kohlenstoffstahl zu pflegen.",
       "sources": [
         "cktg-takeda"
-      ]
+      ],
+      "rustNote": "Chef Knives To Go nennt für die Linie „NAS“ einen rostfreien Mantel; der Katalog stuft die Messer als nicht rostfrei ein, die Sterne folgen dem Katalog."
     },
     "Yoshida Hamono": {
       "label": "Yoshida Hamono"
@@ -843,7 +844,13 @@
         "ty-650083",
         "cktg-guide"
       ],
-      "levelReason": "Beidseitig geschliffen: für Links- und Rechtshänder nutzbar; Händler sehen bei einseitig geschliffenen Messern mehr Übungsbedarf bei Benutzung und Nachschliff."
+      "levelReason": "Beidseitig geschliffen: für Links- und Rechtshänder nutzbar; Händler sehen bei einseitig geschliffenen Messern mehr Übungsbedarf bei Benutzung und Nachschliff.",
+      "levelSources": [
+        "korin-faq",
+        "korin-about",
+        "jki-faq",
+        "cktg-guide"
+      ]
     },
     "santoku": {
       "label": "Santoku",
@@ -884,7 +891,13 @@
         "ty-743282",
         "korin-santoku"
       ],
-      "levelReason": "Beidseitig geschliffen: für Links- und Rechtshänder nutzbar; Händler sehen bei einseitig geschliffenen Messern mehr Übungsbedarf bei Benutzung und Nachschliff."
+      "levelReason": "Beidseitig geschliffen: für Links- und Rechtshänder nutzbar; Händler sehen bei einseitig geschliffenen Messern mehr Übungsbedarf bei Benutzung und Nachschliff.",
+      "levelSources": [
+        "korin-faq",
+        "korin-about",
+        "jki-faq",
+        "cktg-guide"
+      ]
     },
     "bunka": {
       "label": "Bunka",
@@ -914,7 +927,14 @@
         "ty-333833",
         "ty-873243"
       ],
-      "levelReason": "Beidseitig geschliffen: für Links- und Rechtshänder nutzbar; Händler sehen bei einseitig geschliffenen Messern mehr Übungsbedarf bei Benutzung und Nachschliff. Die K-Tip-Spitze ist empfindlicher (Knifewear)."
+      "levelReason": "Beidseitig geschliffen: für Links- und Rechtshänder nutzbar; Händler sehen bei einseitig geschliffenen Messern mehr Übungsbedarf bei Benutzung und Nachschliff. Die K-Tip-Spitze ist empfindlicher (Knifewear).",
+      "levelSources": [
+        "korin-faq",
+        "korin-about",
+        "jki-faq",
+        "cktg-guide",
+        "knifewear-ktip"
+      ]
     },
     "kiritsuke": {
       "label": "Kiritsuke",
@@ -945,7 +965,11 @@
         "ty-333833",
         "ty-465399"
       ],
-      "levelReason": "Die schräge K-Tip-Spitze ist empfindlicher (Knifewear). Das traditionelle Kiritsuke ist einseitig geschliffen; Knifewear nennt das Gerücht, nur Küchenchefs könnten es führen, falsch und spricht von einer Frage der Übung."
+      "levelReason": "Die schräge K-Tip-Spitze ist empfindlicher (Knifewear). Das traditionelle Kiritsuke ist einseitig geschliffen; Knifewear nennt das Gerücht, nur Küchenchefs könnten es führen, falsch und spricht von einer Frage der Übung.",
+      "levelSources": [
+        "knifewear-ktip",
+        "knifewear-shapes"
+      ]
     },
     "petty": {
       "label": "Petty",
@@ -983,7 +1007,10 @@
         "ty-896348",
         "ty-465399"
       ],
-      "levelReason": "Beidseitig geschliffen, kurze Klinge. Japanische Fachleute empfehlen für den Haushalt ein Hauptmesser plus ein kleines Messer von 12–15 cm (Kama-asa-Interview bei JETRO)."
+      "levelReason": "Beidseitig geschliffen, kurze Klinge. Japanische Fachleute empfehlen für den Haushalt ein Hauptmesser plus ein kleines Messer von 12–15 cm (Kama-asa-Interview bei JETRO).",
+      "levelSources": [
+        "ty-109399"
+      ]
     },
     "paring": {
       "label": "Schälmesser (Paring)",
@@ -1014,7 +1041,13 @@
         "ty-350430",
         "ty-148096"
       ],
-      "levelReason": "Beidseitig geschliffen, sehr kurze Klinge für Kleinarbeiten."
+      "levelReason": "Beidseitig geschliffen, sehr kurze Klinge für Kleinarbeiten.",
+      "levelSources": [
+        "korin-faq",
+        "korin-about",
+        "jki-faq",
+        "cktg-guide"
+      ]
     },
     "nakiri": {
       "label": "Nakiri",
@@ -1054,7 +1087,13 @@
         "ty-271055",
         "ty-410167"
       ],
-      "levelReason": "Beidseitig geschliffen. Das gerade Profil erlaubt nur den Auf-und-ab-Schnitt, kein Wiegen."
+      "levelReason": "Beidseitig geschliffen. Das gerade Profil erlaubt nur den Auf-und-ab-Schnitt, kein Wiegen.",
+      "levelSources": [
+        "korin-faq",
+        "korin-about",
+        "jki-faq",
+        "cktg-guide"
+      ]
     },
     "usuba": {
       "label": "Usuba",
@@ -1091,7 +1130,14 @@
         "ty-261437"
       ],
       "levelReason": "Einseitig geschliffen: Das Messer ist händigkeitsgebunden (nur für Rechts- oder Linkshänder gebaut, nicht umarbeitbar), und Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen). Knifewear hält dagegen, dass es kein Profi-Privileg ist, sondern nur Übung verlangt.",
-      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten."
+      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten.",
+      "levelSources": [
+        "korin-faq",
+        "korin-about",
+        "jki-faq",
+        "cktg-guide",
+        "knifewear-shapes"
+      ]
     },
     "mukimono": {
       "label": "Mukimono",
@@ -1138,7 +1184,10 @@
         "ty-415118",
         "cktg-guide"
       ],
-      "levelReason": "Lange Klinge (24–30 cm): Sie braucht ein ausreichend großes Schneidbrett, und Klingen ab 27 cm gelten bei Gyuto als Spezialistenbereich (Chef Knives To Go)."
+      "levelReason": "Lange Klinge (24–30 cm): Sie braucht ein ausreichend großes Schneidbrett, und Klingen ab 27 cm gelten bei Gyuto als Spezialistenbereich (Chef Knives To Go).",
+      "levelSources": [
+        "cktg-guide"
+      ]
     },
     "honesuki": {
       "label": "Honesuki",
@@ -1173,7 +1222,16 @@
         "ty-779560",
         "ty-601520"
       ],
-      "levelReason": "Spezialmesser für das Zerlegen von Geflügel; die dünne Spitze bricht aus, wenn man damit Gelenke aufhebelt (Knifewear)."
+      "levelReason": "Spezialmesser für das Zerlegen von Geflügel; die dünne Spitze bricht aus, wenn man damit Gelenke aufhebelt (Knifewear).",
+      "chip": {
+        "text": "Die dünne Spitze bricht aus, wenn man damit harte Gelenke aufhebelt (Knifewear).",
+        "sources": [
+          "knifewear-honesuki"
+        ]
+      },
+      "levelSources": [
+        "knifewear-honesuki"
+      ]
     },
     "garasuki": {
       "label": "Garasuki",
@@ -1275,7 +1333,14 @@
         "ty-261437"
       ],
       "levelReason": "Einseitig geschliffen: Das Messer ist händigkeitsgebunden (nur für Rechts- oder Linkshänder gebaut, nicht umarbeitbar), und Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen). Knifewear hält dagegen, dass es kein Profi-Privileg ist, sondern nur Übung verlangt.",
-      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten."
+      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten.",
+      "levelSources": [
+        "korin-faq",
+        "korin-about",
+        "jki-faq",
+        "cktg-guide",
+        "knifewear-shapes"
+      ]
     },
     "takohiki": {
       "label": "Takohiki",
@@ -1300,7 +1365,14 @@
         "ty-271055"
       ],
       "levelReason": "Einseitig geschliffen: Das Messer ist händigkeitsgebunden (nur für Rechts- oder Linkshänder gebaut, nicht umarbeitbar), und Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen). Knifewear hält dagegen, dass es kein Profi-Privileg ist, sondern nur Übung verlangt. Ichimonji nennt es anspruchsvoller als das Yanagiba, weil der Schnitt mehr Arm- und Handgelenkseinsatz verlangt (Einzelquelle).",
-      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten."
+      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten.",
+      "levelSources": [
+        "korin-faq",
+        "korin-about",
+        "jki-faq",
+        "cktg-guide",
+        "knifewear-shapes"
+      ]
     },
     "fuguhiki": {
       "label": "Fuguhiki",
@@ -1323,7 +1395,14 @@
         "ty-873243"
       ],
       "levelReason": "Einseitig geschliffen: Das Messer ist händigkeitsgebunden (nur für Rechts- oder Linkshänder gebaut, nicht umarbeitbar), und Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen). Knifewear hält dagegen, dass es kein Profi-Privileg ist, sondern nur Übung verlangt. Dazu kommt die flexible, sehr dünne Klinge.",
-      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten."
+      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten.",
+      "levelSources": [
+        "korin-faq",
+        "korin-about",
+        "jki-faq",
+        "cktg-guide",
+        "knifewear-shapes"
+      ]
     },
     "deba": {
       "label": "Deba",
@@ -1363,7 +1442,14 @@
         "ty-261437"
       ],
       "levelReason": "Einseitig geschliffen: Das Messer ist händigkeitsgebunden (nur für Rechts- oder Linkshänder gebaut, nicht umarbeitbar), und Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen). Knifewear hält dagegen, dass es kein Profi-Privileg ist, sondern nur Übung verlangt.",
-      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten."
+      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten.",
+      "levelSources": [
+        "korin-faq",
+        "korin-about",
+        "jki-faq",
+        "cktg-guide",
+        "knifewear-shapes"
+      ]
     },
     "ai-deba": {
       "label": "Ai-Deba",
@@ -1402,7 +1488,20 @@
         "ty-415118"
       ],
       "levelReason": "Einseitig geschliffen: Das Messer ist händigkeitsgebunden (nur für Rechts- oder Linkshänder gebaut, nicht umarbeitbar), und Händler sehen bei Benutzung und Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff (Erfahrungsurteil, nicht gemessen). Knifewear hält dagegen, dass es kein Profi-Privileg ist, sondern nur Übung verlangt.",
-      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten."
+      "sharpenNote": "Einseitiger Schliff: Händler sehen beim Nachschliff mehr Übungsbedarf als bei beidseitigem Schliff; die Klinge lässt sich nicht auf die andere Händigkeit umarbeiten.",
+      "chip": {
+        "text": "Wegen der geringeren Dicke bricht die Schneide bei harten Knochen leichter aus (Ichimonji).",
+        "sources": [
+          "ty-942297"
+        ]
+      },
+      "levelSources": [
+        "korin-faq",
+        "korin-about",
+        "jki-faq",
+        "cktg-guide",
+        "knifewear-shapes"
+      ]
     },
     "salmon": {
       "label": "Lachsmesser",
@@ -1468,7 +1567,10 @@
         "ty-642816"
       ],
       "levelReason": "Gezahnte Klinge: Sie schneidet Brot ohne viel Druck; die Zähne lassen sich kaum auf dem Wasserstein schärfen (Koi Knives).",
-      "sharpenNote": "Wellenschliff: Die Zähne lassen sich laut Koi Knives kaum auf dem Wasserstein schärfen; die Klingen müssen dafür seltener nachgeschärft werden."
+      "sharpenNote": "Wellenschliff: Die Zähne lassen sich laut Koi Knives kaum auf dem Wasserstein schärfen; die Klingen müssen dafür seltener nachgeschärft werden.",
+      "levelSources": [
+        "koi-pankiri"
+      ]
     },
     "soba": {
       "label": "Soba-Kiri",
@@ -1638,5 +1740,15 @@
         "typical": null
       }
     ]
+  },
+  "kpi": {
+    "chip": {
+      "kTip": {
+        "text": "Die schräge K-Tip-Spitze ist laut Knifewear empfindlicher als eine normale Spitze.",
+        "sources": [
+          "knifewear-ktip"
+        ]
+      }
+    }
   }
 }

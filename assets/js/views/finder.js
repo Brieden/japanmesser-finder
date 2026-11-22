@@ -521,6 +521,10 @@ function renderResult(env) {
         )
       );
     } else {
+      const top = [...new Set(items.map((x) => x.item.handle))].slice(0, 4);
+      if (top.length >= 2) {
+        parts.push(h('p', { class: 'fcompare' }, h('a', { class: 'btn', href: `#/vergleich?m=${top.map(encodeURIComponent).join(',')}` }, icon('check', { size: 18 }), `Die ersten ${top.length} Treffer vergleichen`), h('span', { class: 'muted small' }, ' Sterne und Eckdaten nebeneinander')));
+      }
       parts.push(h('div', { class: 'grid fgrid', style: { '--grid-min': '19rem' } }, items.map((x) => productCard(x.item, { data, reasons: x.reasons, warnings: x.warnings, sizeIndex: x.sizeIndex }))));
       if (total > items.length && limit < MAX_LIMIT) {
         parts.push(

@@ -134,6 +134,8 @@ function personSection(ctx, person, redraw) {
   const { data } = ctx;
   const t = totalJpy(person, data.byHandle);
   const nameId = `name-${person.id}`;
+  // Vergleich der vorgemerkten Messer dieser Person (bis zu vier verschiedene Messer)
+  const compareHandles = [...new Set(person.picks.map((pick) => pick.handle))].filter((handle) => data.byHandle.get(handle)?.category === 'knife').slice(0, 4);
   const commitName = (input) => {
     const v = input.value.trim();
     if (v && v !== person.name) shortlist.rename(person.id, v);
@@ -158,6 +160,7 @@ function personSection(ctx, person, redraw) {
         h(
           'div',
           { class: 'cluster no-print' },
+          compareHandles.length >= 2 ? h('a', { class: 'btn btn--sm', href: ctx.router.href('/vergleich', { m: compareHandles }) }, icon('check'), `Messer vergleichen (${compareHandles.length})`) : null,
           h('a', { class: 'btn btn--sm', href: ctx.router.href('/finder', { for: person.id }) }, icon('compass'), 'Finder für diese Person'),
           h('button', { class: 'btn btn--sm btn--ghost', type: 'button', onClick: () => confirmDelete(person) }, icon('trash'), 'Person löschen')
         )
