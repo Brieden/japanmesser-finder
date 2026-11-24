@@ -6,7 +6,7 @@ geführter **Finder**, filterbarer **Katalog**, kurze sachliche **Messerkunde** 
 
 Jedes Messer zeigt belegte Besonderheiten, seine Härteklasse und den Vergleich mit den übrigen Messern desselben Typs im Katalog.
 Aussagen nennen ihren Grund und ihre Quelle; was keine Quelle hergibt (z. B. die Schärfe ab Werk), steht nicht da und wird nicht geschätzt.
-Sechs Sterne-Skalen (Schnitthaltigkeit, Schärfbarkeit, Ausbruch-Festigkeit, Rostschutz, Eingewöhnung, Preis im Typ) sind als **Schätzung** gekennzeichnet und lassen sich für bis zu vier Messer nebeneinander vergleichen (`#/vergleich`). Die Startseite zeigt eine „Sichere Wahl“: wenige Messer mit guter Preis-Leistung für vegetarische Küche in der Schweiz (Preise in CHF), mit offengelegten Annahmen und Regeln.
+Sechs Sterne-Skalen (Schnitthaltigkeit, Schärfbarkeit, Ausbruch-Festigkeit, Rostschutz, Eingewöhnung, Preis im Typ) sind als **Schätzung** gekennzeichnet und lassen sich für bis zu vier Messer nebeneinander vergleichen (`#/vergleich`). Die Startseite zeigt eine „Sichere Wahl“: neun Messer für vegetarische Küche in der Schweiz (Preise in CHF) in drei Typen (Ausgewogen, Robust, Länger scharf) und drei Preisstufen. Eine Typ-Tabelle und der Block „Unterschied zu …“ auf jeder Karte zeigen, was sich gegenüber dem günstigeren Messer tatsächlich ändert (Sterne, Stahl, Griff, Ausstattung, Preis); Annahmen und Regeln sind offengelegt.
 
 Statische Seite ohne Build-Schritt (HTML, CSS, ES-Module) – direkt über GitHub Pages auslieferbar.
 Inoffiziell und nicht mit dem Shop verbunden. Keine Cookies, keine Tracker, keine externen Schriften.

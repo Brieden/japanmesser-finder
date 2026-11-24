@@ -71,12 +71,30 @@
   margin-top: var(--space-4);
 }
 
-/* Sichere Wahl: wenige Messer nach Stufen */
+/* Sichere Wahl: drei Typen (Spalten) × drei Preisstufen, mit Unterschieds-Block je Karte */
 .picks { padding-block: var(--space-5); }
-.picks h2 { max-width: 28ch; margin-bottom: var(--space-2); }
-.picks__grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); margin-top: var(--space-4); align-items: start; }
+.picks h2 { max-width: 34ch; margin-bottom: var(--space-2); }
+
+/* Gegenüberstellung der Typen */
+.picks__types { margin-top: var(--space-4); }
+.picks__types-h { margin: 0 0 var(--space-2); font-size: var(--step-0); }
+.picks__table { min-width: 28rem; }
+.picks__table tbody th { white-space: nowrap; }
+.picks__table td { vertical-align: middle; }
+.picks__range { font-weight: 650; }
+.picks__types-note { margin: var(--space-2) 0 0; }
+
+.picks__lanes { display: grid; gap: var(--space-5) var(--space-4); grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); margin-top: var(--space-5); align-items: start; }
+.picklane { min-width: 0; display: grid; gap: var(--space-3); align-content: start; }
+.picklane__head { padding-bottom: var(--space-2); border-bottom: 2px solid var(--indigo); }
+.picklane__head > * { margin: 0; }
+.picklane__head h3 { font: 700 var(--step-2) / 1.15 var(--font-serif); }
+.picklane__claim { margin-top: var(--space-1) !important; font-weight: 600; }
+.picklane__who { margin-top: var(--space-1) !important; }
+.picklane__cards { display: grid; gap: var(--space-4); }
+.picklane__actions { margin: 0; }
+
 .pick { min-width: 0; }
-.pick--expert { border-style: dashed; }
 .pick__body { display: grid; gap: var(--space-2); align-content: start; }
 .pick__body > * { margin: 0; }
 .pick__level { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2); font: 700 var(--step-1) / 1.2 var(--font-serif); }
@@ -86,19 +104,39 @@
 .pick__title { font-size: var(--step-0); }
 .pick__orig { font-size: var(--step--1); overflow-wrap: anywhere; }
 .pick__price { font-size: var(--step-1); }
+
+/* Was ändert sich gegenüber dem günstigeren Messer? */
+.pick__diff { padding: var(--space-3); border-radius: var(--radius-s); background: var(--paper-2); border-left: 3px solid var(--indigo); display: grid; gap: var(--space-2); font-size: var(--step--1); }
+.pick__diff--lane { border-left-style: dashed; }
+.pick__diff > * { margin: 0; }
+.pick__diff-title { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-1) var(--space-3); }
+.pick__diff-price { font-weight: 700; white-space: nowrap; padding: 0 0.5rem; border: 1px solid var(--line-2); border-radius: var(--radius-pill); background: var(--surface); }
+.pick__diff-lead { color: var(--ink); }
+.pick__diff-list { list-style: none; padding: 0; display: grid; gap: 0.2rem; }
+.pick__diff-list li { display: grid; grid-template-columns: 1.1rem 1fr; gap: 0.25rem; align-items: baseline; }
+.pick__mark { font-size: 0.7rem; text-align: center; }
+.pick__diff-list .is-up .pick__mark { color: var(--ok); }
+.pick__diff-list .is-down .pick__mark { color: var(--bad); }
+.pick__diff-list .is-same .pick__mark, .pick__diff-list .is-plain .pick__mark { color: var(--ink-3); }
+
 .pick__kpis { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin: 0; }
 .pick__kpis > div { display: grid; gap: 0.15rem; }
 .pick__kpis dt { font-size: var(--step--1); font-weight: 650; }
 .pick__kpis dd { margin: 0; }
 .pick__scales { list-style: none; margin: 0; padding: var(--space-2) 0 0; display: grid; gap: 0.2rem; border-top: 1px solid var(--line); font-size: var(--step--1); }
 .pick__scales li { display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); }
-.pick__care, .pick__feat, .pick__upgrade { font-size: var(--step--1); color: var(--ink-2); }
+.pick__scales li.is-changed > span:first-child { font-weight: 650; }
+.pick__delta { display: inline-block; margin-left: var(--space-2); padding: 0 0.4rem; border-radius: var(--radius-pill); font-size: 0.75rem; font-weight: 700; }
+.pick__delta--up { background: var(--ok-weak); color: var(--ok); }
+.pick__delta--down { background: var(--bad-weak); color: var(--bad); }
+.pick__care, .pick__feat { font-size: var(--step--1); color: var(--ink-2); }
 .pick__why summary { cursor: pointer; min-height: 2.75rem; display: flex; align-items: center; font-weight: 600; font-size: var(--step--1); color: var(--indigo); }
 .pick__why ul { margin: 0 0 var(--space-2); padding-left: 1.1rem; display: grid; gap: var(--space-2); font-size: var(--step--1); }
 .pick__src { display: block; margin-top: 0.2rem; }
 .pick__src:empty { display: none; }
 .pick__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-1); }
-.picks__note { margin: var(--space-4) 0 0; padding: var(--space-3); border-left: 3px solid var(--indigo); background: var(--paper-2); border-radius: var(--radius-s); font-size: var(--step--1); }
+.picks__note { margin: 0; padding: var(--space-3); border-left: 3px solid var(--indigo); background: var(--paper-2); border-radius: var(--radius-s); font-size: var(--step--1); }
+.picks__scale { margin: var(--space-4) 0 0; }
 .picks__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-4) 0; }
 .picks__how { margin-top: var(--space-3); }
 .picks__how h3 { margin: var(--space-3) 0 var(--space-1); font-size: var(--step-0); }
