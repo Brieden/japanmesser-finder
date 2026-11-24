@@ -21,7 +21,8 @@ export async function loadData() {
  *   meta, site, taxonomy, rates, items, knives, accessories, byHandle,
  *   t(group, id, fallback?): string,
  *   entry(group, id): object|null,
- *   shopUrl(item): string
+ *   shopUrl(item): string        // Produktseite im englischen Shop (tsubaya.jp/en/products/<handle>)
+ *   shopUrlJa(item): string      // dieselbe Seite auf Japanisch (tsubaya.jp/products/<handle>) – die Seite, die das Personal kennt
  * }}
  */
 export function buildData(catalog, taxonomy, site) {
@@ -30,6 +31,7 @@ export function buildData(catalog, taxonomy, site) {
   const entry = (group, id) => taxonomy[group]?.[id] ?? null;
   const t = (group, id, fallback) => entry(group, id)?.label ?? fallback ?? String(id ?? '');
   const base = (site?.shop?.url ?? 'https://tsubaya.jp/en').replace(/\/$/, '');
+  const baseJa = (site?.shop?.urlJa ?? base.replace(/\/en$/, '')).replace(/\/$/, '');
 
   return {
     meta: catalog.meta,
@@ -43,5 +45,6 @@ export function buildData(catalog, taxonomy, site) {
     t,
     entry,
     shopUrl: (item) => `${base}/products/${item.handle}`,
+    shopUrlJa: (item) => `${baseJa}/products/${item.handle}`,
   };
 }

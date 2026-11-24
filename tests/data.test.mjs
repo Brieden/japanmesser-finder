@@ -21,6 +21,16 @@ test('Datensatz: eindeutige Handles, Pflichtfelder', () => {
   }
 });
 
+test('Datensatz: jeder Handle ergibt eine gültige Shop-URL (ohne Sonderzeichen), site.json nennt die Basis-URLs', () => {
+  const site = read('data/site.json');
+  assert.equal(site.shop.url, 'https://tsubaya.jp/en');
+  assert.equal(site.shop.urlJa, 'https://tsubaya.jp');
+  for (const i of catalog.items) {
+    assert.match(i.handle, /^[a-z0-9][a-z0-9-]*$/, `Handle mit Sonderzeichen: ${i.handle}`);
+    assert.equal(new URL(`${site.shop.urlJa}/products/${i.handle}`).pathname, `/products/${i.handle}`);
+  }
+});
+
 test('Datensatz: alle Aufzählungswerte existieren in der Taxonomie', () => {
   assert.deepEqual(unknown(knives.map((i) => i.type), 'types'), []);
   assert.deepEqual(unknown(knives.map((i) => i.steel?.id), 'steels'), []);

@@ -58,6 +58,10 @@ test('data: buildData liefert Index und Label-Helfer', () => {
   assert.equal(data.t('types', 'gyuto'), 'Gyuto');
   assert.equal(data.t('types', 'unbekannt', 'Fallback'), 'Fallback');
   assert.equal(data.shopUrl(data.items[0]), 'https://tsubaya.jp/en/products/a');
+  // japanische Seite: aus site.shop.urlJa, ohne Angabe aus der englischen URL abgeleitet
+  assert.equal(data.shopUrlJa(data.items[0]), 'https://tsubaya.jp/products/a');
+  const withJa = buildData({ meta: {}, items: data.items }, {}, { shop: { url: 'https://tsubaya.jp/en', urlJa: 'https://example.test/' } });
+  assert.equal(withJa.shopUrlJa(data.items[0]), 'https://example.test/products/a');
   assert.equal(data.knives.length, 2);
 });
 

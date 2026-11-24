@@ -7,6 +7,7 @@ import { jpy, money, convert, priceParts, sizeText, dateDe, count } from '../for
 import { itemHeadline } from '../ui/attrs.js';
 import { productPhoto } from '../ui/card.js';
 import { openDialog } from '../ui/dialog.js';
+import { shopPageLink } from '../ui/shop-link.js';
 import { toast } from '../ui/toast.js';
 
 export const title = 'Meine Liste';
@@ -220,7 +221,8 @@ function pickRow(ctx, person, pick) {
           : h('p', { class: 'liste__size' }, h('span', { class: 'muted' }, 'Größe '), h('strong', sizes[0] ? sizeText(sizes[0]) : 'nicht angegeben')),
         priceLine(ctx, r.priceJpy),
         r.available == null ? null : h('span', { class: ['chip', r.available ? 'chip--ok' : 'chip--warn'] }, r.available ? 'Laut Katalog vorrätig' : 'Laut Katalog nicht vorrätig'),
-        r.size?.sku ? h('span', { class: 'liste__sku muted' }, 'Art.-Nr. ', h('span', { class: 'mono' }, r.size.sku)) : null
+        r.size?.sku ? h('span', { class: 'liste__sku muted' }, 'Art.-Nr. ', h('span', { class: 'mono' }, r.size.sku)) : null,
+        h('a', { class: 'liste__shop no-print', href: data.shopUrlJa(r.item), target: '_blank', rel: 'noopener noreferrer' }, h('span', 'Seite im Shop (', h('span', { lang: 'ja' }, '日本語'), ')'), icon('external', { size: 14 }), h('span', { class: 'visually-hidden' }, ' (öffnet in neuem Tab)'))
       ),
       noteField(person, pick, rowId)
     ),
@@ -338,15 +340,16 @@ function showInStore(ctx) {
   const draw = () => {
     const { person, pick, r } = cards[i];
     const typeName = r.item ? itemHeadline(data, r.item).title : 'Nicht mehr im Katalog';
-    stage.replaceChildren(
+    stage.replaceChildren(...[
       h('p', { class: 'show__who' }, `Für ${person.name}`),
       h('p', { class: 'show__type' }, typeName),
       h('p', { class: 'show__size' }, r.size ? sizeText(r.size) : 'Größe nicht angegeben'),
       h('p', { class: 'show__orig', lang: 'en' }, r.item?.title ?? pick.handle),
       r.size?.sku ? h('p', { class: 'show__sku' }, 'Art.-Nr. ', h('span', { class: 'mono' }, r.size.sku)) : null,
       h('p', { class: 'show__price' }, jpy(r.priceJpy)),
-      pick.note ? h('p', { class: 'show__note' }, pick.note) : null
-    );
+      pick.note ? h('p', { class: 'show__note' }, pick.note) : null,
+      r.item ? h('p', { class: 'show__page' }, shopPageLink(data, r.item)) : null
+    ].filter(Boolean)); // replaceChildren macht aus null den Text „null“
     pos.textContent = `${i + 1} von ${cards.length}`;
     prev.disabled = i === 0;
     next.disabled = i === cards.length - 1;

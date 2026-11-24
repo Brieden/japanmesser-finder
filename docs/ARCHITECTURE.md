@@ -141,7 +141,7 @@ Die Inhaltsfelder (werden schrittweise ergänzt – Ansichten müssen **graceful
 * **store.js**: `store.get/set/update/subscribe`; Schlüssel-Präfix `jmf:v1:`. Genutzte Schlüssel: `theme`, `people`, `activePerson`, `prefs` (`{currency:'EUR'|'CHF'|'JPY', images:boolean}`), `finder` (letzte Antworten).
 * **shortlist.js**: `shortlist.add/rename/remove/active/setActive/addPick/removePick/updatePick/picksFor/isPicked/count/subscribe`, `sizeKeyOf(size, index)`, `resolvePick(pick, byHandle)`, `totalJpy(person, byHandle)`, `listAsText(people, ctx)`.
 * **ui/dialog.js**: `openDialog({ title, body, sheet })` · **ui/toast.js**: `toast(text)` · **ui/shop-notice.js**: `shopNotice(data, {compact})`.
-* **data (ctx.data)**: `items`, `knives`, `accessories`, `byHandle` (Map), `taxonomy`, `meta`, `site`, `rates`, `t(group,id)`, `entry(group,id)`, `shopUrl(item)`.
+* **data (ctx.data)**: `items`, `knives`, `accessories`, `byHandle` (Map), `taxonomy`, `meta`, `site`, `rates`, `t(group,id)`, `entry(group,id)`, `shopUrl(item)` (englische Shop-Seite), `shopUrlJa(item)` (japanische Shop-Seite, `site.shop.urlJa`; Link „商品ページを開く“ aus `ui/shop-link.js` im Dialog „Im Laden zeigen“ und in der Liste).
 
 ## CSS-Konventionen
 
@@ -170,7 +170,7 @@ Alle Routen sind umgesetzt und im Browser geprüft (Desktop/Mobil, hell/dunkel; 
 | Finder (Fragen, Bewertung, Begründung) | `lib/finder-engine.js`, `views/finder.js`, `css/views/finder.css` |
 | Messerkunde (Atlas, Stahltabelle, Diagramme) | `views/wissen.js`, `ui/typeatlas.js`, `ui/steeltable.js`, `ui/figures.js`, `content.js` (gemeinsamer Lader für `wissen.json`) |
 | Einschätzung mit Sternen (Schätzung) | `lib/predict.js` (reine Logik: sechs Skalen, Schwellen als Konstanten, Eignung je Aufgabe), `ui/stars.js`, `ui/kpis.js` (Abschnitt „Einschätzung für den Alltag“), `ui/sources.js` (Quellen nachladen), `tests/predict.test.mjs` |
-| „Sichere Wahl“ auf der Startseite (Sorglos, Preis-Leistung) | `lib/picks.js` (reine Logik: Annahmen, Tor, Preisstufen, Auswahl; Regeln als Text für die Messerkunde), `ui/picks.js`, Block `picksrules` in `views/wissen.js`, `tests/picks.test.mjs` |
+| „Sichere Wahl“ auf der Startseite (drei Typen × drei Preisstufen, Sorglos, Preis-Leistung, „Unterschied zu …“) | `lib/picks.js` (reine Logik: Annahmen, Tore je Typ, Preisstufen, Mehrwert-Regel, `diffPicks`/`describeDiff`; Regeln als Text für die Messerkunde), `ui/picks.js`, Block `picksrules` in `views/wissen.js`, `tests/picks.test.mjs` |
 | Vergleich nebeneinander (`#/vergleich?m=handle1,handle2,…`, bis 4 Messer) | `views/compare.js`, `css/views/compare.css`; Einstiege: „Ähnliche Messer“ auf der Detailseite, „Messer vergleichen“ je Person in `views/liste.js`, „Die ersten Treffer vergleichen“ im Finder-Ergebnis |
 | Vergleiche und Besonderheiten je Messer | `lib/insights.js` (reine Logik: Härteklasse, Einordnung im Typ, belegte „Was dieses Messer besonders macht“-Aussagen), `ui/meter.js` (Härte-Skala), Abschnitte „Besonderheiten“ und „Im Vergleich“ in `views/detail.js` |
 | Liste („Für wen?“, Text/Druck/Zeigen) | `views/liste.js`, `css/views/liste.css` |

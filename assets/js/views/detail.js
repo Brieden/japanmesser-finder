@@ -11,6 +11,7 @@ import { productCard, productPhoto, priceBlock, availabilityText } from '../ui/c
 import { openPickDialog } from '../ui/pick.js';
 import { openDialog } from '../ui/dialog.js';
 import { shopNotice } from '../ui/shop-notice.js';
+import { shopPageLink } from '../ui/shop-link.js';
 import { silhouette } from '../ui/silhouette.js';
 import { similarItems } from '../lib/filters.js';
 import { highlights, compareInClass, hardnessSentence, priceSentence, knifeHardness, hardnessNote, sharpeningStatement, hrcText } from '../lib/insights.js';
@@ -232,6 +233,7 @@ function openShowDialog({ data, item, sizeIndex = 0 }) {
     h('p', { class: 'muted small detail-show__ask-de' }, 'Bedeutung: „Bitte zeigen Sie mir dieses Produkt.“'),
     switcher,
     facts,
+    h('div', { class: 'detail-show__page' }, shopPageLink(data, item), h('p', { class: 'muted small' }, 'Öffnet die Seite dieses Messers auf der japanischen Website von Tsubaya (tsubaya.jp) in einem neuen Tab.')),
     h('p', { class: 'muted small' }, `Preis und Bestand stammen aus dem Online-Katalog (Stand ${dateDe(data.meta.fetchedAt)}) und können im Laden abweichen.`)
   );
   return openDialog({ title: 'Im Laden zeigen', body, sheet: false });
